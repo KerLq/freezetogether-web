@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < BackendController
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :permission, only: [:show]
   # GET /users or /users.json
