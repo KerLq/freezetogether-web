@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to @user, notice: "Successfully registered!"
       else
-        redirect_to users_path, notice: "Registration failed!"
+        redirect_to register_path, notice: "Registration failed!"
       end
 
   end
