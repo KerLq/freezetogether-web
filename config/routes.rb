@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   
   scope module: 'frontend' do
     resources :users
+    resources :sessions
   end
+  
+    scope module: 'backend', path: 'backend' do
+      resources :users
+    end
 end

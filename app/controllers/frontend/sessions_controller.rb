@@ -16,6 +16,6 @@ class Frontend::SessionsController < Frontend::FrontendController
 
     def destroy
         session[:user_id] = nil
-        redirect_to users_path
+        redirect_to users_path # Landingpage (root_path)
     end
 end

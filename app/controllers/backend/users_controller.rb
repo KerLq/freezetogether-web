@@ -3,6 +3,7 @@ class Backend::UsersController < Backend::BackendController
   before_action :permission, only: [:show]
   # GET /users or /users.json
   def index
+    
     @users = User.all
   end
 
