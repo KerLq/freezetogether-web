@@ -1,4 +1,4 @@
-class NewsController < BackendController
+class Backend::NewsController < Backend::BackendController
   before_action :set_news, only: %i[ show edit update destroy ]
 
   # GET /news or /news.json

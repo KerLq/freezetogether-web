@@ -1,4 +1,4 @@
-class SessionsController < BackendController
+class Backend::SessionsController < Backend::BackendController
     def login
 
     end
