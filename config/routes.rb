@@ -9,13 +9,14 @@ Rails.application.routes.draw do
   get '/logout', to: 'frontend/sessions#destroy'
   post '/logout', to: 'frontend/sessions#destroy'
   
-  scope module: 'frontend' do
+  scope module: 'frontend', as: 'frontend' do
     root to: "welcome#index"
     resources :users
     resources :sessions
   end
   
-    scope module: 'backend', path: 'backend' do
+    scope module: 'backend', as: 'backend', path: 'admin' do
+      root to: "welcome#index"
       resources :users
     end
 end
