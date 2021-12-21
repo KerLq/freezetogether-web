@@ -1,6 +1,6 @@
 class Frontend::UsersController < Frontend::FrontendController
   before_action :set_user, only: %i[ show edit update destroy ]
-  before_action :permission, only: [:show]
+  before_action :permission, only: %i[edit update destroy]
   # GET /users or /users.json
   def index
     @users = User.all
@@ -18,6 +18,8 @@ class Frontend::UsersController < Frontend::FrontendController
   # GET /users/1/edit
   def edit
   end
+
+
 
   # POST /users or /users.json
   def create
