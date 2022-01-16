@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title= "Freeze Together"
+    = stylesheet_link_tag 'frontend'
+    = csrf_meta_tags
+    = yield :stylesheets
+    = yield :javascripts
+    %meta{ name: 'robots', content: 'noindex,follow' }
+    - if content_for(:no_header)
+      = flash_messages
+      = yield
+    - else
+      = yield
