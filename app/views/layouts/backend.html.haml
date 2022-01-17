@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title= "Admin - Freeze Together"
+    = stylesheet_link_tag 'backend'
+    = favicon_link_tag 'favicon.png'
+    = csrf_meta_tags
+    = yield :stylesheets
+    = yield :javascripts
+    %meta{ name: 'robots', content: 'noindex,follow' }
+  %body
+    - if content_for(:no_header)
+      = flash_messages
+      = yield
+    - else
+      = yield

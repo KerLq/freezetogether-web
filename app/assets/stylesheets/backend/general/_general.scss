@@ -1,0 +1,36 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  background-size: 100%;
+  background: gray;
+}
+
+.section {
+  position: relative;
+  padding: 4em 2em;
+  width: 100%;
+
+  @media only screen and (max-width: $sm-display) {
+    padding: 3em 1em;
+  }
+}
+
+.container {
+  position: relative;
+  display: block;
+  max-width: $lg-display;
+  margin: 0 auto;
+
+  &--slg-display {
+    max-width: $slg-display;
+  }
+}
