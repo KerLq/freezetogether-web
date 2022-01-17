@@ -1,1 +1,14 @@
 
+%header.main-header
+  %nav.main-nav
+    .main-nav__navigation
+      = link_to (image_tag('/assets/logos/logo-text.svg')), frontend_root_path, class: 'main-nav__logo'
+      %ul.nav-list
+        %li.nav-list__item.nav-list__item--selected= link_to "Spielinfo", "#"
+        %li.nav-list__item= link_to "Medien", "#"
+        %li.nav-list__item= link_to "News", "#"
+        %li.nav-list__item= link_to "Bestenliste", "#"
+        %li.nav-list__item= link_to "Hilfe", "#"
+    .main-nav__buttons
+      = link_to "Login".html_safe, '#', class: 'button button--login'
+      = link_to "Herunterladen #{image_tag('/assets/icons/download.png')}".html_safe, '#', class: 'button button--download'

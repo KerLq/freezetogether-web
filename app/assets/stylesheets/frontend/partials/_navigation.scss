@@ -1,0 +1,30 @@
+.nav-list {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  margin-left: 1em;
+  height: 100%;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: .25em 1em;
+    transition: opacity 200ms ease-in-out;
+    font-weight: bold;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      box-shadow: inset 0px -4px 0 $accent-color;
+    }
+  }
+}

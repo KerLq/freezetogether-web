@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 1.25em;
+
+  &--download {
+    font-weight: bold;
+    background: #fff;
+    color: $primary-color;
+    height: 100%;
+
+    img {
+      margin-left: .5em;
+    }
+  }
+
+  &--login {
+    font-weight: bold;
+    background: none;
+    color: #fff;
+    height: 100%;
+
+    img {
+      margin-left: .5em;
+    }
+  }
+}

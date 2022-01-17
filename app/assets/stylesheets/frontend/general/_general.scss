@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  background: #fff;
   background-size: 100%;
+  background: gray;
 }
 
 .section {
@@ -21,16 +21,6 @@ body {
 
   @media only screen and (max-width: $sm-display) {
     padding: 3em 1em;
-  }
-
-  &--hero {
-    padding: 2em 2em 4em 2em;
-    background: $secondary-color;
-    color: #fff;
-
-    @media only screen and (max-width: $sm-display) {
-      padding: 2em 1em 4em 1em;
-    }
   }
 }
 
