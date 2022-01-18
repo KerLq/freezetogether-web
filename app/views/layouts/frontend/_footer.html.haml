@@ -1,1 +1,18 @@
+%footer.footer
+  .footer__top
+  .footer__bottom
+    .footer-container
+      .footer-container__logo
+        = link_to (image_tag('/assets/logos/logo.svg')), frontend_root_path
+      .footer-container__copyright
+        .footer-copyright
+          .footer-copyright__links
+            %ul.copyright-links
+              %li.copyright-links__item= link_to 'Rechtliche Hinweise', '#'
+              %li.copyright-links__item= link_to 'Nutzervereinbarung', '#'
+              %li.copyright-links__item= link_to 'Spiel-Updates', '#'
+              %li.copyright-links__item= link_to 'Datenschutz- und Cookie Richtline (deine Datenschutzrechte)', '#'
+              %li.copyright-links__item= link_to 'Cookie Präferenzen', '#'
+          .footer-copyright__text Copyright &copy; 2022 Freeze Together
+      .footer-container__images
 

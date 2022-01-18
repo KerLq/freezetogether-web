@@ -1,0 +1,51 @@
+.footer {
+  background-color: $primary-color;
+  color: #fff;
+
+  &-container {
+    display: flex;
+    flex-flow: row;
+
+    &__logo {
+      img {
+        height: 3.5em;
+      }
+    }
+
+    &__copyright {
+
+    }
+  }
+
+  &-copyright {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &__links {
+      display: flex;
+      flex-flow: row;
+      max-width: 40em;
+    }
+
+    &__text {
+      font-size: 0.875em;
+      opacity: .5;
+    }
+  }
+}
+
+.copyright-links {
+  display: flex;
+  flex-flow: row wrap;
+  &__item {
+    margin-right: .5em;
+    a {
+      color: #fff;
+      opacity: .75;
+      text-decoration: none;
+      font-size: 0.875em;
+    }
+  }
+}
