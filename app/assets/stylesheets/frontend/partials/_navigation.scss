@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: .25em 1em;
     transition: opacity 200ms ease-in-out;
     font-weight: bold;
     a {
@@ -21,6 +20,7 @@
       text-decoration: none;
       color: #fff;
       text-transform: uppercase;
+      padding: 0 1em;
     }
 
     &:hover {
