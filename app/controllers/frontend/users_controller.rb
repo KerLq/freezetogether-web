@@ -1,13 +1,10 @@
 class Frontend::UsersController < Frontend::FrontendController
-  before_action :set_user, only: %i[ show edit update destroy ]
   before_action :permission, only: %i[edit update destroy]
   # GET /users or /users.json
-  def index
-    @users = User.all
-  end
 
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -25,7 +22,7 @@ class Frontend::UsersController < Frontend::FrontendController
   def create
     @user = User.new(user_params)
       if @user.save
-        redirect_to @user, notice: "Successfully registered!"
+        redirect_to [:frontend, @user], notice: "Successfully registered!"
       else
         redirect_to register_path, notice: "Registration failed!"
       end
@@ -60,7 +57,7 @@ class Frontend::UsersController < Frontend::FrontendController
       @user = User.find(params[:id])
     end
     def permission
-      if current_user != set_user
+      if current_user != User.find(params[:id])
         redirect_to users_path, notice: "No Permission!"
       end
     end

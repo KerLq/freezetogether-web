@@ -10,5 +10,5 @@
         %li.nav-list__item= link_to "Bestenliste", "#"
         %li.nav-list__item= link_to "Hilfe", "#"
     .main-nav__buttons
-      = link_to "#{image_tag('/assets/icons/login.png')} Login".html_safe, '#', class: 'button button--login'
+      = link_to "#{image_tag('/assets/icons/login.png')} Login".html_safe, login_path, class: 'button button--login'
       = link_to "Herunterladen #{image_tag('/assets/icons/download.png')}".html_safe, '#', class: 'button button--download'
