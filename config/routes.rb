@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
     
-  resources :news
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/login', to: 'frontend/sessions#login'
   post '/login', to: 'frontend/sessions#create'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
     root to: "welcome#index"
     resources :users
     resources :sessions
+    resources :news
   end
   
     scope module: 'backend', as: 'backend', path: 'admin' do
