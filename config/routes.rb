@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit]
     resources :sessions
     resources :news
+    resources :scores, only: [:index, :show]
+    resources :achievements, only: [:index, :show]
   end
 
   scope module: 'backend', as: 'backend', path: 'admin' do
