@@ -5,4 +5,6 @@ class User < ApplicationRecord
     validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
 
     enum role: [:standard, :admin]
+
+    has_many :scores
 end
