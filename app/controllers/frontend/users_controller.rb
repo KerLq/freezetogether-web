@@ -22,7 +22,8 @@ class Frontend::UsersController < Frontend::FrontendController
   def create
     @user = User.new(user_params)
       if @user.save
-        redirect_to [:frontend, @user], notice: "Successfully registered!"
+        UserMailer.registration_confirmation(@user).deliver!
+        redirect_to login_path, notice: "Verify your email"
       else
         redirect_to register_path, notice: "Registration failed!"
       end
@@ -48,6 +49,20 @@ class Frontend::UsersController < Frontend::FrontendController
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+
+  def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user
+      user.email_activate
+      flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
+      Please sign in to continue."
+      redirect_to login_path
+    else
+      flash[:error] = "Sorry. User does not exist"
+      redirect_to frontend_root_path
     end
   end
 
