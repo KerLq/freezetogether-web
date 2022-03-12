@@ -1,4 +1,4 @@
-class AchievementsController < ApplicationController
+class Frontend::AchievementsController < Frontend::FrontendController
   before_action :set_achievement, only: %i[ show edit update destroy ]
 
   # GET /achievements or /achievements.json

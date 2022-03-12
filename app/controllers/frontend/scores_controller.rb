@@ -1,4 +1,4 @@
-class ScoresController < ApplicationController
+class Frontend::ScoresController < Frontend::FrontendController
   before_action :set_score, only: %i[ show edit update destroy ]
 
   # GET /scores or /scores.json
