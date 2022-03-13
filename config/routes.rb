@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :achievements
-  resources :scores
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/login', to: 'frontend/sessions#login'
   post '/login', to: 'frontend/sessions#create'
@@ -14,13 +12,13 @@ Rails.application.routes.draw do
   scope module: 'frontend', as: 'frontend' do
     root to: "welcome#index"
     resources :users, only: [:show, :edit] do
-      resources :scores, only: [:index, :show] do
-        resources :achievements, only: [:index, :show]
-      end
+      resources :achievements, only: [:index, :show]
       member do
         get :confirm_email
       end
     end
+    resources :scores, only: [:index, :show], path: '/leaderboards'
+    
     
     resources :sessions
     resources :news
