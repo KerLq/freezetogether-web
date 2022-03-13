@@ -29,35 +29,30 @@
   }
   &--primary {
     font-weight: bold;
-    display: inline-block;
     padding: 1em 2em;
     background: $primary-color;
     color: #fff;
   }
   &--secondary {
     font-weight: bold;
-    display: inline-block;
     padding: 1em 2em;
     color: white;
   }
 
   &--accent {
     font-weight: bold;
-    display: inline-block;
     padding: 1em 2em;
     background: $accent-color;
     color: #fff;
   }
   &--primary-light {
     font-weight: bold;
-    display: inline-block;
     padding: 1em 2em;
     border: 1px solid $primary-color;
     color: $primary-color;
   }
   &--accent-light {
     font-weight: bold;
-    display: inline-block;
     padding: 1em 2em;
     border: 1px solid $accent-color;
     color: $accent-color;
