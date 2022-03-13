@@ -14,10 +14,14 @@ Rails.application.routes.draw do
   scope module: 'frontend', as: 'frontend' do
     root to: "welcome#index"
     resources :users, only: [:show, :edit] do
+      resources :scores, only: [:index, :show] do
+        resources :achievements, only: [:index, :show]
+      end
       member do
         get :confirm_email
       end
     end
+    
     resources :sessions
     resources :news
     resources :scores, only: [:index, :show]
