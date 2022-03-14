@@ -73,9 +73,18 @@
       margin-bottom: 2em;
     }
 
-    &__platforms {
+    &__platforms-headline {
       margin-top: 1em;
+      margin-bottom: .5em;
+    }
+
+    &__platforms {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       svg {
+        margin: 0 .5em;
         height: 1.25em;
         fill: #fff;
 
