@@ -1,0 +1,5 @@
+= form_for [:frontend, @user] do |f|
+  = f.text_field :username
+  = f.text_field :email
+  = f.file_field :avatar
+  = f.submit "Submit"

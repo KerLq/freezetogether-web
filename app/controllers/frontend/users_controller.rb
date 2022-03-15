@@ -14,6 +14,7 @@ class Frontend::UsersController < Frontend::FrontendController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
 
@@ -22,6 +23,8 @@ class Frontend::UsersController < Frontend::FrontendController
 
   def create
     @user = User.new(user_params)
+    @user.avatar.attach(params[:user][:avatar])
+
       if @user.save
         UserMailer.registration_confirmation(@user).deliver!
         redirect_to login_path, notice: "Verify your email"
@@ -33,6 +36,9 @@ class Frontend::UsersController < Frontend::FrontendController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    @user = User.find(params[:id])
+    @user.avatar.attach(params[:user][:avatar])
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -65,6 +71,13 @@ class Frontend::UsersController < Frontend::FrontendController
     end
   end
 
+  def upload_image
+    @user = User.find(params[:user_id])
+    image = params[:user][:avatar]
+    @user.avatar.attach(image)
+    redirect_to [:frontend, @user]
+  end
+
   private
     def permission
       if current_user != User.find(params[:id])
@@ -76,7 +89,8 @@ class Frontend::UsersController < Frontend::FrontendController
       params.require(:user).permit(
         :username,
         :email,
-        :password
+        :password,
+        :avatar
       )
     end
 end

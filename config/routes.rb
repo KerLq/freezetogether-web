@@ -11,13 +11,16 @@ Rails.application.routes.draw do
 
   scope module: 'frontend', as: 'frontend' do
     root to: "welcome#index"
-    resources :users, only: [:show, :edit] do
+    resources :users, only: [:show, :edit, :update] do
       resources :scores, only: [:index] do
         resources :achievements, only: [:index]
       end
       member do
         get :confirm_email
       end
+      get '/upload-image', to: 'users#upload_image'
+      post '/upload-image', to: 'users#upload_image' 
+
     end
     resources :scores, only: [:index, :show], path: '/leaderboards'
     resources :achievements, only: [:index, :show]
