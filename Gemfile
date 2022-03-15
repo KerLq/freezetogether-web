@@ -21,7 +21,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -30,6 +29,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 #HAML
 gem 'haml'
+gem 'premailer-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

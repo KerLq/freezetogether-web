@@ -19,6 +19,7 @@ class Frontend::UsersController < Frontend::FrontendController
 
 
   # POST /users or /users.json
+
   def create
     @user = User.new(user_params)
       if @user.save
@@ -57,9 +58,7 @@ class Frontend::UsersController < Frontend::FrontendController
     user = User.find_by_confirm_token(params[:id])
     if user
       user.email_activate
-      flash[:success] = "Welcome to the Sample App! Your email has been confirmed.
-      Please sign in to continue."
-      redirect_to login_path
+      redirect_to login_path # Render special view for activation page
     else
       flash[:error] = "Sorry. User does not exist"
       redirect_to frontend_root_path

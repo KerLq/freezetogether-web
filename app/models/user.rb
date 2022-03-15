@@ -5,6 +5,8 @@ class User < ApplicationRecord
     validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
     before_create :confirmation_token, :downcase_email
     before_save :downcase_email
+    validates :username, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true
     enum role: [:standard, :admin]
 
     has_many :scores

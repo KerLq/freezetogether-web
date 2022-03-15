@@ -1,0 +1,9 @@
+.email
+  .container
+    .email__content{style: "text-align: center;"}
+      .email__header
+        %h4 Thanks For Registrating To Freeze Together!
+      .email__text{style: "margin: 1em 0 1em 0;"}
+        %p To Access Your Account, Please Activate Your Email By Clicking This Button Below
+      .email__button
+        = link_to "Activate My Account!", confirm_email_frontend_user_url(@user.confirm_token)
