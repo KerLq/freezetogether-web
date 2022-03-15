@@ -1,0 +1,23 @@
+.game {
+  display: flex;
+  //height: 5000px; // just to test image scroll thing
+  justify-content: space-between;
+  &__image-wrapper {
+    img {
+      position: sticky;
+      top: 0;
+      //width:fit-content;
+    }
+  }
+  &__description {
+    text-align: right;
+    p {
+      line-height: 2;
+      font-size: 24px;
+      font-weight: 300;
+    }
+    &--t-left {
+      text-align: left;
+    }
+  }
+}
