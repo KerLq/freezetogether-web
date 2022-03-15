@@ -5,6 +5,7 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 1.25em;
+  border: none;
 
   &--download {
     font-weight: bold;
@@ -27,16 +28,24 @@
       margin-right: .5em;
     }
   }
+
   &--primary {
     font-weight: bold;
     padding: 1em 2em;
     background: $primary-color;
     color: #fff;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 -5em 0 inset rgba(0, 0, 0, 0.5);
+    }
   }
+
   &--secondary {
     font-weight: bold;
     padding: 1em 2em;
-    color: white;
+    background: #fff;
+    color: $primary-color;
   }
 
   &--accent {
@@ -45,12 +54,27 @@
     background: $accent-color;
     color: #fff;
   }
+
+  &--secondary-light {
+    font-weight: bold;
+    padding: 1em 2em;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 -5em 0 inset #fff;
+      color: $accent-color;
+    }
+  }
+
   &--primary-light {
     font-weight: bold;
     padding: 1em 2em;
     border: 1px solid $primary-color;
     color: $primary-color;
   }
+
   &--accent-light {
     font-weight: bold;
     padding: 1em 2em;

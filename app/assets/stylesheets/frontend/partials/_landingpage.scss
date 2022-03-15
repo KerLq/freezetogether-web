@@ -1,0 +1,133 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42em;
+  background: linear-gradient(-23deg, #0098ff, #a5ddff 88%);
+  box-shadow: 0px 1em 0 0 #dff3ff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: asset-url("backgrounds/pngwing.com.png");
+    background-size: cover;
+    background-position: 0;
+    opacity: .3;
+    filter: grayscale(1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: asset-url("logos/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 30em;
+    background-position: center 15%;
+    opacity: .2;
+    -webkit-animation: logo-animation 4s infinite alternate;
+    animation: logo-animation 4s infinite alternate;
+  }
+
+  &__snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  &__main{
+    color: #fff;
+    text-align: center;
+  }
+
+  &-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+
+    &__buttons {
+      margin-top: 2em;
+      width: 12.5em;
+    }
+    &__headline {
+      font-family: "Homesick";
+      font-weight: 100;
+      text-shadow: 0px 5px 0px rgba(255, 255, 255, 0.35);
+    }
+
+    &__description {
+      margin-bottom: 1em;
+    }
+
+    &__platforms-headline {
+      margin-top: 2em;
+      margin-bottom: .5em;
+    }
+
+    &__platforms {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        margin: 0 .5em;
+        height: 1.25em;
+        fill: #fff;
+
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(white, white);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.introduction {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__headline {
+    max-width: 65em;
+  }
+
+  &__buttons {
+    margin-top: 1.5em;
+    max-width: 15em;
+  }
+}
+
+@-webkit-keyframes logo-animation {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2em); }
+}
+
+@keyframes logo-animation {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2em); }
+}

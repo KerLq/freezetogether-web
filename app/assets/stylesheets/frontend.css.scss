@@ -5,12 +5,17 @@
 @import "frontend/general/general";
 @import "frontend/general/misc";
 @import "frontend/general/buttons";
-
+@import "frontend/general/form";
 
 // PARTIALS //
 @import "frontend/partials/header";
 @import "frontend/partials/navigation";
 @import "frontend/partials/social-media";
+@import "frontend/partials/character-section";
+@import "frontend/partials/landingpage";
+@import "frontend/partials/news";
 
 @import "frontend/partials/footer";
+@import "frontend/partials/user-card";
+
 

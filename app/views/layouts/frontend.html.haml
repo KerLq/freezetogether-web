@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= "Freeze Together"
+    %title= "Das neue Koop-Abenteuer mit deinen Freunden - Freeze Together"
     = stylesheet_link_tag 'frontend'
     = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
@@ -16,3 +16,4 @@
       = render 'layouts/frontend/header'
       = yield
       = render 'layouts/frontend/footer'
+    = javascript_include_tag 'application.js'

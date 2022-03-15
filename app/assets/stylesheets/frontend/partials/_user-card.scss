@@ -1,0 +1,72 @@
+.user-card {
+  padding: 2rem 0rem;
+  background: #101010;
+  margin-bottom: 2.5rem;
+  &__content {
+      display: flex;
+      justify-content: space-between;
+  }
+  &__info {
+      display: flex;
+      align-items: center;
+  }
+  &__username {
+      font-size: 2.625rem;
+      font-weight: 400;
+      color: white;
+  }
+
+  &__wrapper {
+      margin-left: 2rem;
+  }
+  &__additional {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+  }
+  &__buttons {
+      display: flex;
+      justify-content: flex-end;
+
+  }
+  &__description {
+      font-size: 1.125rem;
+      font-weight: 200;
+      text-align: right;
+      margin-top: 1rem;
+      color: white;
+
+  }
+  &__twitter {
+      margin-right: 2rem;
+  }
+}
+
+.avatar {
+  &__logo {
+      height: 100px;
+      @media (max-width: 580px) {
+          height: 50px;
+      } 
+  }
+  &__img {
+      border-radius: 20px;
+      border: 3px solid transparent;
+      height: 80px;
+
+      &--inverted {
+          filter: invert(1);
+          border-radius: 0px;
+          height: 35px;
+      }
+
+      &--mobile {
+          height: 60px
+      }
+      &--user-card {
+          border-radius: 25px;
+          max-width: 124px;
+          height: 124px;
+      }
+  }
+}

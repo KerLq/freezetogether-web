@@ -78,6 +78,10 @@ p {
   color: #fff !important;
 }
 
+.accent {
+  color: $accent-color;
+}
+
 .text {
   &-center {
     text-align: center;

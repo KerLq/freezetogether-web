@@ -19,6 +19,11 @@ body {
   padding: 4em 2em;
   width: 100%;
 
+  &--accent {
+    background: linear-gradient(-23deg, #0098ff, #5ec1ff 88%);
+    color: #fff;
+  }
+
   @media only screen and (max-width: $sm-display) {
     padding: 3em 1em;
   }
@@ -33,4 +38,28 @@ body {
   &--slg-display {
     max-width: $slg-display;
   }
+}
+
+.head-text {
+  margin-bottom: 2em;
+
+  &__headline {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-top: .5em;
+  }
+}
+
+::-webkit-scrollbar {
+  width: .5em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(10, 10, 10);
 }
