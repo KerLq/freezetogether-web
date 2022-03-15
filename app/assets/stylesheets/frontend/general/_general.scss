@@ -16,11 +16,12 @@ body {
 
 .section {
   position: relative;
-  padding: 3em 2em;
+  padding: 4em 2em;
   width: 100%;
 
   &--accent {
-    background-color: $accent-color;
+    background: linear-gradient(-23deg, #0098ff, #5ec1ff 88%);
+    color: #fff;
   }
 
   @media only screen and (max-width: $sm-display) {

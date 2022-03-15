@@ -58,3 +58,16 @@
     width: 100%;
   }
 }
+
+.newsletter {
+  max-width: 40em;
+
+  &__button-group {
+    display: flex;
+    flex-flow: row;
+
+    button {
+      margin-left: .5em;
+    }
+  }
+}

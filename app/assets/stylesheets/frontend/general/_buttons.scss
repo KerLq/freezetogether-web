@@ -5,6 +5,7 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 1.25em;
+  border: none;
 
   &--download {
     font-weight: bold;
@@ -43,7 +44,8 @@
   &--secondary {
     font-weight: bold;
     padding: 1em 2em;
-    color: white;
+    background: #fff;
+    color: $primary-color;
   }
 
   &--accent {
