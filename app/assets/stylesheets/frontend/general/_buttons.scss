@@ -33,6 +33,11 @@
     padding: 1em 2em;
     background: $primary-color;
     color: #fff;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 -5em 0 inset rgba(0, 0, 0, 0.5);
+    }
   }
 
   &--secondary {

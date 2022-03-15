@@ -1,0 +1,15 @@
+.introduction {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__headline {
+    max-width: 65em;
+  }
+
+  &__buttons {
+    margin-top: 1.5em;
+    max-width: 15em;
+  }
+}

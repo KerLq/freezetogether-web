@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   height: 42em;
-  /*background: linear-gradient(45deg, $accent-color, rgb(0, 80, 199) 100%);*/
   background: linear-gradient(-23deg, #0098ff, #a5ddff 88%);
+  box-shadow: 0px 1em 0 0 #dff3ff;
 
   &::after {
     content: '';
@@ -71,11 +71,11 @@
     }
 
     &__description {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
 
     &__platforms-headline {
-      margin-top: 1em;
+      margin-top: 2em;
       margin-bottom: .5em;
     }
 
