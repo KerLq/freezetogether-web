@@ -54,18 +54,6 @@
             %span.news-card__description
               sit excepturi porro cumque enim praesentium provident doloribus sed. Eum?
 
-%section#newsletter.section.section--accent
-  .background-schatztruhe
-  .container
-    .newsletter
-      .head-text
-        %h2.head-text__headline Newsletter
-        %p.head-text__description Registriere dich noch heute, um per E-Mail die aktuellsten News, Updates und Hintergrundinformationen zu erhalten.
-    .newsletter__button-group
-      %input#phone{name: "email", placeholder:"E-Mail Adresse", type: "email"}/
-      %button.button.button--secondary Anmelden
-
-
 %section.section
   .container
     .game
@@ -84,6 +72,17 @@
         = image_tag("game/Ice_Golem_Koenig.svg", size: 600)
     .button-group.button-group--single
 
+
+%section#newsletter.section.section--accent
+  .background-schatztruhe
+  .container
+    .newsletter
+      .head-text
+        %h2.head-text__headline Newsletter
+        %p.head-text__description Registriere dich noch heute, um per E-Mail die aktuellsten News, Updates und Hintergrundinformationen zu erhalten.
+    .newsletter__button-group
+      %input#phone{name: "email", placeholder:"E-Mail Adresse", type: "email"}/
+      %button.button.button--secondary Anmelden
 
 %section#features.section
   .container
