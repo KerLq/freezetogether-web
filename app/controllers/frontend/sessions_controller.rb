@@ -4,7 +4,7 @@ class Frontend::SessionsController < Frontend::FrontendController
     end
     
     def create
-        @user = User.find_by(email: params[:email]) # Change to email!
+        @user = User.find_by(email: params[:email]) # Change to email! also downcase
         if !!@user && @user.authenticate(params[:password])
             if @user.email_confirmed
                 session[:user_id] = @user.id

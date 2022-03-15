@@ -67,10 +67,6 @@ class Frontend::UsersController < Frontend::FrontendController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
     def permission
       if current_user != User.find(params[:id])
         redirect_to users_path, notice: "No Permission!"
