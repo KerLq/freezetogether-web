@@ -1,0 +1,8 @@
+%section.section
+  .head-text.text-center
+    %h2.head-text__headline Neuigkeiten
+  .container
+    %ul.news-cards.news-cards--njc
+      -20.times do
+        -@news.each do |news|
+          %li.news-cards__item=render news

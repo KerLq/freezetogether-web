@@ -1,5 +1,5 @@
 class Backend::BackendController < ApplicationController
-    #layout 'backend'
+    layout 'backend'
     before_action :check_is_admin?
 
     def check_is_admin?

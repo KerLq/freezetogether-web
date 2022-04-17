@@ -5,6 +5,14 @@
   * {
     flex-basis: calc(100% / 3 - 1em);
   }
+  &--njc {
+    justify-content: unset;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin: 2em 1em 0 0;
+    }
+  }
 }
 
 .news-card {

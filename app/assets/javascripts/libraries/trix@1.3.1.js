@@ -1,0 +1,2 @@
+export * from 'https://cdn.skypack.dev/pin/trix@v1.3.1-EGGvto9zyvcAYsikgQxN/mode=imports/optimized/trix.js';
+export { default } from 'https://cdn.skypack.dev/pin/trix@v1.3.1-EGGvto9zyvcAYsikgQxN/mode=imports,min/optimized/trix.js';
