@@ -1,6 +1,76 @@
+.form {
+  &-sub {
+    font-size: .875em;
+    margin: 1em 0;
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 input {
   font-family: 'Roboto', sans-serif;
   border: none;
   background: #fff;
-  padding: 1em 1.5em;
+  padding: 1em;
+
+  &[type=text], &[type=password] {
+    border: 1px solid gray;
+  }
+}
+
+label {
+  &[for=remember_me], &[for=user_tos] {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    .description {
+      margin-left: .5em;
+    }
+  }
+}
+
+.checkbox {
+  position: relative;
+
+  input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.125em;
+    width: 1.125em;
+    border: 1px solid gray;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 4px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+  input[type=checkbox]:checked ~ .checkmark {
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+  input[type=checkbox]:checked ~ .checkmark:after {
+    display: block;
+  }
 }
