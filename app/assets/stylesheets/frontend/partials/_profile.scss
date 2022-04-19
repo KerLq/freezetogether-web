@@ -87,6 +87,10 @@
     border-radius: 100%;
     z-index: 1;
 
+    &:hover .avatar-upload {
+      display: flex;
+    }
+
     img {
       height: 100%;
       width: 100%;
@@ -126,6 +130,25 @@
     bottom: 0;
     z-index: 2;
   }
+}
+
+.avatar-upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.75em;
+  padding: 1em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
 
 @keyframes pulse {
