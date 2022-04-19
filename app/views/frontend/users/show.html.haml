@@ -1,17 +1,21 @@
-.user-card
-  .container
-    .user-card__content
-      .user-card__info
-        .user-card__avatar
-          - if @user.avatar.attached?
-            = image_tag(@user.avatar, size: 200, class: "avatar__img avatar__img--user-card")
-          - else
-            = image_tag("default.png", size: 200, class: "avatar__img avatar__img--user-card")
-        .user-card__wrapper
-          .user-card__username
-            %p="#{@user.username}'s Profile"
-          .user-card__description
-            %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, repellendus?
+.profile
+  .profile__banner
+    .profile-banner
+      = image_tag (@user.avatar.attached? ? @user.avatar : "default.jpg")
+    .profile-transparent-hr
+    .profile-data
+      .profile-data__avatar
+        .profile-avatar
+          = image_tag (@user.avatar.attached? ? @user.avatar : "default.jpg")
           = form_for [:frontend, @user], url: frontend_user_upload_image_path(@user), method: :post do |f|
             = f.file_field :avatar
-            = f.submit "Submit"
+            .avatar-upload= "Avatar<br>ändern".html_safe
+        .profile-avatar-outline
+        .profile-avatar-status
+
+      .profile-data__details
+        .profile-details
+          .profile-details__title= "Hero"
+          %h1.profile-details__username= @user.username
+          .profile-details__description= @user.description
+          %date.profile-details__date= @user.created_at.strftime("Registriert seit %d. %b. %Y")
