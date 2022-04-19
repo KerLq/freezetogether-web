@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_140002) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title", default: "This is a placeholder, please remind the support team to change it"
+    t.string "title"
   end
 
   create_table "scores", force: :cascade do |t|
