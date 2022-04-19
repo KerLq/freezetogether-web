@@ -28,30 +28,7 @@
       %h2.head-text__headline Neuigkeiten
       %p.head-text__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vitae obcaecati!
     .news-cards
-      .news-card
-        .news-card__image
-          = image_tag('/assets/placeholder/placeholder-1.png')
-          .news-card-inbox
-            %h5.news-card__title
-              Placeholder (1)
-            %span.news-card__description
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde vitae obcaecati
-      .news-card
-        .news-card__image
-          = image_tag('/assets/placeholder/placeholder-2.png')
-          .news-card-inbox
-            %h5.news-card__title
-              Placeholder (2)
-            %span.news-card__description
-              optio laboriosam quo, distinctio magnam voluptates aspernatur placeat deleniti
-      .news-card
-        .news-card__image
-          = image_tag('/assets/placeholder/placeholder-3.png')
-          .news-card-inbox
-            %h5.news-card__title
-              Placeholder (3)
-            %span.news-card__description
-              sit excepturi porro cumque enim praesentium provident doloribus sed. Eum?
+      =render @news
 
 %section.section
   .container
