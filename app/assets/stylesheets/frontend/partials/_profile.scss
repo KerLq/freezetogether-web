@@ -51,6 +51,13 @@
       font-weight: 600;
     }
 
+    &__description {
+      margin-top: .5em;
+      font-style: italic;
+      opacity: .75;
+      font-weight: 300;
+    }
+
     &__date {
       margin-top: 2em;
       text-transform: uppercase;

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_140002) do
+ActiveRecord::Schema.define(version: 2022_04_19_201522) do
+
   create_table "achievements", force: :cascade do |t|
     t.string "image"
     t.string "name"
@@ -86,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_140002) do
     t.boolean "email_confirmed"
     t.string "confirm_token"
     t.boolean "tos", default: false
+    t.string "description", default: "Ich bin neu bei Freeze Together!"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

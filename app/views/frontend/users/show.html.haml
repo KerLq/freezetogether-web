@@ -17,4 +17,5 @@
         .profile-details
           .profile-details__title= "Hero"
           %h1.profile-details__username= @user.username
+          .profile-details__description= @user.description
           %date.profile-details__date= @user.created_at.strftime("Registriert seit %d. %b. %Y")
