@@ -81,3 +81,20 @@
     }
   }
 }
+.news {
+  margin-top: 3em;
+  padding: 1em;
+}
+.news-content {
+  padding: 0em;
+  background: ghostwhite;
+}
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  &__publish-date {
+    font-weight: bold;
+  }
+}

@@ -1,9 +1,20 @@
-.news
-  .news-header
-    .news-header__content
-      %h1.news-header__text
-      %h1.news-header__description
-    .news-header__publish-date
-      11.02.2022
-  .news-content
-    = @news.content
+%section.section.news
+  .container.container--news
+    .news-header
+      .news-header__content
+        %h2.news-header__title=@news.title
+        %h4.news-header__description=@news.description
+      .news-header__publish-date
+        11.02.2022
+
+%section.section.news-content
+  .container.container--news
+    .news-body
+      = @news.content
+
+%section.section
+  .container
+    .head-text.text-center
+      %h3.head-text__headline Weitere Artikel
+    .news-cards
+      =render @other_news

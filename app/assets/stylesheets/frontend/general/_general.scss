@@ -38,6 +38,9 @@ body {
   &--slg-display {
     max-width: $slg-display;
   }
+  &--news {
+    max-width: $lg-display - 25em;
+  }
 }
 
 .head-text {

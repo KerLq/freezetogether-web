@@ -1,6 +1,6 @@
 .news-card
   .news-card__image
-    -if news.cover_image.nil?
+    -if !news.cover_image.attached?
       = link_to image_tag("placeholder/placeholder-1.png"), frontend_news_path(news)
     -else
       = link_to image_tag(news.cover_image), frontend_news_path(news)
