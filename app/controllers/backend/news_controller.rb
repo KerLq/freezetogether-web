@@ -64,6 +64,6 @@ class Backend::NewsController < Backend::BackendController
 
     # Only allow a list of trusted parameters through.
     def news_params
-      params.require(:news).permit(:cover_image, :content, :description)
+      params.require(:news).permit(:cover_image, :title, :content, :description)
     end
 end
