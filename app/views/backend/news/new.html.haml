@@ -1,6 +1,10 @@
-=form_for [:backend, @news] do |f|
-  = f.label :description 
-  = f.text_field :description
-  = f.label :content
-  = f.rich_text_area :content
-  = f.button "Submit"
+%section
+  .container
+    .login-register
+      .head-text.text-center
+        %h2.head-text__headline Freeze Login
+        %p.head-text__description Das neue Koop-Abenteuer mit deinen Freunden!
+      = form_for [:backend, @news], class: 'login-form' do |f|
+        = f.text_field :description, placeholder: "Kurze Beschreibung"
+        = f.rich_text_area :content, placeholder: "Where is the content men?"
+        = f.submit "Publish News", class: 'button button--accent'

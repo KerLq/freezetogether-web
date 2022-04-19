@@ -6,8 +6,10 @@
 @import "backend/general/misc";
 @import "backend/general/buttons";
 // PARTIALS //
+@import "backend/partials/news-form";
 
 // OTHER
 @import "backend/other/actiontext";
 
 
+@import 'trix/dist/trix.css';

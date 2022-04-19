@@ -3,6 +3,5 @@
     %h2.head-text__headline Neuigkeiten
   .container
     %ul.news-cards.news-cards--njc
-      -20.times do
-        -@news.each do |news|
-          %li.news-cards__item=render news
+      -@news.each do |news|
+        %li.news-cards__item=render news
