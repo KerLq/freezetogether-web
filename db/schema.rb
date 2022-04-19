@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_19_201522) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_04_19_201522) do
   create_table "achievements", force: :cascade do |t|
     t.string "image"
     t.string "name"

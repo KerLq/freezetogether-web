@@ -15,9 +15,6 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem 'jquery-rails'
 
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
