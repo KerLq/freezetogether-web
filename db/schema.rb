@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_12_183659) do
+ActiveRecord::Schema.define(version: 2022_04_18_213706) do
 
   create_table "achievements", force: :cascade do |t|
     t.string "image"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2022_03_12_183659) do
     t.integer "role", default: 0
     t.boolean "email_confirmed"
     t.string "confirm_token"
+    t.boolean "tos", default: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

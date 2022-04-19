@@ -1,9 +1,19 @@
-%section.section.section--accent 
-    = form_for @user, url: register_path do |f|
-        = f.label :username
-        = f.text_field :username
-        = f.label :email
-        = f.text_field :email
-        = f.label :password
-        = f.password_field :password
-        = f.submit "Register"
+%section
+  .container
+    .login-register
+      .head-text.text-center
+        %h2.head-text__headline Registration
+        %p.head-text__description Bist du bereit auf ein Abenteuer?
+      = form_for @user, url: register_path, class: 'login-form' do |f|
+        = f.text_field :email, placeholder: 'E-Mail-Adresse'
+        = f.text_field :username, placeholder: 'Benutzername'
+        = f.password_field :password, placeholder: 'Passwort'
+        .form-sub
+          = f.label :tos, class: 'checkbox' do
+            = f.check_box :tos
+            .checkmark
+            .description Ich habe die Nutzungsbedingungen gelesen und akzeptiere sie.
+        = f.submit "Kostenlos registrieren", class: 'button button--accent'
+      .login-register__caption
+        Bereits registriert?
+        = link_to "Jetzt einloggen!", login_path
