@@ -83,10 +83,10 @@
 }
 .news {
   margin-top: 3em;
-  padding: 1em;
+  padding: 5px;
 }
 .news-content {
-  padding: 0em;
+  padding: 2em;
   background: ghostwhite;
 }
 .news-header {
@@ -97,4 +97,16 @@
   &__publish-date {
     font-weight: bold;
   }
+}
+.news-black-border {
+  position: absolute;
+  width: 350px;
+  height: 5px;
+  background: black;
+}
+.news-gray-border {
+  position: absolute;
+  width: 450px;
+  height: 5px;
+  background: whitesmoke;
 }
