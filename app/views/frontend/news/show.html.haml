@@ -5,7 +5,7 @@
         %h2.news-header__title=@news.title
         %h4.news-header__description=@news.description
       .news-header__publish-date
-        11.02.2022
+        = @news.created_at.strftime("%d.%m.%Y")
 
 %section.section.news-content
   .container.container--news
