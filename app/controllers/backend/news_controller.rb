@@ -25,8 +25,8 @@ class Backend::NewsController < Backend::BackendController
 
     respond_to do |format|
       if @news.save
-        format.html { redirect_to [:backend, @news], notice: "News was successfully created." }
-        format.json { render :show, status: :created, location: [:backend, @news] }
+        format.html { redirect_to [:frontend, @news], notice: "News was successfully created." }
+        format.json { render :show, status: :created, location: [:frontend, @news] }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @news.errors, status: :unprocessable_entity }

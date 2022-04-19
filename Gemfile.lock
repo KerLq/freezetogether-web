@@ -95,6 +95,8 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphicsmagick (1.0.6)
+      subexec
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -218,6 +220,7 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
+    subexec (0.2.3)
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
@@ -256,6 +259,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  graphicsmagick (~> 1.0, >= 1.0.5)
   haml
   image_processing (~> 1.2)
   importmap-rails
