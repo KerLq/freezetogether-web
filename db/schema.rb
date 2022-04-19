@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_132859) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_19_140002) do
   create_table "achievements", force: :cascade do |t|
     t.string "image"
     t.string "name"
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_132859) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title", default: "This is a placeholder, please remind the support team to change it"
   end
 
   create_table "scores", force: :cascade do |t|
