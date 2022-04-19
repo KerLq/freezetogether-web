@@ -25,6 +25,7 @@ class Backend::NewsController < Backend::BackendController
 
     respond_to do |format|
       if @news.save
+        @news.cover_image.attach(params[:news][:cover_image])
         format.html { redirect_to [:frontend, @news], notice: "News was successfully created." }
         format.json { render :show, status: :created, location: [:frontend, @news] }
       else
