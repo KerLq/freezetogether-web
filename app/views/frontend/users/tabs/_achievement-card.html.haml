@@ -1,0 +1,11 @@
+- progress = achievement.badge.max_score/100*achievement.score
+.achievements-card
+  .achievements-card__image
+    =image_tag achievement.badge.image
+  .achievements-card__text
+    %h3= achievement.badge.name
+    %p= achievement.badge.description
+  .achievements-card__status
+    %b= "#{progress}%"
+  .achievements-card__progressbar
+    .achievements-card__progressbar-fill{style: "width: #{progress}%"}
