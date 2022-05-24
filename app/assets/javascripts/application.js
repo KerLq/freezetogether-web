@@ -1,6 +1,7 @@
 //= require jquery
 //= require components/PureSnow
 //= require components/avatar-upload
+//= require components/tabs
 
 // KAPPUT (?)
 //import "trix"

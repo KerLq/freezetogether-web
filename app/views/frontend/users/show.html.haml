@@ -19,3 +19,16 @@
           %h1.profile-details__username= @user.username
           .profile-details__description= @user.description
           %date.profile-details__date= @user.created_at.strftime("Registriert seit %d. %b. %Y")
+.container
+  .tabs
+    %ul.tabs__list{role: "tablist"}
+      %li.tabs__item{role: "presentation"}
+        = link_to "Erfolge", "#erfolge", {class: 'tabs__link', "aria-controls": "erfolge", "aria-selected": "true", role: "tab", tabindex: "0"}
+      %li.tabs__item{role:  "presentation"}
+        = link_to "Spielverlauf", "#", {class: 'tabs__link', "aria-controls": "spielverlauf", "aria-selected": "false", href: "#spielverlauf", role: "tab", tabindex: "-1"}
+    %section#erfolge.tabs__section{"aria-hidden": "false", "aria-labelledby": "tab-erfolge", role: "tabpanel"}
+      .tabs__body
+        Content für Erfolge
+    %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
+      .tabs__body
+        Content für Spielverlauf
