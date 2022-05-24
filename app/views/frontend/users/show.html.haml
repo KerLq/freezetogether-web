@@ -28,7 +28,9 @@
         = link_to "Spielverlauf", "#", {class: 'tabs__link', "aria-controls": "spielverlauf", "aria-selected": "false", href: "#spielverlauf", role: "tab", tabindex: "-1"}
     %section#erfolge.tabs__section{"aria-hidden": "false", "aria-labelledby": "tab-erfolge", role: "tabpanel"}
       .tabs__body
-        Content für Erfolge
+        .achievements
+          - @achievements.each do |achievement|
+            = render 'frontend/users/tabs/achievement-card', achievement: achievement
     %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
       .tabs__body
-        Content für Spielverlauf
+        = render 'frontend/users/tabs/game-history'

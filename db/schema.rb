@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_201522) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_184420) do
   create_table "achievements", force: :cascade do |t|
-    t.string "image"
-    t.string "name"
-    t.text "description"
-    t.float "score"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "score_id"
+    t.integer "user_id"
+    t.integer "badge_id"
+    t.index ["badge_id"], name: "index_achievements_on_badge_id"
+    t.index ["user_id"], name: "index_achievements_on_user_id"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
@@ -59,6 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_201522) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "badges", force: :cascade do |t|
+    t.text "slug"
+    t.string "name"
+    t.text "description"
+    t.integer "max_score"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news", force: :cascade do |t|
     t.text "cover_image"
     t.string "content"
@@ -89,6 +99,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_201522) do
     t.string "description", default: "Ich bin neu bei Freeze Together!"
   end
 
+  add_foreign_key "achievements", "badges"
+  add_foreign_key "achievements", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
