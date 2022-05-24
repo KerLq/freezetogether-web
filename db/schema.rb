@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_24_184420) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_205347) do
   create_table "achievements", force: :cascade do |t|
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "badge_id"
+    t.integer "game_id"
     t.index ["badge_id"], name: "index_achievements_on_badge_id"
+    t.index ["game_id"], name: "index_achievements_on_game_id"
     t.index ["user_id"], name: "index_achievements_on_user_id"
   end
 
@@ -69,6 +71,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_184420) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "games", force: :cascade do |t|
+    t.string "character"
+    t.integer "score"
+    t.integer "stage"
+    t.integer "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
   create_table "news", force: :cascade do |t|
     t.text "cover_image"
     t.string "content"
@@ -76,14 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_184420) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-  end
-
-  create_table "scores", force: :cascade do |t|
-    t.float "score"
-    t.date "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,7 +105,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_184420) do
   end
 
   add_foreign_key "achievements", "badges"
+  add_foreign_key "achievements", "games"
   add_foreign_key "achievements", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "games", "users"
 end

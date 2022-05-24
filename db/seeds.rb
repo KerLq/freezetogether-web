@@ -37,8 +37,17 @@ badge_weltreisender.image.attach(
   filename: 'test-image.png'
 )
 
+spiel = Game.create(
+  user: dogus,
+  score: 100,
+  time: 3605,
+  stage: 2,
+  character: "main"
+)
+
 Achievement.create(
   user: dogus,
   badge: badge_weltreisender,
+  game: spiel,
   score: 5
 )

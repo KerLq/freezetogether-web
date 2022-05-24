@@ -9,9 +9,9 @@ class User < ApplicationRecord
     # validates :email, presence: true, uniqueness: true
     enum role: [:standard, :admin]
 
-    has_one_attached :avatar
-    has_many :scores
+    has_many :games
     has_many :achievements
+    has_one_attached :avatar
 
     def email_activate
         self.email_confirmed = true
