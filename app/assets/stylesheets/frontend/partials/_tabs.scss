@@ -1,5 +1,7 @@
 .tabs {
   position: relative;
+  max-width: $md-display;
+  margin: 0 auto;
   padding: 4em 0;
 
   &__list {
