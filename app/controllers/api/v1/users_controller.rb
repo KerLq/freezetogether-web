@@ -1,7 +1,10 @@
 class Api::V1::UsersController < Api::V1::ApiController
   
   def index
-    @user = User.find_by(username: params[:username])
+  end
+  
+  def show
+    @user = User.find_by(id: params[:id])
     if @user
       render json: @user.username, status: :ok
     else
