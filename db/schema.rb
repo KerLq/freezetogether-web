@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_24_205347) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_14_124628) do
   create_table "achievements", force: :cascade do |t|
     t.integer "score"
     t.datetime "created_at", null: false
@@ -102,6 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_205347) do
     t.string "confirm_token"
     t.boolean "tos", default: false
     t.string "description", default: "Ich bin neu bei Freeze Together!"
+    t.string "token"
   end
 
   add_foreign_key "achievements", "badges"

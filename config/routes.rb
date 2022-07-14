@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/auth/login', to: 'authentication#login'
+      get '/auth/validate_token', to: 'authentication#validate_token'
       resources :users
     end
   end
