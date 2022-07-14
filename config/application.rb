@@ -18,5 +18,9 @@ module FreezetogetherWeb
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    def secret_key_base
+      "NWS4hdCq3vr6Dk4nVWqpz28UxTPm02QnFCxPAGKGuTYoGdSNrQhXZJ0pL5kddOG"
+    end
   end
 end
