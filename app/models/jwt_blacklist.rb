@@ -1,0 +1,3 @@
+class JwtBlacklist < ApplicationRecord
+  
+end

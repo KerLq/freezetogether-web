@@ -3,10 +3,10 @@ class Api::V1::UsersController < Api::V1::ApiController
   def index
   end
   
-  def show
-    @user = User.find_by(id: params[:id])
+  def index
+    @user = User.find_by(username: params[:username])
     if @user
-      render json: @user.username, status: :ok
+      render json: @user.email, status: :ok
     else
       render json: '-1', status: :unprocessable_entity
     end
