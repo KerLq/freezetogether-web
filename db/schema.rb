@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_14_124628) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_14_134622) do
   create_table "achievements", force: :cascade do |t|
     t.integer "score"
     t.datetime "created_at", null: false
@@ -80,6 +80,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_14_124628) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "jwt_black_lists", force: :cascade do |t|
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jwt_blacklists", force: :cascade do |t|
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "news", force: :cascade do |t|
