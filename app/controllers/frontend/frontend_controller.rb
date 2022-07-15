@@ -1,7 +1,7 @@
 class Frontend::FrontendController < ApplicationController
-    layout 'frontend'
+	layout 'frontend'
 
-    def index
+	def index
 
-    end
+	end
 end
