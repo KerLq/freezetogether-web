@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_15_102601) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_15_105413) do
   create_table "achievements", force: :cascade do |t|
     t.integer "score"
     t.datetime "created_at", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_102601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "coin"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
@@ -101,14 +102,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_15_102601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-  end
-
-  create_table "scores", force: :cascade do |t|
-    t.float "score"
-    t.integer "coin"
-    t.time "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
