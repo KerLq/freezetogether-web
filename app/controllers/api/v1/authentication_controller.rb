@@ -3,7 +3,7 @@ class Api::V1::AuthenticationController < Api::V1::ApiController
 
   # POST /auth/login
   def login
-    @user = User.find_by(params[:username])
+    @user = User.find_by(username: params[:username])
     if @user&.authenticate(params[:password])
       token = JsonWebToken.encode(user_id: @user.id)
       time = Time.now + 24.hours.to_i
