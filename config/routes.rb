@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       #get '/auth/validate_token', to: 'authentication#validate_token'
       get '/token/revoke'
       resources :games
-      resources :users
+      get '/users/me', to: 'users#me'
     end
   end
 
