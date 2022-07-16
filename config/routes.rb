@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/auth/login', to: 'authentication#login'
+      post '/auth/login', to: 'authentication#login'
       #get '/auth/validate_token', to: 'authentication#validate_token'
       get '/token/revoke'
       resources :games
