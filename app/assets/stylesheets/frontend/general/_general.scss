@@ -24,6 +24,16 @@ body {
     color: #fff;
   }
 
+  &--dark {
+    background: $primary-color;
+    color: #fff;
+  }
+
+  &--no-x-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   @media only screen and (max-width: $sm-display) {
     padding: 3em 1em;
   }
@@ -52,6 +62,21 @@ body {
 
   &__description {
     margin-top: .5em;
+
+    &--intro {
+      font-size: 1.25rem;
+      max-width: $md-display;
+      opacity: .8;
+      line-height: 1.5;
+      margin: 0 auto;
+    }
+  }
+
+  &__overline {
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: .8;
+    letter-spacing: .1rem;
   }
 }
 
