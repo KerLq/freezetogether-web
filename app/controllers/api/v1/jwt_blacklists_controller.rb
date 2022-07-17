@@ -1,18 +1,12 @@
-class JwtBlacklistController < ApplicationController
+class Api::V1::JwtBlacklistsController < Api::V1::ApiController
 
   def create
-    jwt_blacklist = JwtBlacklist.new(jwt_blacklist_params)
+    jwt_blacklist = JwtBlacklist.new(token: @@token)
 
-    if jwt_black_lists.save
-      render json: "0", status: ok
+    if jwt_blacklist.save
+      render json: "0", status: :ok
     else
-      render json: "-1", status :unprocessable_entity
+      render json: "-1", status: :unprocessable_entity
     end
-  end
-
-  def jwt_blacklist_params
-    params.require(:jwt_blacklist).permit(
-      :token
-    )
   end
 end

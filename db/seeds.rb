@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 dogus = User.create(email: "dogus@dogus.de", username: "dogus", password: "dogus123", email_confirmed: true, role: 1)
-User.create(email: "oussama@oussama.de", username: "oussama", password: "oussama123", email_confirmed: true, role: 1)
+User.create(email: "oussama@oussama.de", username: "oussama", password: "oussama", email_confirmed: true, role: 1)
 
 News.create(
   title: "The City of Azerios has fallen!",
