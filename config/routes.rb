@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :achievements, only: [:index, :show]
 
     get '/spielinfo' => 'welcome#spielinfo'
-    get '/faq' => 'welcome#faq'
+    get '/hilfe' => 'welcome#hilfe'
 
     resources :sessions
     resources :news

@@ -4,5 +4,5 @@ class Frontend::WelcomeController < Frontend::FrontendController
     end
 
     def spielinfo; end
-    def faq; end
+    def hilfe; end
 end
