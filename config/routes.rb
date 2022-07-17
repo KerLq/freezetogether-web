@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/auth/login', to: 'authentications#login'
-      #get '/auth/validate_token', to: 'authentication#validate_token'
+      post '/auth/validate_token', to: 'authentications#validate_token'
       post '/token/revoke', to: 'jwt_blacklists#create'
       resources :games
       get '/users/me', to: 'users#me'

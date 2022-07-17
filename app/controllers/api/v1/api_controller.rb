@@ -1,8 +1,7 @@
 class Api::V1::ApiController < ActionController::API
+	before_action :authorization_token
   before_action :authorize_request
-
-	@@token = nil
-
+	
   def jwt_blacklists(header)
     render json: { error: 'unauthorized' }, status: :unauthorized if JwtBlacklist.find_by(token: header)
   end
@@ -11,17 +10,14 @@ class Api::V1::ApiController < ActionController::API
     render json: { error: 'not_found' }
   end
 	
-	def set_token(token)
-		@@token ||= token
+	def authorization_token
+		request.headers['Authorization'].split(' ').last if request.headers['Authorization']
 	end
-
+	
   def authorize_request
-    header = request.headers['Authorization']
-    header = header.split(' ').last if header
-    jwt_blacklists(header)
-		set_token(header)
+    jwt_blacklists(authorization_token)
     begin
-      @decoded = JsonWebToken.decode(header)
+      @decoded = JsonWebToken.decode(authorization_token)
       @current_user = User.find(@decoded[:user_id])
     rescue ActiveRecord::RecordNotFound || JWT::VerificationError, JWT::DecodeError => e
       render json: { errors: e.message }, status: :unauthorized

@@ -1,7 +1,7 @@
 class Api::V1::JwtBlacklistsController < Api::V1::ApiController
 
   def create
-    jwt_blacklist = JwtBlacklist.new(token: @@token)
+    jwt_blacklist = JwtBlacklist.new(token: authorization_token)
 
     if jwt_blacklist.save
       render json: "0", status: :ok
