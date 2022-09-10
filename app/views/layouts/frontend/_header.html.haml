@@ -7,7 +7,7 @@
         %li.nav-list__item.nav-list__item--selected= link_to "Spielinfo", frontend_spielinfo_path
         %li.nav-list__item= link_to "Medien", "#"
         %li.nav-list__item= link_to "News", frontend_news_index_path
-        %li.nav-list__item= link_to "Bestenliste", "#"
+        %li.nav-list__item= link_to "Bestenliste", frontend_bestenliste_path
         %li.nav-list__item= link_to "Hilfe", frontend_hilfe_path
     .main-nav__buttons
       = link_to "#{image_tag('/assets/icons/login.png')} Login".html_safe, login_path, class: 'button button--login'
