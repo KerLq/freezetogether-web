@@ -1,0 +1,170 @@
+.story-text {
+  position: relative;
+  max-width: $sm-display;
+  margin: 0 auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: asset-url("icons/apostroph.png");
+    width: 4rem;
+    height: 4rem;
+    background-size: 4rem;
+    background-repeat: no-repeat;
+    top: -1.75rem;
+    left: -5rem;
+  }
+
+  &__text {
+    margin-top: .5rem;
+
+    p, img {
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+
+    img {
+      max-width: $sm-display;
+    }
+  }
+}
+
+.character {
+  margin-top: 2rem;
+  background: $primary-color;
+  padding: 2rem;
+  color: #fff;
+
+  &:nth-child(2n) {
+    background: none;
+    color: $primary-color;
+
+    .character__container {
+      flex-flow: row;
+    }
+
+    .character__image{
+      svg {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: $md-display;
+    margin: 0 auto;
+    gap: 4rem;
+  }
+
+  &__image {
+    max-width: 50%;
+
+    svg {
+      margin: -10rem 0;
+    }
+  }
+
+  &__content {
+    max-width: 30rem;
+  }
+
+  &__image {
+    img, svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    &--flip {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+
+  &__content {}
+
+  &__overline {
+    text-transform: uppercase;
+    opacity: .8;
+    font-weight: 500;
+    letter-spacing: .1rem;
+  }
+
+  &__headline {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  &__characteristics {
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+  }
+}
+
+.characteristics {
+  display: flex;
+  flex-flow: row;
+  font-size: 1.25rem;
+  gap: .25em;
+
+  &__image {
+    svg {
+      height: 1em;
+      width: auto;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &--ice-blue {
+    color: #1ca0fa;
+    svg {
+      fill: #1ca0fa;
+      path {
+        stroke: #1ca0fa;
+      }
+    }
+  }
+  &--slime-green {
+    color: #00c51c;
+    svg {
+      fill: #00c51c;
+      path {
+        stroke: #00c51c;
+      }
+    }
+  }
+  &--darkgreen {
+    color: #4d6251;
+    svg {
+      fill: #4d6251;
+      path {
+        stroke: #4d6251;
+      }
+    }
+  }
+  &--yellow {
+    color: #c5a700;
+    svg {
+      fill: #c5a700;
+      path {
+        stroke: #c5a700;
+      }
+    }
+  }
+}

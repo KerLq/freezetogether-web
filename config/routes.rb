@@ -29,13 +29,17 @@ Rails.application.routes.draw do
         get :confirm_email
       end
       get '/upload-image', to: 'users#upload_image'
-      post '/upload-image', to: 'users#upload_image' 
+      post '/upload-image', to: 'users#upload_image'
 
     end
     resources :scores, only: [:index, :show], path: '/leaderboards'
     resources :achievements, only: [:index, :show]
-    
-    
+
+    # FRONTEND DESIGNS #
+    get '/spielinfo' => 'welcome#spielinfo'
+    get '/hilfe' => 'welcome#hilfe'
+    get '/bestenliste' => 'welcome#bestenliste'
+
     resources :sessions
     resources :news
   end
