@@ -1,0 +1,37 @@
+%section#info.section
+  .container
+    .head-text.text-center
+      .head-text__overline Die besten Freezer
+      %h2.head-text__headline Bestenliste
+    .leaderboard-sort= select_tag "sort", raw('<option value="" disabled="disabled" selected="selected">Sortieren nach</option><option>A-Z</option><option>Punkte</option>Zeit<option>Datum</option>'), class: 'leaderboard-search'
+    .leaderboard
+      .leaderboard__item.leaderboard__item--header
+        %div
+        %div Name
+        %div Punkte
+        %div Erfolge
+        %div Zeit
+      .leaderboard__item
+        %div #1
+        %div= link_to 'Dogus', "#"
+        %div 34.656
+        %div 324
+        %div 02:33:15
+      .leaderboard__item
+        %div #1
+        %div Dogus
+        %div 34.656
+        %div 324
+        %div 02:33:15
+      .leaderboard__item
+        %div #1
+        %div Dogus
+        %div 34.656
+        %div 324
+        %div 02:33:15
+      .leaderboard__item
+        %div #1
+        %div Dogus
+        %div 34.656
+        %div 324
+        %div 02:33:15

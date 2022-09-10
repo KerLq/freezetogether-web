@@ -5,4 +5,5 @@ class Frontend::WelcomeController < Frontend::FrontendController
 
     def spielinfo; end
     def hilfe; end
+    def bestenliste; end
 end
