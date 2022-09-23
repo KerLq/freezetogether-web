@@ -40,7 +40,7 @@ jobs:
       - name: Run tests
         run: bin/rake
 
-  lint:
+  rubocop:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -53,7 +53,7 @@ jobs:
         run: sudo apt-get install -y graphicsmagick
       # Add or replace any other lints here
       - name: Lint Ruby files
-        run: bundle exec rubocop --parallel
+        run: bundle exec rubocop -P
 
   audit:
     runs-on: ubuntu-latest
@@ -67,7 +67,7 @@ jobs:
       - name: Install GraphicksMagick
         run: sudo apt-get install -y graphicsmagick
       - name: Security audit dependencies
-        run: bundle exec bundle audit --update
+        run: bundle exec bundle audit check --update
     
   brakeman:
     runs-on: ubuntu-latest
@@ -93,4 +93,4 @@ jobs:
         with:
           bundler-cache: true
       - name: Lint all frontend files
-        run: bundle exec erblint --lint-all --enable-all-linters
+        run: bundle exec erblint --lint-all
