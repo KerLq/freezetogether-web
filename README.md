@@ -1,25 +1,19 @@
-# README
+# Dependencies
+  * Rubocop
+  * Brakeman
+  * Erblint
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Workflow
 
-Things you may want to cover:
+Feature/Bug oder sonstiges:
+  * Issue erstellen mit ggf. Beschreibung
+  * Branch basierend auf das Issue erstellen
+  * Commits sollten am Besten kurz sein
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# freezetogether-web
+Nach fertigem Branch:
+  * Alle CI's (Git Actions) beheben
+  * Dafür zuständig sind folgende Commands:
+    `rubocop -A`
+    `brakeman`
+    `erblint --lint-all -a`
+  * Sobald alles grün, mergen!
