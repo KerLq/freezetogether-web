@@ -83,7 +83,7 @@ jobs:
       - name: Security audit application code
         run: bundle exec brakeman -q -w2
 
-  erblintt:
+  erblint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -93,4 +93,4 @@ jobs:
         with:
           bundler-cache: true
       - name: Lint all frontend files
-        run: erblint --lint-all --enable-all-linters
+        run: bundle exec erblint --lint-all --enable-all-linters
