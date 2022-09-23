@@ -16,4 +16,5 @@ Nach fertigem Branch:
     `rubocop -A`
     `brakeman`
     `erblint --lint-all -a`
-  * Sobald alles grün, mergen!
+  * Audit und Brakeman Schwachstellen sind unter Actions zu finden
+  * Sobald alles grün ist, mergen! (Am besten uns gegenseitig Bescheid geben, damit wir sehen was alles gemacht wurde) 
