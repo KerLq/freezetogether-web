@@ -1,62 +1,64 @@
-class Frontend::AchievementsController < Frontend::FrontendController
-  before_action :set_achievement, only: %i[ show edit update destroy ]
+# frozen_string_literal: true
 
-  # GET /achievements or /achievements.json
-  def index
-    @achievements = Achievement.all
-  end
+module Frontend
+  class AchievementsController < Frontend::FrontendController
+    before_action :set_achievement, only: %i[show edit update destroy]
 
-  # GET /achievements/1 or /achievements/1.json
-  def show
-  end
+    # GET /achievements or /achievements.json
+    def index
+      @achievements = Achievement.all
+    end
 
-  # GET /achievements/new
-  def new
-    @achievement = Achievement.new
-  end
+    # GET /achievements/1 or /achievements/1.json
+    def show; end
 
-  # GET /achievements/1/edit
-  def edit
-  end
+    # GET /achievements/new
+    def new
+      @achievement = Achievement.new
+    end
 
-  # POST /achievements or /achievements.json
-  def create
-    @achievement = Achievement.new(achievement_params)
+    # GET /achievements/1/edit
+    def edit; end
 
-    respond_to do |format|
-      if @achievement.save
-        format.html { redirect_to @achievement, notice: "Achievement was successfully created." }
-        format.json { render :show, status: :created, location: @achievement }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @achievement.errors, status: :unprocessable_entity }
+    # POST /achievements or /achievements.json
+    def create
+      @achievement = Achievement.new(achievement_params)
+
+      respond_to do |format|
+        if @achievement.save
+          format.html { redirect_to @achievement, notice: 'Achievement was successfully created.' }
+          format.json { render :show, status: :created, location: @achievement }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @achievement.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
-  # PATCH/PUT /achievements/1 or /achievements/1.json
-  def update
-    respond_to do |format|
-      if @achievement.update(achievement_params)
-        format.html { redirect_to @achievement, notice: "Achievement was successfully updated." }
-        format.json { render :show, status: :ok, location: @achievement }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @achievement.errors, status: :unprocessable_entity }
+    # PATCH/PUT /achievements/1 or /achievements/1.json
+    def update
+      respond_to do |format|
+        if @achievement.update(achievement_params)
+          format.html { redirect_to @achievement, notice: 'Achievement was successfully updated.' }
+          format.json { render :show, status: :ok, location: @achievement }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @achievement.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
-  # DELETE /achievements/1 or /achievements/1.json
-  def destroy
-    @achievement.destroy
-    respond_to do |format|
-      format.html { redirect_to achievements_url, notice: "Achievement was successfully destroyed." }
-      format.json { head :no_content }
+    # DELETE /achievements/1 or /achievements/1.json
+    def destroy
+      @achievement.destroy
+      respond_to do |format|
+        format.html { redirect_to achievements_url, notice: 'Achievement was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
-  end
 
-  private
+    private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_achievement
       @achievement = Achievement.find(params[:id])
@@ -66,4 +68,5 @@ class Frontend::AchievementsController < Frontend::FrontendController
     def achievement_params
       params.fetch(:achievement, {})
     end
+  end
 end

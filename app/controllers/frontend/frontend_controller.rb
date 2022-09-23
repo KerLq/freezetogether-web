@@ -1,7 +1,9 @@
-class Frontend::FrontendController < ApplicationController
-	layout 'frontend'
+# frozen_string_literal: true
 
-	def index
+module Frontend
+  class FrontendController < ApplicationController
+    layout 'frontend'
 
-	end
+    def index; end
+  end
 end

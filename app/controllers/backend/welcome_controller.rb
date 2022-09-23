@@ -1,5 +1,7 @@
-class Backend::WelcomeController < Backend::BackendController
-	def index
-			
-	end
+# frozen_string_literal: true
+
+module Backend
+  class WelcomeController < Backend::BackendController
+    def index; end
+  end
 end

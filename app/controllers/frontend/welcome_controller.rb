@@ -1,9 +1,13 @@
-class Frontend::WelcomeController < Frontend::FrontendController
+# frozen_string_literal: true
+
+module Frontend
+  class WelcomeController < Frontend::FrontendController
     def index
-        @news = News.last(3)
+      @news = News.last(3)
     end
 
     def spielinfo; end
     def hilfe; end
     def bestenliste; end
+  end
 end

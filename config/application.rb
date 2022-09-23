@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -20,7 +22,7 @@ module FreezetogetherWeb
     # config.eager_load_paths << Rails.root.join("extras")
 
     def secret_key_base
-      "NWS4hdCq3vr6Dk4nVWqpz28UxTPm02QnFCxPAGKGuTYoGdSNrQhXZJ0pL5kddOG"
+      'NWS4hdCq3vr6Dk4nVWqpz28UxTPm02QnFCxPAGKGuTYoGdSNrQhXZJ0pL5kddOG'
     end
   end
 end

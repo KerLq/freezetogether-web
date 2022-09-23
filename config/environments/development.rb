@@ -1,4 +1,6 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -33,12 +35,11 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-
   # Mailer Integration
   # config.action_mailer.delivery_method = :smtp
   # host = 'example.com' #replace with your own url
   # config.action_mailer.default_url_options = { host: host }
-  
+
   # SMTP settings for gmail
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -47,12 +48,12 @@ Rails.application.configure do
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+    address: 'smtp.gmail.com',
     port: 587,
-    user_name: "freezetogethergame",
-    password: "freezetogether1234",
-    authentication: "plain",
-    domain: "gmail.com",
+    user_name: 'freezetogethergame',
+    password: 'freezetogether1234',
+    authentication: 'plain',
+    domain: 'gmail.com',
     enable_starttls_auto: true
   }
 
