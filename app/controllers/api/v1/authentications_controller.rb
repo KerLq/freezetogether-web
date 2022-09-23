@@ -10,7 +10,7 @@ module Api
         @user = User.find_by(username: params[:username])
         if @user&.authenticate(params[:password])
           token = JsonWebToken.encode(user_id: @user.id)
-          time = Time.now + 24.hours.to_i
+          time  = Time.zone.now + 24.hours.to_i
           JwtBlacklist.blacklist(@user.token) if @user.token
 
           @user.update(token:)

@@ -9,7 +9,7 @@ module Frontend
 
     # GET /news/1 or /news/1.json
     def show
-      @news = News.find(params[:id])
+      @news       = News.find(params[:id])
       @other_news = News.limit(3).order('RANDOM()')
     end
   end

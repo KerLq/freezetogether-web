@@ -2,14 +2,14 @@
 
 class User < ApplicationRecord
   has_secure_password
-  validates_length_of :username, maximum: 16 # Entferne Sonderzeichen und ggf. chinesische Schriftzeichen entfernen
+  validates :username, length: { maximum: 16 } # Entferne Sonderzeichen und ggf. chinesische Schriftzeichen entfernen
   # validates_length_of :password, minimum: 8 # Groß- und Kleinbuchstaben ggf. + Sonderzeichen
-  validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP
-  before_create :confirmation_token, :downcase_email
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   before_save :downcase_email
+  before_create :confirmation_token, :downcase_email
   # validates :username, presence: true, uniqueness: true
   # validates :email, presence: true, uniqueness: true
-  enum role: %i[standard admin]
+  enum role: { standard: 0, admin: 1 }
 
   has_many :games
   has_many :achievements
@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def email_activate
     self.email_confirmed = true
-    self.confirm_token = nil
+    self.confirm_token   = nil
     save!(validate: false)
   end
 

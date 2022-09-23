@@ -35,7 +35,7 @@ badge_weltreisender = Badge.create(
 )
 
 badge_weltreisender.image.attach(
-  io: File.open(Rails.root.join('app/assets/images/test-image.png')),
+  io: Rails.root.join('app/assets/images/test-image.png').open,
   filename: 'test-image.png'
 )
 

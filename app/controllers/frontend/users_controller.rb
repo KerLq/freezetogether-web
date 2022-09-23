@@ -7,7 +7,7 @@ module Frontend
 
     # GET /users/1 or /users/1.json
     def show
-      @user = User.find(params[:id])
+      @user         = User.find(params[:id])
       @achievements = @user.achievements
     end
 
@@ -61,7 +61,7 @@ module Frontend
     end
 
     def confirm_email
-      user = User.find_by_confirm_token(params[:id])
+      user = User.find_by(confirm_token: params[:id])
       if user
         user.email_activate
         redirect_to login_path # Render special view for activation page

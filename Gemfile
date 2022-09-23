@@ -60,9 +60,10 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'erb_lint', require: false
+  gem 'erb_lint'
   gem 'pg'
   gem 'rubocop'
+  gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'ruby_audit'
 end
