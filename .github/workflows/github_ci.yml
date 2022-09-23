@@ -77,7 +77,7 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
         with:
-        bundler-cache: true
+          bundler-cache: true
       - name: Install GraphicksMagick
         run: sudo apt-get install -y graphicsmagick
       - name: Security audit application code
