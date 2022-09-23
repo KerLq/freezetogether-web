@@ -5,7 +5,7 @@
 
 # Workflow
 
-Feature/Bug oder sonstiges:
+Das Einbauen/Beheben von Features/Bugs oder sonstiges:
   * Issue erstellen mit ggf. Beschreibung
   * Branch basierend auf das Issue erstellen
   * Commits sollten am Besten kurz sein
