@@ -144,6 +144,7 @@ GEM
     loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    lorem_ipsum_amet (0.6.2)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
@@ -329,6 +330,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jwt
+  lorem_ipsum_amet
   pg
   premailer-rails
   puma (~> 5.0)

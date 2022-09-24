@@ -66,6 +66,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'ruby_audit'
+	gem 'lorem_ipsum_amet'
 end
 
 group :development do
