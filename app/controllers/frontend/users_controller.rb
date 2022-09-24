@@ -8,7 +8,8 @@ module Frontend
     # GET /users/1 or /users/1.json
     def show
       @user                      = User.find(params[:id])
-      @accomplished_achievements = @user.accomplished_achievements
+      @games                     = @user.games
+      @accomplished_achievements = @games.map(&:accomplished_achievements).flatten
     end
 
     # GET /users/new

@@ -12,7 +12,6 @@ class User < ApplicationRecord
   enum role: { standard: 0, admin: 1 }
 
   has_many :games, dependent: :delete_all
-  has_many :accomplished_achievements, dependent: :delete_all
   has_one_attached :avatar
 
   def email_activate
