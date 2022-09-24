@@ -27,7 +27,6 @@ Layout/ExtraSpacing:
   ForceEqualSignAlignment: true
 
 Layout/LineLength:
-  Enabled: false
   Max: 120
 
 Layout/MultilineMethodCallIndentation:
