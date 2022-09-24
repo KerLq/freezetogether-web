@@ -3,8 +3,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
-  helper_method :is_admin?
-  helper_method :is_current_user
+  helper_method :admin?
+  helper_method :current_user?
 
   def current_user
     User.find(session[:user_id]) if session[:user_id]
@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
-  def is_admin?
+  def admin?
     logged_in? ? current_user.admin? : false
   end
 
-  def is_current_user(user)
+  def current_user?(user)
     current_user == user if logged_in?
   end
 end

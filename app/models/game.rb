@@ -2,5 +2,5 @@
 
 class Game < ApplicationRecord
   belongs_to :user
-  has_many :accomplished_achievements
+  has_many :accomplished_achievements, dependent: :delete_all
 end

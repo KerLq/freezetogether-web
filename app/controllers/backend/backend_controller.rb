@@ -6,7 +6,7 @@ module Backend
     before_action :check_is_admin?
 
     def check_is_admin?
-      redirect_to frontend_root_path unless is_admin?
+      redirect_to frontend_root_path unless admin?
     end
   end
 end
