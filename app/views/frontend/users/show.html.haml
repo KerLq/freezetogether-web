@@ -29,7 +29,7 @@
     %section#erfolge.tabs__section{"aria-hidden": "false", "aria-labelledby": "tab-erfolge", role: "tabpanel"}
       .tabs__body
         .achievements
-          - @achievements.each do |achievement|
+          - @accomplished_achievements.each do |achievement|
             = render 'frontend/users/tabs/achievement-card', achievement: achievement
     %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
       .tabs__body
