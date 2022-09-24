@@ -12,7 +12,7 @@ class User < ApplicationRecord
   enum role: { standard: 0, admin: 1 }
 
   has_many :games
-  has_many :achievements
+  has_many :accomplished_achievements
   has_one_attached :avatar
 
   def email_activate

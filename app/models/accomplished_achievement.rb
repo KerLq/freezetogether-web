@@ -1,0 +1,6 @@
+class AccomplishedAchievement < ApplicationRecord
+	belongs_to :achievement
+	delegate :title, to: :achievement
+	belongs_to :user
+	belongs_to :game
+end

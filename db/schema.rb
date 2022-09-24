@@ -84,10 +84,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_24_102708) do
   end
 
   create_table "news", force: :cascade do |t|
-    t.text "cover_image"
-    t.string "content"
     t.string "title"
     t.string "description"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

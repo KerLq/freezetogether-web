@@ -2,5 +2,5 @@
 
 class Game < ApplicationRecord
   belongs_to :user
-  has_many :achievements
+  has_one :accomplished_achievements
 end
