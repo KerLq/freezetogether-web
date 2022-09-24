@@ -33,4 +33,6 @@
             = render 'frontend/users/tabs/achievement-card', achievement: achievement
     %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
       .tabs__body
-        = render 'frontend/users/tabs/game-history'
+        .games
+          - @games.each do |game|
+            = render 'frontend/users/tabs/game-card', game: game
