@@ -25,9 +25,9 @@ module Backend
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to @user, notice: 'Successfully registered!'
+        redirect_to @user, notice: (I18n.t 'backend.register.success')
       else
-        redirect_to register_path, notice: 'Registration failed!'
+        redirect_to register_path, notice: (I18n.t 'backend.register.failed')
       end
     end
 
@@ -35,7 +35,7 @@ module Backend
     def update
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          format.html { redirect_to @user, notice: (I18n.t 'backend.user.updated') }
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -48,7 +48,7 @@ module Backend
     def destroy
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+        format.html { redirect_to users_url, notice: (I18n.t 'backend.user.destroyed') }
         format.json { head :no_content }
       end
     end
@@ -61,7 +61,7 @@ module Backend
     end
 
     def permission
-      redirect_to users_path, notice: 'No Permission!' if current_user != set_user
+      redirect_to users_path, notice: (I18n.t 'backend.user.no_permission') if current_user != set_user
     end
 
     # Only allow a list of trusted parameters through.

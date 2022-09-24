@@ -15,7 +15,7 @@ module Frontend
 					instructions in the account confirmation email you received to proceed"
         end
       else
-        redirect_to login_path, notice: 'Invalid Login!'
+        redirect_to login_path, notice: (I18n.t 'frontend.login.invalid')
       end
     end
 

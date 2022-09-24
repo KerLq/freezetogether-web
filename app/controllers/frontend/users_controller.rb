@@ -7,8 +7,9 @@ module Frontend
 
     # GET /users/1 or /users/1.json
     def show
-      @user         = User.find(params[:id])
-      @achievements = @user.achievements
+      @user                      = User.find(params[:id])
+      @games                     = @user.games
+      @accomplished_achievements = @user.accomplished_achievements.uniq(&:achievement)
     end
 
     # GET /users/new
@@ -29,9 +30,9 @@ module Frontend
 
       if @user.save
         UserMailer.registration_confirmation(@user).deliver!
-        redirect_to login_path, notice: 'Verify your email'
+        redirect_to login_path, notice: (I18n.t 'frontend.register.verfiy_email')
       else
-        redirect_to register_path, notice: 'Registration failed!'
+        redirect_to register_path, notice: (I18n.t 'frontend.register.failed')
       end
     end
 
@@ -42,7 +43,7 @@ module Frontend
 
       respond_to do |format|
         if @user.update(user_params)
-          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          format.html { redirect_to @user }
           format.json { render :show, status: :ok, location: @user }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +56,7 @@ module Frontend
     def destroy
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+        format.html { redirect_to users_url }
         format.json { head :no_content }
       end
     end
@@ -66,7 +67,7 @@ module Frontend
         user.email_activate
         redirect_to login_path # Render special view for activation page
       else
-        flash[:error] = 'Sorry. User does not exist'
+        flash[:error] = (I18n.t 'frontend.user.does_not_exist')
         redirect_to frontend_root_path
       end
     end
@@ -81,7 +82,7 @@ module Frontend
     private
 
     def permission
-      redirect_to users_path, notice: 'No Permission!' if current_user != User.find(params[:id])
+      redirect_to users_path, notice: (I18n.t 'frontend.user.no_permission') if current_user != User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

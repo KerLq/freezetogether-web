@@ -61,6 +61,7 @@ group :development, :test do
   gem 'bundler-audit'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'erb_lint'
+  gem 'lorem_ipsum_amet'
   gem 'pg'
   gem 'rubocop'
   gem 'rubocop-performance'

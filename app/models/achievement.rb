@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Achievement < ApplicationRecord
-  belongs_to :badge
-  belongs_to :user
-  belongs_to :game
+  has_many :accomplished_achievements, dependent: :delete_all
+  has_one_attached :cover_image
 end

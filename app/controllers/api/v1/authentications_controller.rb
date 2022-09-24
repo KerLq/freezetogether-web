@@ -22,8 +22,7 @@ module Api
       end
 
       def validate_token
-        pp authorization_token
-        if @user = User.find_by(token: authorization_token)
+        if (@user = User.find_by(token: authorization_token))
           render json: { token: @user.token }, status: :ok
         else
           render json: { error: 'unauthorized' }, status: :unauthorized
