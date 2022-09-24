@@ -11,13 +11,13 @@
 dogus = User.create(email: 'dogus@dogus.de', username: 'dogus', password: 'dogus123', email_confirmed: true, role: 1)
 User.create(email: 'oussama@oussama.de', username: 'oussama', password: 'oussama', email_confirmed: true, role: 1)
 
-6.times {
-	News.create(
-		title: LoremIpsum.lorem_ipsum(words: rand(2..4)),
-		description: LoremIpsum.short,
-		content: LoremIpsum.random(paragraphs: rand(3..8))
-	)
-}
+6.times do
+  News.create(
+    title: LoremIpsum.lorem_ipsum(words: rand(2..4)),
+    description: LoremIpsum.short,
+    content: LoremIpsum.random(paragraphs: rand(3..8))
+  )
+end
 
 achievement_weltreisender = Achievement.create(
   title: 'Weltreisender',
