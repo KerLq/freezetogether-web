@@ -27,7 +27,7 @@ module Backend
       respond_to do |format|
         if @news.save
           @news.cover_image.attach(params[:news][:cover_image])
-          format.html { redirect_to [:frontend, @news], notice: 'News was successfully created.' }
+          format.html { redirect_to [:frontend, @news], notice: (I18n.t 'backend.news.created') }
           format.json { render :show, status: :created, location: [:frontend, @news] }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ module Backend
     def update
       respond_to do |format|
         if @news.update(news_params)
-          format.html { redirect_to @news, notice: 'News was successfully updated.' }
+          format.html { redirect_to @news, notice: (I18n.t 'backend.news.updated') }
           format.json { render :show, status: :ok, location: @news }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ module Backend
     def destroy
       @news.destroy
       respond_to do |format|
-        format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
+        format.html { redirect_to news_index_url, notice: (I18n.t 'backend.news.destroyed') }
         format.json { head :no_content }
       end
     end

@@ -10,7 +10,7 @@ module Backend
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
-        redirect_to login_path, notice: 'Invalid Login!'
+        redirect_to login_path, notice: (I18n.t 'backend.login.invalid')
       end
     end
 
