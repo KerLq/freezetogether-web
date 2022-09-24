@@ -9,7 +9,7 @@ module Frontend
     def show
       @user                      = User.find(params[:id])
       @games                     = @user.games
-      @accomplished_achievements = @games.map(&:accomplished_achievements).flatten
+      @accomplished_achievements = @games.map(&:accomplished_achievements).flatten.uniq(&:achievement)
     end
 
     # GET /users/new
