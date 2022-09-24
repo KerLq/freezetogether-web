@@ -36,7 +36,6 @@ spiel = Game.create(
 )
 
 AccomplishedAchievement.create(
-  user: dogus,
   achievement: achievement_weltreisender,
   game: spiel
 )

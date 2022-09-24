@@ -11,6 +11,7 @@ class User < ApplicationRecord
   # validates :email, presence: true, uniqueness: true
   enum role: { standard: 0, admin: 1 }
 
+	has_many :accomplished_achievements, through: :games
   has_many :games, dependent: :delete_all
   has_one_attached :avatar
 
