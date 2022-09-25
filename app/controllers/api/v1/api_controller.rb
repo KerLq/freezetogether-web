@@ -22,7 +22,7 @@ module Api
         return false if jwt_blacklists(authorization_token)
 
         begin
-          @decoded      = JsonWebToken.decode(authorization_token)
+          @decoded     = JsonWebToken.decode(authorization_token)
           Current.user = User.find_by(id: @decoded[:user_id])
         rescue ActiveRecord::RecordNotFound || JWT::VerificationError, JWT::DecodeError => e
           render json: { errors: e.message }, status: :unauthorized
