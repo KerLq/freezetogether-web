@@ -3,58 +3,45 @@
 module Frontend
   class UsersController < Frontend::FrontendController
     before_action :permission, only: %i[edit update destroy]
-    # GET /users or /users.json
 
-    # GET /users/1 or /users/1.json
     def show
-      @user                      = User.find(params[:id])
-      @games                     = @user.games
-      @accomplished_achievements = @user.accomplished_achievements.uniq(&:achievement)
+      user
     end
 
-    # GET /users/new
     def new
       @user = User.new
     end
 
-    # GET /users/1/edit
-    def edit
-      @user = User.find(params[:id])
-    end
-
-    # POST /users or /users.json
+    def edit; end
 
     def create
-      @user = User.new(user_params)
-      @user.avatar.attach(params[:user][:avatar])
+      user = User.new(user_params)
+      user.avatar.attach(params[:user][:avatar])
 
-      if @user.save
-        UserMailer.registration_confirmation(@user).deliver!
+      if user.save
+        UserMailer.registration_confirmation(user).deliver!
         redirect_to login_path, notice: (I18n.t 'frontend.register.verfiy_email')
       else
         redirect_to register_path, notice: (I18n.t 'frontend.register.failed')
       end
     end
 
-    # PATCH/PUT /users/1 or /users/1.json
     def update
-      @user = User.find(params[:id])
-      @user.avatar.attach(params[:user][:avatar])
+      user.avatar.attach(params[:user][:avatar])
 
       respond_to do |format|
-        if @user.update(user_params)
-          format.html { redirect_to @user }
-          format.json { render :show, status: :ok, location: @user }
+        if user.update(user_params)
+          format.html { redirect_to user }
+          format.json { render :show, status: :ok, location: user }
         else
           format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
+          format.json { render json: user.errors, status: :unprocessable_entity }
         end
       end
     end
 
-    # DELETE /users/1 or /users/1.json
     def destroy
-      @user.destroy
+      user.destroy
       respond_to do |format|
         format.html { redirect_to users_url }
         format.json { head :no_content }
@@ -73,10 +60,10 @@ module Frontend
     end
 
     def upload_image
-      @user = User.find(params[:user_id])
+      user  = User.find(params[:user_id])
       image = params[:user][:avatar]
-      @user.avatar.attach(image)
-      redirect_to [:frontend, @user]
+      user.avatar.attach(image)
+      redirect_to frontend_user_path(user)
     end
 
     private
@@ -93,6 +80,10 @@ module Frontend
         :password,
         :avatar
       )
+    end
+
+    def user
+      @user ||= User.find_by(id: params[:id])
     end
   end
 end

@@ -1,12 +1,12 @@
 .profile
   .profile__banner
     .profile-banner
-      = image_tag (@user.avatar.attached? ? @user.avatar : "default.jpg")
+      = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
     .profile-transparent-hr
     .profile-data
       .profile-data__avatar
         .profile-avatar
-          = image_tag (@user.avatar.attached? ? @user.avatar : "default.jpg")
+          = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
           = form_for [:frontend, @user], url: frontend_user_upload_image_path(@user), method: :post do |f|
             = f.file_field :avatar
             .avatar-upload= "Avatar<br>ändern".html_safe
@@ -29,10 +29,10 @@
     %section#erfolge.tabs__section{"aria-hidden": "false", "aria-labelledby": "tab-erfolge", role: "tabpanel"}
       .tabs__body
         .achievements
-          - @accomplished_achievements.each do |achievement|
+          - @user.accomplished_achievements.uniq(&:achievement).each do |achievement|
             = render 'frontend/users/tabs/achievement-card', achievement: achievement
     %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
       .tabs__body
         .games
-          - @games.each do |game|
+          - @user.games.each do |game|
             = render 'frontend/users/tabs/game-card', game: game
