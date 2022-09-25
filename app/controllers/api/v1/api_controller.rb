@@ -7,7 +7,7 @@ module Api
       before_action :authorize_request
 
       def jwt_blacklists(header)
-        render json: { error: 'unauthorized' }, status: :unauthorized if JwtBlacklist.find_by(token: header)
+        JwtBlacklist.find_by(token: header)
       end
 
       def not_found
@@ -19,7 +19,8 @@ module Api
       end
 
       def authorize_request
-        jwt_blacklists(authorization_token)
+        return false if jwt_blacklists(authorization_token)
+
         begin
           @decoded      = JsonWebToken.decode(authorization_token)
           @current_user = User.find(@decoded[:user_id])
