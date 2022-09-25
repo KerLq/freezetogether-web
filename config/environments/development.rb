@@ -4,6 +4,9 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  I18n.enforce_available_locales = false
+  I18n.config.default_locale     = :de
+  I18n.config.available_locales  = %i[de en]
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
