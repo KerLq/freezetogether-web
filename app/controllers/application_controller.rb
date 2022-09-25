@@ -5,10 +5,9 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_action do
-    browser_lang = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
+    browser_lang = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first&.to_sym
 
     I18n.locale = browser_lang || I18n.default_locale if I18n.available_locales.include?(browser_lang)
-
     next unless session[:user_id]
 
     Current.user = User.find_by(id: session[:user_id])
