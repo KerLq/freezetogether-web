@@ -7,9 +7,10 @@
       .profile-data__avatar
         .profile-avatar
           = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
-          = form_for [:frontend, @user], url: frontend_user_upload_image_path(@user), method: :post do |f|
-            = f.file_field :avatar
-            .avatar-upload= "Avatar<br>ändern".html_safe
+          - if policy([:frontend, @user]).upload_image?
+            = form_for [:frontend, @user], url: frontend_user_upload_image_path(@user), method: :post do |f|
+              = f.file_field :avatar
+              .avatar-upload= "Avatar<br>ändern".html_safe
         .profile-avatar-outline
         .profile-avatar-status
 

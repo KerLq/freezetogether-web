@@ -2,7 +2,7 @@
 
 module Backend
   class SessionsController < Backend::BackendController
-    def login; end
+    def new; end
 
     def create
       @user = User.find_by(email: params[:email]) # Change to email!
