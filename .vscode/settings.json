@@ -1,5 +1,7 @@
 {
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "ruby.rubocop.onSave": true,
+  "editor.formatOnSave": true
 }
