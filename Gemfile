@@ -11,7 +11,6 @@ gem 'haml'
 gem 'premailer-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'jquery-rails'
 gem 'jwt'
@@ -86,3 +85,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "pundit", "~> 2.2"
