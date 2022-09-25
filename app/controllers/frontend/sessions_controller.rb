@@ -13,13 +13,12 @@ module Frontend
       if @user&.authenticate(params[:password])
         if @user.email_confirmed
           session[:user_id] = @user.id
-          redirect_to frontend_user_path(@user)
+          redirect_to frontend_user_path(@user), flash: { success: t('.success') }
         else
-          redirect_to login_path, notice: "Please activate your account by following the
-					instructions in the account confirmation email you received to proceed"
+          redirect_to login_path, flash: { error: t('.confirm_email') }
         end
       else
-        redirect_to login_path, notice: (I18n.t 'frontend.login.invalid')
+        redirect_to login_path, flash: { error: t('.failed') }
       end
     end
 

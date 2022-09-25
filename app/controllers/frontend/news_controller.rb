@@ -2,15 +2,22 @@
 
 module Frontend
   class NewsController < Frontend::FrontendController
-    # GET /news or /news.json
     def index
+      authorize(News)
+
       @news = News.all
     end
 
-    # GET /news/1 or /news/1.json
     def show
-      @news       = News.find(params[:id])
+      authorize(news)
+
       @other_news = News.limit(3).order('RANDOM()')
+    end
+
+    private
+
+    def news
+      @news ||= News.find_by(id: params[:id])
     end
   end
 end

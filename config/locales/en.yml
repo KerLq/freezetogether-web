@@ -1,13 +1,21 @@
 en:
   frontend:
-    login:
-      invalid: 'Invalid Login!'
-    register:
-      verfiy_email: 'Verify your email'
-      failed: 'Registration failed!'
+    sessions:
+      create:
+        confirm_email: 'Please activate your account by following the
+                        instructions in the account confirmation email you received to proceed'
+        failed: 'Invalid login!'
+        success: 'Successfully logged in!'
     user:
-      does_not_exist: 'Sorry. User does not exist'
-      no_permission: 'No permission!'
+      create:
+        success: Successfully created! Verify your email.
+        failed: User creation failed!
+      update:
+        success: Successfully updated!
+        failed: Update failed!
+      confirm_email:
+        success: Email activation was successful!
+        failed: Email activation failed!
 
   backend:
     login:
