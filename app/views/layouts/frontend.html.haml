@@ -10,10 +10,10 @@
     %meta{ name: 'robots', content: 'noindex,follow' }
   %body
     - if content_for(:no_header)
-      = flash_messages
       = yield
     - else
       = render 'layouts/frontend/header'
+      = render 'layouts/frontend/flash'
       = yield
       = render 'layouts/frontend/footer'
     = javascript_include_tag 'application.js'

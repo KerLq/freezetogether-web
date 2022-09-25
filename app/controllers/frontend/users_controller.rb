@@ -23,9 +23,9 @@ module Frontend
 
       if user.save
         UserMailer.registration_confirmation(user).deliver!
-        redirect_to login_path, notice: (I18n.t 'frontend.register.verfiy_email')
+        redirect_to login_path, flash: { success: t('.success') }
       else
-        redirect_to register_path, notice: (I18n.t 'frontend.register.failed')
+        redirect_to register_path, flash: { success: t('.failed') }
       end
     end
 
@@ -35,9 +35,9 @@ module Frontend
       user.avatar.attach(params[:user][:avatar]) if params[:user][:avatar]
 
       if user.update(permitted_attributes(user))
-        redirect_to frontend_user_path(user), flash: { error: 'Saved successfully :skull: moment' }
+        redirect_to frontend_user_path(user), flash: { success: t('.success') }
       else
-        redirect_to frontend_user_path(user), flash: { error: 'Failed miserably :skull: moment' }
+        redirect_to frontend_user_path(user), flash: { error: t('.failed') }
       end
     end
 
@@ -50,13 +50,14 @@ module Frontend
     end
 
     def confirm_email
+      authorize(User.find_by(confirm_token: params[:id]))
+
       user = User.find_by(confirm_token: params[:id])
       if user
         user.email_activate
-        redirect_to login_path # Render special view for activation page
+        redirect_to login_path, flash: { success: t('.success') } # Render special view for activation page
       else
-        flash[:error] = (I18n.t 'frontend.user.does_not_exist')
-        redirect_to frontend_root_path
+        redirect_to frontend_root_path, flash: { error: t('.failed') }
       end
     end
 
