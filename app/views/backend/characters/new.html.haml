@@ -1,0 +1,12 @@
+%section
+  .container
+    .login-register
+      .head-text.text-center
+        %h2.head-text__headline Freeze Login
+        %p.head-text__description Das neue Koop-Abenteuer mit deinen Freunden!
+      = form_for [:backend, @character] do |f|
+        = f.file_field :image
+        = f.text_field :title, placeholder: "Title"
+        = f.text_field :name, placeholder: "Name"
+        = f.text_field :description, placeholder: "Description"
+        = f.submit "Create Character", class: 'button button--accent'
