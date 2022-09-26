@@ -85,5 +85,5 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'pundit', '~> 2.2'
 gem 'active_storage_validations'
+gem 'pundit', '~> 2.2'
