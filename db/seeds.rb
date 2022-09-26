@@ -43,7 +43,7 @@ hero_perk = Perk.create(
 jaxson = Character.create(
   title: 'Erster Charakter',
   name: 'Mr. Jaxson',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus magni possimus rem delectus sapiente dolorem asperiores? Quia, perspiciatis officiis! Cupiditate quos similique quas assumenda sequi!',
+  description: LoremIpsum.lorem_ipsum(words: 25)
 )
 3.times do
   jaxson.character_perks.create(
