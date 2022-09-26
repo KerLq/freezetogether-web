@@ -2,6 +2,8 @@
 
 module Backend
   class WelcomeController < Backend::BackendController
-    def index; end
+    def index
+      authorize(User)
+    end
   end
 end
