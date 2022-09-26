@@ -10,10 +10,6 @@ module Backend
       user&.admin?
     end
 
-    def edit?
-      user&.admin?
-    end
-
     def create?
       user&.admin?
     end
@@ -26,8 +22,8 @@ module Backend
       %i[title name description]
     end
 
-    def permitted_attributes_for_create
-      %i[title name description]
-    end
+    # def permitted_attributes_for_create
+    #   %i[title name description]
+    # end
   end
 end

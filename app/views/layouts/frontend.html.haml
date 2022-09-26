@@ -10,6 +10,7 @@
     %meta{ name: 'robots', content: 'noindex,follow' }
   %body
     - if content_for(:no_header)
+      = flash_messages
       = yield
     - else
       = render 'layouts/frontend/header'
