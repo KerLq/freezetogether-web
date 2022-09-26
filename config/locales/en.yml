@@ -35,7 +35,13 @@ en:
       created: 'Achievement was successfully created.'
       updated: 'Achievement was successfully updated.'
       destroyed: 'Achievement was successfully destroyed.'
-
+    characters:
+      create:
+        success: 'Successfully created!'
+        failed: 'Creation failed!'
+      update:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
   mailer:
     register:
       subject: 'Registration Confirmation'

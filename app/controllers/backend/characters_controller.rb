@@ -41,9 +41,9 @@ module Backend
       character.avatar.attach(params[:character][:image]) if params[:character][:image]
 
       if character.update(permitted_attributes(character))
-        redirect_to backend_characters_path(character), flash: { success: t('.success') }
+        redirect_to backend_character_path(character), flash: { success: t('.success') }
       else
-        redirect_to [:backend, character], flash: { error: t('.failed') }
+        redirect_to backend_character_path(character), flash: { error: t('.failed') }
       end
     end
 
