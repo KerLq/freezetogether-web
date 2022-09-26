@@ -1,0 +1,3 @@
+%ul
+  - @characters.each do |character|
+    %li= link_to character.name, edit_backend_character_path(character)
