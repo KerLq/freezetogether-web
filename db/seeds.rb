@@ -1,16 +1,10 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+## User
 dogus = User.create(email: 'dogus@dogus.de', username: 'dogus', password: 'dogus123', email_confirmed: true, role: 1)
 User.create(email: 'oussama@oussama.de', username: 'oussama', password: 'oussama', email_confirmed: true, role: 1)
 
+## News
 6.times do
   News.create(
     title: LoremIpsum.lorem_ipsum(words: rand(2..4)),
@@ -19,6 +13,7 @@ User.create(email: 'oussama@oussama.de', username: 'oussama', password: 'oussama
   )
 end
 
+## Achievements
 achievement_weltreisender = Achievement.create(
   title: 'Weltreisender',
   description: 'Lege mindestens 100 Kilometer Distanz zurück.'
@@ -39,3 +34,19 @@ AccomplishedAchievement.create(
   achievement: achievement_weltreisender,
   game: spiel
 )
+
+## Characters & Perks
+hero_perk = Perk.create(
+  name: 'Held'
+)
+
+jaxson = Character.create(
+  title: 'Erster Charakter',
+  name: 'Mr. Jaxson',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus magni possimus rem delectus sapiente dolorem asperiores? Quia, perspiciatis officiis! Cupiditate quos similique quas assumenda sequi!',
+)
+3.times do
+  jaxson.character_perks.create(
+    perk: hero_perk
+  )
+end
