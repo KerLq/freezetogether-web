@@ -30,7 +30,7 @@ class ApplicationController
       end
 
       def permitted_attributes(model)
-        scope = policy_class.name.split('::')&.first&.to_sym
+        scope = policy_class.name&.split('::')&.first&.to_sym
 
         super([scope, model])
       end
