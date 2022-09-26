@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include self::PunditInit
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_action do
