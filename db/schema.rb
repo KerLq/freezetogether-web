@@ -12,14 +12,12 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
   create_table "accomplished_achievements", force: :cascade do |t|
-    t.integer "achievement_id"
     t.integer "game_id"
-    t.integer "user_id"
+    t.integer "achievement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["achievement_id"], name: "index_accomplished_achievements_on_achievement_id"
     t.index ["game_id"], name: "index_accomplished_achievements_on_game_id"
-    t.index ["user_id"], name: "index_accomplished_achievements_on_user_id"
   end
 
   create_table "achievements", force: :cascade do |t|
@@ -129,7 +127,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
 
   add_foreign_key "accomplished_achievements", "achievements"
   add_foreign_key "accomplished_achievements", "games"
-  add_foreign_key "accomplished_achievements", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "character_perks", "characters"

@@ -7,7 +7,6 @@
     = csrf_meta_tags
     = yield :stylesheets
     = yield :javascripts
-    = javascript_pack_tag 'application', media: 'all'
     %meta{ name: 'robots', content: 'noindex,follow' }
   %body
     - if content_for(:no_header)
@@ -15,3 +14,4 @@
       = yield
     - else
       = yield
+    = javascript_include_tag 'application', media: 'all'

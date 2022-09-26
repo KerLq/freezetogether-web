@@ -28,7 +28,6 @@ gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
-gem 'webpacker'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'graphicsmagick', '~> 1.0', '>= 1.0.5'
 gem 'jbuilder'

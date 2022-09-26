@@ -2,6 +2,8 @@
 
 module Frontend
   class FrontendController < ApplicationController
+    include self::Frontend::PunditInit
+
     layout 'frontend'
 
     def index; end
