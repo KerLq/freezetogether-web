@@ -26,12 +26,25 @@ module Backend
       authorize(Character)
 
       character = Character.new(permitted_attributes(Character))
-      # character.image.attach(params[:user][:image])
+      character.image.attach(params[:character][:image])
 
       if character.save
         redirect_to backend_characters_path, flash: { success: t('.success') }
       else
-        redirect_to [:frontend, character], flash: { success: t('.failed') }
+        @character = character
+        render :new, flash: { error: t('.failed') }
+      end
+    end
+
+    def update
+      authorize(character)
+
+      character.avatar.attach(params[:character][:image]) if params[:character][:image]
+
+      if character.update(permitted_attributes(character))
+        redirect_to backend_characters_path(character), flash: { success: t('.success') }
+      else
+        redirect_to [:backend, character], flash: { error: t('.failed') }
       end
     end
 
