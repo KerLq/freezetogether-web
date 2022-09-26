@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_24_102708) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
   create_table "accomplished_achievements", force: :cascade do |t|
     t.integer "achievement_id"
     t.integer "game_id"
@@ -67,6 +67,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_24_102708) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "character_perks", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "perk_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_perks_on_character_id"
+    t.index ["perk_id"], name: "index_character_perks_on_perk_id"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "games", force: :cascade do |t|
     t.integer "score"
     t.integer "coin"
@@ -91,6 +108,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_24_102708) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "perks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "username", null: false
@@ -109,5 +132,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_24_102708) do
   add_foreign_key "accomplished_achievements", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "character_perks", "characters"
+  add_foreign_key "character_perks", "perks"
   add_foreign_key "games", "users"
 end
