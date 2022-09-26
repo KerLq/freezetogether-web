@@ -86,3 +86,4 @@ group :test do
 end
 
 gem 'pundit', '~> 2.2'
+gem 'active_storage_validations'

@@ -31,8 +31,7 @@ module Backend
       if character.save
         redirect_to backend_characters_path, flash: { success: t('.success') }
       else
-        @character = character
-        render :new, flash: { error: t('.failed') }
+        redirect_to new_backend_character_path, flash: { error: t('.failed') }
       end
     end
 
