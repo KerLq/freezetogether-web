@@ -21,9 +21,5 @@ module Backend
     def permitted_attributes
       %i[title name description]
     end
-
-    # def permitted_attributes_for_create
-    #   %i[title name description]
-    # end
   end
 end
