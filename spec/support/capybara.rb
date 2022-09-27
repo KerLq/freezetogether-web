@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/support/capybara.rb
 
 # Setup chrome headless driver
