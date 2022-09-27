@@ -19,7 +19,7 @@ module Backend
     end
 
     def permitted_attributes
-      %i[title name description]
+      %i[title name description quote]
     end
   end
 end

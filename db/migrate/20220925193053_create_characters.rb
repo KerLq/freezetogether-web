@@ -6,6 +6,7 @@ class CreateCharacters < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :name
       t.string :description
+      t.string :quote
       t.timestamps
     end
   end

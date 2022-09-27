@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   validates :title, presence: true
   validates :name, presence: true
   validates :description, presence: true
+  validates :quote, presence: true
   validates :image, attached: true, content_type: ['image/png', 'image/jpeg', 'image/svg']
 
   has_one_attached :image
