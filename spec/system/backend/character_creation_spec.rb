@@ -12,6 +12,7 @@ RSpec.describe 'character creation', type: :system do
     fill_in 'character_title', with: 'The Unforgiving'
     fill_in 'character_name', with: 'Ben o. Spencer'
     fill_in 'character_description', with: 'Certified Hero Chaser'
+    fill_in 'character_quote', with: 'If not you, who else?'
     attach_file('character_image', Rails.root + 'spec/images/test.png')
 
     click_button 'Create Character'
