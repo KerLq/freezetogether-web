@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
   create_table "accomplished_achievements", force: :cascade do |t|
-    t.integer "game_id"
     t.integer "achievement_id"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["achievement_id"], name: "index_accomplished_achievements_on_achievement_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
     t.string "title"
     t.string "name"
     t.string "description"
+    t.string "quote"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
