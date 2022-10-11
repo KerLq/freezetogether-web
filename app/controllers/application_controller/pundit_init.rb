@@ -21,15 +21,15 @@ class ApplicationController
         @policy_scope_class ||= "#{self.class.name[0..-11].singularize}Policy::Scope".constantize
       end
 
-      def authorize(record, query = nil)
-        super(record, query, policy_class:)
+      def controller_authorize(record, query = nil)
+        authorize(record, query, policy_class:)
       end
 
-      def policy_scope(scope)
-        super(scope, policy_scope_class:)
+      def controller_policy_scope(scope)
+        policy_scope(scope, policy_scope_class:)
       end
 
-      def permitted_attributes(model)
+      def controller_controller_permitted_attributes(model)
         scope = policy_class.name&.split('::')&.first&.to_sym
 
         super([scope, model])

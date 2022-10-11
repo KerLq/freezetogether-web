@@ -3,29 +3,29 @@
 module Backend
   class CharactersController < Backend::BackendController
     def index
-      authorize(Character)
+      controller_authorize(Character)
 
       @characters = Character.all
     end
 
     def show
-      authorize(character)
+      controller_authorize(character)
     end
 
     def new
-      authorize(Character)
+      controller_authorize(Character)
 
       @character = Character.new
     end
 
     def edit
-      authorize(character)
+      controller_authorize(character)
     end
 
     def create
-      authorize(Character)
+      controller_authorize(Character)
 
-      character = Character.new(permitted_attributes(Character))
+      character = Character.new(controller_permitted_attributes(Character))
       character.image.attach(params[:character][:image])
 
       if character.save
@@ -36,11 +36,11 @@ module Backend
     end
 
     def update
-      authorize(character)
+      controller_authorize(character)
 
       character.avatar.attach(params[:character][:image]) if params[:character][:image]
 
-      if character.update(permitted_attributes(character))
+      if character.update(controller_permitted_attributes(character))
         redirect_to backend_character_path(character), flash: { success: t('.success') }
       else
         redirect_to backend_character_path(character), flash: { error: t('.failed') }

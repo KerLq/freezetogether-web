@@ -3,13 +3,13 @@
 module Frontend
   class NewsController < Frontend::FrontendController
     def index
-      authorize(News)
+      controller_authorize(News)
 
       @news = News.all
     end
 
     def show
-      authorize(news)
+      controller_authorize(news)
 
       @other_news = News.limit(3).order('RANDOM()')
     end

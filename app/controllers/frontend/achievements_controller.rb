@@ -3,12 +3,12 @@
 module Frontend
   class AchievementsController < Frontend::FrontendController
     def index
-      authorize(Achievement)
+      controller_authorize(Achievement)
       @achievements = Achievement.all
     end
 
     def show
-      authorize(achievement)
+      controller_authorize(achievement)
     end
 
     private
