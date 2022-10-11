@@ -7,6 +7,7 @@ ruby '3.1.2'
 
 ## Update to 7 ##
 gem 'bcrypt'
+gem 'lorem_ipsum_amet'
 gem 'haml'
 gem 'premailer-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -61,7 +62,6 @@ group :development, :test do
   gem 'erb_lint'
   gem 'factory_bot_rails'
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
-  gem 'lorem_ipsum_amet'
   gem 'pg'
   gem 'rspec-rails', '>= 3.9.0'
   gem 'rubocop'
