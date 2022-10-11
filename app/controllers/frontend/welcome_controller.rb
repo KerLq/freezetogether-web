@@ -8,8 +8,16 @@ module Frontend
       @news = News.last(3)
     end
 
-    def spielinfo; end
-    def hilfe; end
-    def bestenliste; end
+    def spielinfo
+      controller_authorize(User)
+    end
+
+    def hilfe
+      controller_authorize(User)
+    end
+
+    def bestenliste
+      controller_authorize(User)
+    end
   end
 end

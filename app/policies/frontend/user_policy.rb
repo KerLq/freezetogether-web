@@ -2,14 +2,6 @@
 
 module Frontend
   class UserPolicy < ApplicationPolicy
-    class Scope < Scope
-      def resolve
-        return scope.none unless user
-
-        scope.where(user)
-      end
-    end
-
     def create?
       true
     end

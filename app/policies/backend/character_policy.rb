@@ -3,19 +3,23 @@
 module Backend
   class CharacterPolicy < ApplicationPolicy
     def index?
-      user&.admin?
+      Current.user&.admin?
     end
 
     def show?
-      user&.admin?
+      Current.user&.admin? && record
     end
 
     def create?
-      user&.admin?
+      Current.user&.admin?
     end
 
     def update?
-      user&.admin?
+      Current.user&.admin? && record
+    end
+
+    def destroy?
+      Current.user&.admin? && record
     end
 
     def permitted_attributes

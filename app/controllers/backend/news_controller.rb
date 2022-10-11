@@ -2,72 +2,57 @@
 
 module Backend
   class NewsController < Backend::BackendController
-    before_action :set_news, only: %i[show edit update destroy]
-
-    # GET /news or /news.json
     def index
+      controller_authorize(News)
+
       @news = News.all
     end
 
-    # GET /news/1 or /news/1.json
-    def show; end
+    def show
+      controller_authorize(News)
+    end
 
-    # GET /news/new
     def new
+      controller_authorize(News)
+
       @news = News.new
     end
 
-    # GET /news/1/edit
-    def edit; end
+    def edit
+      controller_authorize(news)
+    end
 
-    # POST /news or /news.json
     def create
-      @news = News.new(news_params)
+      controller_authorize(News)
 
-      respond_to do |format|
-        if @news.save
-          @news.cover_image.attach(params[:news][:cover_image])
-          format.html { redirect_to [:frontend, @news], notice: (I18n.t 'backend.news.created') }
-          format.json { render :show, status: :created, location: [:frontend, @news] }
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @news.errors, status: :unprocessable_entity }
-        end
+      news = News.new(permitted_attributes(News))
+
+      if news.save
+        news.cover_image.attach(params[:news][:cover_image])
+        redirect_to backend_news_path(news), flash: { success: t('.success') }
+      else
+        redirect_to new_backend_news_path, flash: { error: t('.failed') }
       end
     end
 
-    # PATCH/PUT /news/1 or /news/1.json
     def update
-      respond_to do |format|
-        if @news.update(news_params)
-          format.html { redirect_to @news, notice: (I18n.t 'backend.news.updated') }
-          format.json { render :show, status: :ok, location: @news }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @news.errors, status: :unprocessable_entity }
-        end
+      controller_authorize(news)
+
+      if news.update(permitted_attributes(news))
+        redirect_to backend_news_path(news), flash: { success: t('.success') }
+      else
+        redirect_to new_backend_news_path, flash: { error: t('.failed') }
       end
     end
 
-    # DELETE /news/1 or /news/1.json
     def destroy
-      @news.destroy
-      respond_to do |format|
-        format.html { redirect_to news_index_url, notice: (I18n.t 'backend.news.destroyed') }
-        format.json { head :no_content }
+      controller_authorize(news)
+
+      if news.destroy
+        redirect_to backend_news_path, flash: { success: t('.success') }
+      else
+        redirect_to backend_news_path, flash: { error: t('.error') }
       end
-    end
-
-    private
-
-    # Use callbacks to share common setup or constraints between actions.
-    def set_news
-      @news = News.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def news_params
-      params.require(:news).permit(:cover_image, :title, :content, :description)
     end
   end
 end

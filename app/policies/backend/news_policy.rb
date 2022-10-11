@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 module Backend
-  class UserPolicy < ApplicationPolicy
+  class NewsPolicy < ApplicationPolicy
     def index?
       Current.user&.admin?
     end
 
-    def create?
+    def show?
       Current.user&.admin? && record
     end
 
-    def show?
+    def create?
       Current.user&.admin?
     end
 
@@ -18,12 +18,12 @@ module Backend
       Current.user&.admin? && record
     end
 
-    def upload_image?
+    def destroy?
       Current.user&.admin? && record
     end
 
     def permitted_attributes
-      %i[username email password description]
+      %i[title description content]
     end
   end
 end

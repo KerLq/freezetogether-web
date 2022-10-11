@@ -25,7 +25,7 @@ module Backend
     def create
       controller_authorize(Character)
 
-      character = Character.new(controller_permitted_attributes(Character))
+      character = Character.new(permitted_attributes(Character))
       character.image.attach(params[:character][:image])
 
       if character.save
