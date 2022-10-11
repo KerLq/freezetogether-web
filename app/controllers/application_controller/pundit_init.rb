@@ -29,9 +29,8 @@ class ApplicationController
         policy_scope(scope, policy_scope_class:)
       end
 
-      def controller_controller_permitted_attributes(model)
+      def permitted_attributes(model)
         scope = policy_class.name&.split('::')&.first&.to_sym
-
         super([scope, model])
       end
     end

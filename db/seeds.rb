@@ -44,8 +44,9 @@ jaxson = Character.create(
   title: 'Erster Charakter',
   name: 'Mr. Jaxson',
   description: LoremIpsum.lorem_ipsum(words: 25),
-  quote: LoremIpsum.lorem_ipsum(words: 10)
+  quote: LoremIpsum.lorem_ipsum(words: 10),
 )
+
 3.times do
   jaxson.character_perks.create(
     perk: hero_perk
