@@ -3,7 +3,7 @@
 module Backend
   class WelcomeController < Backend::BackendController
     def index
-      authorize(User)
+      controller_authorize(User)
     end
   end
 end

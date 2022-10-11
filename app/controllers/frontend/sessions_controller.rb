@@ -3,11 +3,11 @@
 module Frontend
   class SessionsController < Frontend::FrontendController
     def new
-      authorize(User)
+      controller_authorize(User)
     end
 
     def create
-      authorize(User)
+      controller_authorize(User)
 
       @user = User.find_by(email: params[:email]) # Change to email! also downcase
       if @user&.authenticate(params[:password])
@@ -23,7 +23,7 @@ module Frontend
     end
 
     def destroy
-      authorize(User)
+      controller_authorize(User)
 
       session[:user_id] = nil
       redirect_to frontend_root_path # Landingpage (root_path)

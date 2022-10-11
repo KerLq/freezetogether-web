@@ -2,75 +2,63 @@
 
 module Backend
   class UsersController < Backend::BackendController
-    before_action :set_user, only: %i[show edit update destroy]
-    before_action :permission, only: [:show]
-    # GET /users or /users.json
     def index
+      controller_authorize(User)
+
       @users = User.all
     end
 
-    # GET /users/1 or /users/1.json
-    def show; end
+    def show
+      controller_authorize(user)
+    end
 
-    # GET /users/new
     def new
+      controller_authorize(User)
+
       @user = User.new
     end
 
-    # GET /users/1/edit
-    def edit; end
+    def edit
+      controller_authorize(user)
+    end
 
-    # POST /users or /users.json
     def create
-      @user = User.new(user_params)
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to @user, notice: (I18n.t 'backend.register.success')
+      controller_authorize(User)
+
+      user = User.new(permitted_attributes(User))
+
+      if user.save
+        session[:user_id] = user.id
+        redirect_to new_backend_user_path, flash: { success: t('.success') }
       else
-        redirect_to register_path, notice: (I18n.t 'backend.register.failed')
+        redirect_to new_backend_user_path, flash: { error: t('.failed') }
       end
     end
 
-    # PATCH/PUT /users/1 or /users/1.json
     def update
-      respond_to do |format|
-        if @user.update(user_params)
-          format.html { redirect_to @user, notice: (I18n.t 'backend.user.updated') }
-          format.json { render :show, status: :ok, location: @user }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
+      controller_authorize(user)
+
+      if @user.update(permitted_attributes(user))
+        redirect_to backend_user_path(user), flash: { success: t('.success') }
+      else
+        redirect_to backend_user_path(user), flash: { error: t('.failed') }
       end
     end
 
-    # DELETE /users/1 or /users/1.json
     def destroy
-      @user.destroy
-      respond_to do |format|
-        format.html { redirect_to users_url, notice: (I18n.t 'backend.user.destroyed') }
-        format.json { head :no_content }
+      controller_authorize(user)
+
+      if user.destroy
+        redirect_to backend_users_path, flash: { success: t('.success') }
+      else
+        redirect_to backend_user_path(user), flash: { error: t('.failed') }
       end
     end
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
-
-    def permission
-      redirect_to users_path, notice: (I18n.t 'backend.user.no_permission') if current_user != set_user
-    end
-
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(
-        :username,
-        :email,
-        :password
-      )
+    def user
+      @user = User.find_by(id: params[:id])
     end
   end
 end

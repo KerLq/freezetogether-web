@@ -3,7 +3,7 @@
 module Frontend
   class WelcomeController < Frontend::FrontendController
     def index
-      authorize(User)
+      controller_authorize(User)
 
       @news = News.last(3)
     end

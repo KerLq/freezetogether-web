@@ -3,22 +3,22 @@
 module Frontend
   class UsersController < Frontend::FrontendController
     def show
-      authorize(user)
+      controller_authorize(user)
     end
 
     def new
-      authorize(User)
+      controller_authorize(User)
       @user = User.new
     end
 
     def edit
-      authorize(user)
+      controller_authorize(user)
     end
 
     def create
-      authorize(User)
+      controller_authorize(User)
 
-      user = User.new(permitted_attributes(User))
+      user = User.new(controller_permitted_attributes(User))
       user.avatar.attach(params[:user][:avatar])
 
       if user.save
@@ -30,11 +30,11 @@ module Frontend
     end
 
     def update
-      authorize(user)
+      controller_authorize(user)
 
       user.avatar.attach(params[:user][:avatar]) if params[:user][:avatar]
 
-      if user.update(permitted_attributes(user))
+      if user.update(controller_permitted_attributes(user))
         redirect_to frontend_user_path(user), flash: { success: t('.success') }
       else
         redirect_to frontend_user_path(user), flash: { error: t('.failed') }
@@ -42,7 +42,7 @@ module Frontend
     end
 
     def destroy
-      authorize(user)
+      controller_authorize(user)
 
       user.destroy
 
@@ -50,7 +50,7 @@ module Frontend
     end
 
     def confirm_email
-      authorize(User.find_by(confirm_token: params[:id]))
+      controller_authorize(User.find_by(confirm_token: params[:id]))
 
       user = User.find_by(confirm_token: params[:id])
       if user
@@ -62,7 +62,7 @@ module Frontend
     end
 
     def upload_image
-      authorize(User.find_by(id: params[:user_id]))
+      controller_authorize(User.find_by(id: params[:user_id]))
 
       user  = User.find_by(id: params[:user_id])
       image = params[:user][:avatar]
