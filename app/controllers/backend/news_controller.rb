@@ -54,5 +54,11 @@ module Backend
         redirect_to backend_news_path, flash: { error: t('.error') }
       end
     end
+
+    private
+
+    def news
+      @news ||= News.find_by(id: params[:id])
+    end
   end
 end
