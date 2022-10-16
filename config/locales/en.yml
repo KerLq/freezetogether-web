@@ -1,5 +1,13 @@
 en:
   frontend:
+    header:
+      gameinfo: Gameinfo
+      media: Media
+      news: News
+      leaderboard: Leaderboard
+      help: Help
+      login: Login
+      download: Download
     sessions:
       create:
         confirm_email: 'Please activate your account by following the
