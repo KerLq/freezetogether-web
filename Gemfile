@@ -7,8 +7,8 @@ ruby '3.1.2'
 
 ## Update to 7 ##
 gem 'bcrypt'
-gem 'lorem_ipsum_amet'
 gem 'haml'
+gem 'lorem_ipsum_amet'
 gem 'premailer-rails'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
