@@ -31,6 +31,10 @@ en:
         newsletter: Newsletter
         newsletter_description: Sign up today to receive the latest news, updates and background information by email.
         newsletter_subscribe: Subscribe
+      gameinfo:
+        overline: Are you ready?
+        headline: Freeze it!
+        description: A single player game with story adventure is an ideal game for players who want to experience an exciting and challenging game with a interesting plot. Players will have to use their wits and strategy to defeat the freeze monster and progress through the story. This game is perfect for those who enjoy puzzle and adventure games.
       help:
         overline: Need help?
         headline: Support & FAQ

@@ -3,7 +3,10 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
@@ -48,6 +51,7 @@ body {
   &--slg-display {
     max-width: $slg-display;
   }
+
   &--news {
     max-width: $lg-display - 25em;
   }
@@ -65,7 +69,7 @@ body {
 
     &--intro {
       font-size: 1.25rem;
-      max-width: $md-display;
+      max-width: $sm-display;
       opacity: .8;
       line-height: 1.5;
       margin: 0 auto;
