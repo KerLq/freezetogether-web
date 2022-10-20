@@ -6,15 +6,15 @@ module Frontend
       true
     end
 
-    def spielinfo?
+    def gameinfo?
       true
     end
 
-    def hilfe?
+    def help?
       true
     end
 
-    def bestenliste?
+    def leaderboard?
       true
     end
   end
