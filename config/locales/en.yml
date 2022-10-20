@@ -10,6 +10,13 @@ en:
       help: Help
       login: Login
       download: Download
+    footer:
+      impressum: Impressum
+      legal: Legal
+      updates: Service Updates
+      user_agreement: User Agreement
+      policies: Privacy & Cookie Policy (Your Privacy Rights)
+      cookies: Cookie Preferences
     welcome:
       index:
         overline: The new single player adventure!

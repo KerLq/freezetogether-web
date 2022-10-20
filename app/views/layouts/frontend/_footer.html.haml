@@ -3,12 +3,13 @@
     .footer-weblinks
       %h3 Freeze Links
       %ul.weblinks
-        %li.weblinks__item= link_to 'Startseite', frontend_root_path
-        %li.weblinks__item= link_to 'Spielinfo', '#'
-        %li.weblinks__item= link_to 'Medien', '#'
-        %li.weblinks__item= link_to 'Neuigkeiten', frontend_news_index_path
-        %li.weblinks__item= link_to 'Bestenliste', '#'
-        %li.weblinks__item= link_to 'Hilfe', '#'
+        %li.weblinks__item= link_to t('frontend.header.gameinfo') , '#'
+        %li.weblinks__item= link_to t('frontend.header.media'), '#'
+        %li.weblinks__item= link_to t('frontend.header.news'), frontend_news_index_path
+        %li.weblinks__item= link_to t('frontend.header.leaderboard'), '#'
+        %li.weblinks__item= link_to t('frontend.header.help'), '#'
+        %li.weblinks__item= link_to t('frontend.header.login'), '#'
+        %li.weblinks__item= link_to t('frontend.header.download'), '#'
     .footer-sm
       %ul.social-media-list
         %li.social-media-list__item= link_to image_tag('/assets/icons/instagram.svg'), '#'
@@ -22,11 +23,12 @@
         .footer-copyright
           .footer-copyright__links
             %ul.copyright-links
-              %li.copyright-links__item= link_to 'Rechtliche Hinweise', '#'
-              %li.copyright-links__item= link_to 'Nutzervereinbarung', '#'
-              %li.copyright-links__item= link_to 'Spiel-Updates', '#'
-              %li.copyright-links__item= link_to 'Datenschutz- und Cookie Richtline (deine Datenschutzrechte)', '#'
-              %li.copyright-links__item= link_to 'Cookie Präferenzen', '#'
+              %li.copyright-links__item= link_to t('frontend.footer.impressum'), '#'
+              %li.copyright-links__item= link_to t('frontend.footer.legal'), '#'
+              %li.copyright-links__item= link_to t('frontend.footer.updates'), '#'
+              %li.copyright-links__item= link_to t('frontend.footer.user_agreement'), '#'
+              %li.copyright-links__item= link_to t('frontend.footer.policies'), '#'
+              %li.copyright-links__item= link_to t('frontend.footer.cookies'), '#'
           .footer-copyright__text Copyright &copy; 2022 - Freeze Together.
     .footer-images
       = image_tag('/assets/icons/usk12.png', height: 75 )
