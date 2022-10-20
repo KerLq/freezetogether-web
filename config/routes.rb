@@ -36,9 +36,9 @@ Rails.application.routes.draw do
     resources :achievements, only: %i[index show]
 
     # FRONTEND DESIGNS #
-    get '/spielinfo' => 'welcome#spielinfo'
-    get '/hilfe' => 'welcome#hilfe'
-    get '/bestenliste' => 'welcome#bestenliste'
+    get '/gameinfo' => 'welcome#gameinfo'
+    get '/help' => 'welcome#help'
+    get '/leaderboard' => 'welcome#leaderboard'
 
     resources :sessions
     resources :news

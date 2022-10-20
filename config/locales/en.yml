@@ -31,6 +31,9 @@ en:
         newsletter: Newsletter
         newsletter_description: Sign up today to receive the latest news, updates and background information by email.
         newsletter_subscribe: Subscribe
+    news:
+      index:
+        headline: News
     sessions:
       create:
         confirm_email: 'Please activate your account by following the
