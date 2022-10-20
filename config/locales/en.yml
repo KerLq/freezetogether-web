@@ -31,6 +31,10 @@ en:
         newsletter: Newsletter
         newsletter_description: Sign up today to receive the latest news, updates and background information by email.
         newsletter_subscribe: Subscribe
+      help:
+        overline: Need help?
+        headline: Support & FAQ
+        sidebar_text: If you have a specific request, you are very welcome to contact our support. We will be happy to help you!
     news:
       index:
         headline: News
