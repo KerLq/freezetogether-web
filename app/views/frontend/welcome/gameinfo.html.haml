@@ -1,14 +1,13 @@
 %section#info.section.section--dark
   .container
     .head-text.text-center
-      .head-text__overline Über das Spiel
-      %h2.head-text__headline Freeze Together
-      %p.head-text__description.head-text__description--intro.mt-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus quae illo quos blanditiis quam odit error odio? Error repellendus blanditiis quas eos sint, est non culpa dolores explicabo, deleniti optio.
+      .head-text__overline= t('.overline')
+      %h2.head-text__headline= t('.headline')
+      %p.head-text__description.head-text__description--intro.mt-2= t('.description')
 %section#info.section
   .container
     .head-text.text-center
       .head-text__overline Eine Story
-      %h2.head-text__headline Freeze it
     .story-text
       .story-text__text
         %p
@@ -20,9 +19,6 @@
         %p
           %b Vitae impedit aspernatur ratione!
 %section#info.section.section--no-x-padding
-  .head-text.text-center
-    .head-text__overline Helden & Monster
-    %h2.head-text__headline Charaktere
   .character
     .character__container
       .character__image.character__image--flip

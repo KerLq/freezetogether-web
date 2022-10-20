@@ -18,7 +18,8 @@
   &__text {
     margin-top: .5rem;
 
-    p, img {
+    p,
+    img {
       margin-top: 1rem;
     }
 
@@ -38,7 +39,7 @@
   padding: 2rem;
   color: #fff;
 
-  &:nth-child(2n) {
+  &--dark {
     background: none;
     color: $primary-color;
 
@@ -46,7 +47,7 @@
       flex-flow: row;
     }
 
-    .character__image{
+    .character__image {
       svg {
         margin: 0 !important;
       }
@@ -76,7 +77,9 @@
   }
 
   &__image {
-    img, svg {
+
+    img,
+    svg {
       height: 100%;
       width: 100%;
     }
@@ -133,35 +136,46 @@
 
   &--ice-blue {
     color: #1ca0fa;
+
     svg {
       fill: #1ca0fa;
+
       path {
         stroke: #1ca0fa;
       }
     }
   }
+
   &--slime-green {
     color: #00c51c;
+
     svg {
       fill: #00c51c;
+
       path {
         stroke: #00c51c;
       }
     }
   }
+
   &--darkgreen {
     color: #4d6251;
+
     svg {
       fill: #4d6251;
+
       path {
         stroke: #4d6251;
       }
     }
   }
+
   &--yellow {
     color: #c5a700;
+
     svg {
       fill: #c5a700;
+
       path {
         stroke: #c5a700;
       }
