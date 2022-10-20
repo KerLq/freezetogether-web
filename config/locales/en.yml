@@ -1,4 +1,6 @@
 en:
+  placeholder:
+    email: E-Mail Adress
   frontend:
     header:
       gameinfo: Gameinfo
@@ -8,6 +10,20 @@ en:
       help: Help
       login: Login
       download: Download
+    welcome:
+      index:
+        overline: The new single player adventure!
+        headline: Freeze Together
+        play_now: Play now
+        supported_platforms: Supported Platforms
+        introduction: A story that takes you on a journey...
+        introduction_text: Are you ready for your big adventure?
+        introduction_more: Read more
+        news: News
+        news_description: Stay up-to-date on new features & updates!
+        newsletter: Newsletter
+        newsletter_description: Sign up today to receive the latest news, updates and background information by email.
+        newsletter_subscribe: Subscribe
     sessions:
       create:
         confirm_email: 'Please activate your account by following the
