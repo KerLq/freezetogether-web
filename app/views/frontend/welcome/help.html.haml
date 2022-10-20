@@ -1,8 +1,8 @@
 %section#info.section
   .container
     .head-text.text-center
-      .head-text__overline Need Help?
-      %h2.head-text__headline Kontakt & Hilfe
+      .head-text__overline= t('.overline')
+      %h2.head-text__headline= t('.headline')
     .faq
       .faq__content
         %div
@@ -28,5 +28,5 @@
 
       .faq__sidebar
         = image_tag("icons/faq.png")
-        %p.mt-2 Falls du ein bestimmtes Anliegen hast, kannst du sehr gerne unseren Support kontaktieren. Wir helfen dir gerne weiter!
-        %a.mt-2(href="mailto:support@freeze-together.de") support@freeze-together.de
+        %p.mt-2= t('.sidebar_text')
+        %a.mt-2(href="mailto:support@freeze-together.xyz") support@freeze-together.xyz
