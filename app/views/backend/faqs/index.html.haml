@@ -1,0 +1,6 @@
+- @faqs.group_by(&:category).each do |faqs|
+  %h2= faqs.first
+  %ul
+    - faqs.last.each do |faq|
+      %li= link_to faq.question, backend_faq_path(faq)
+

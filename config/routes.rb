@@ -49,5 +49,6 @@ Rails.application.routes.draw do
     resources :users
     resources :news
     resources :characters
+    resources :faqs
   end
 end
