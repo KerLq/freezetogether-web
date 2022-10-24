@@ -52,3 +52,26 @@ jaxson = Character.create(
     perk: hero_perk
   )
 end
+
+Faq.create(
+  question: 'How can I download Freeze Together?',
+  answer: LoremIpsum.lorem_ipsum(words: 25),
+  category: 'general'
+)
+
+Faq.create(
+  question: 'Is Freeze Together free to play?',
+  answer: LoremIpsum.lorem_ipsum(words: 25),
+  category: 'general'
+)
+
+Faq.create(
+  question: 'Can I play online with my friends?',
+  answer: LoremIpsum.lorem_ipsum(words: 25),
+  category: 'game'
+)
+Faq.create(
+  question: 'How can I save my scores?',
+  answer: LoremIpsum.lorem_ipsum(words: 25),
+  category: 'game'
+)

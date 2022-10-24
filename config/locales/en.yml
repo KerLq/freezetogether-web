@@ -73,6 +73,10 @@ en:
       updated: 'User was successfully updated.'
       destroyed: 'User was successfully destroyed.'
       no_permission: 'No permission!'
+    faq:
+      updated: 'FAQ was successfully updated.'
+      destroyed: 'FAQ was successfully destroyed.'
+      no_permission: 'No permission!'
     achievement:
       created: 'Achievement was successfully created.'
       updated: 'Achievement was successfully updated.'

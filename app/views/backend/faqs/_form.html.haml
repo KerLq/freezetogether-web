@@ -1,0 +1,5 @@
+= form_for [:backend, @faq] do |f|
+    = f.text_field :question, placeholder: "Question"
+    = f.text_field :answer, placeholder: "Answer"
+    = f.select :category, options_for_select(Faq.categories.map {|key, value| [key.titleize, Faq.categories.key(value)]}, @faq.category)
+    = f.submit
