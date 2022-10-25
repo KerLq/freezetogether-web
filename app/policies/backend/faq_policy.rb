@@ -14,6 +14,10 @@ module Backend
       Current.user&.admin?
     end
 
+    def edit?
+      Current.user&.admin?
+    end
+
     def update?
       Current.user&.admin? && record
     end
