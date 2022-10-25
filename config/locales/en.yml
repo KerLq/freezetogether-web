@@ -31,6 +31,7 @@ en:
         newsletter: Newsletter
         newsletter_description: Sign up today to receive the latest news, updates and background information by email.
         newsletter_subscribe: Subscribe
+        show_all: Show all
       gameinfo:
         overline: Are you ready?
         headline: Freeze it!
