@@ -26,7 +26,7 @@
   - Character.all.each do |character|
     .character
       .character__container
-        .character__image.character__image--flip
+        .character__image
           = show_svg character&.image if character&.image&.attached?
         .character__content
           .character__overline= character.title

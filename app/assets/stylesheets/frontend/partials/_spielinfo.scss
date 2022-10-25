@@ -39,7 +39,18 @@
   padding: 2rem;
   color: #fff;
 
-  &--dark {
+  &__image {
+    img,
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  &:nth-child(2n) {
     background: none;
     color: $primary-color;
 
@@ -50,6 +61,20 @@
     .character__image {
       svg {
         margin: 0 !important;
+      }
+      -webkit-transform: unset;
+      transform: unset;
+    }
+
+    .characteristics {
+      color: $primary-color !important;
+
+      svg {
+        fill: $primary-color !important;
+
+        path {
+          stroke: $primary-color !important;
+        }
       }
     }
   }
@@ -74,20 +99,6 @@
 
   &__content {
     max-width: 30rem;
-  }
-
-  &__image {
-
-    img,
-    svg {
-      height: 100%;
-      width: 100%;
-    }
-
-    &--flip {
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-    }
   }
 
   &__content {}
