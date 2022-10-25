@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Faq < ApplicationRecord
-  enum :category, [ :draft, :general, :game ]
+  enum :category, %i[draft general game]
 end
