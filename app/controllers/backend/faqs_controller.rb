@@ -28,7 +28,6 @@ module Backend
       faq = Faq.new(permitted_attributes(Faq))
 
       if faq.save
-        session[:faq_id] = faq.id
         redirect_to backend_faqs_path, flash: { success: t('.success') }
       else
         redirect_to new_backend_faq_path, flash: { error: t('.failed') }
