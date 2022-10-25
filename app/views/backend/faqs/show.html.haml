@@ -2,5 +2,5 @@
   %p= @faq.question
   %p= @faq.answer
   %p= @faq.category
-  %p= link_to 'Edit', edit_backend_faq_path(@faq)
-  %p=# link_to 'Delete', backend_faq_path(@faq), method: :delete
+  %p= button_to 'Edit', edit_backend_faq_path(@faq)
+  %p= button_to 'Delete', backend_faq_path(@faq), method: :delete
