@@ -38,6 +38,8 @@
                 .characteristics__image
                   = show_svg perk&.image if perk&.image&.attached?
                 .characteristics__name= perk.name
+  .button-row
+    = link_to t('.show_all'), "#", class: 'button button--primary'
 
 %section#news.section
   .container
