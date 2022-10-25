@@ -121,6 +121,15 @@
   flex-flow: row;
   font-size: 1.25rem;
   gap: .25em;
+  color: #ffffff;
+
+  svg {
+    fill: #ffffff;
+
+    path {
+      stroke: #ffffff;
+    }
+  }
 
   &__image {
     svg {

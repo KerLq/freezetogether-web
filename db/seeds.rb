@@ -35,24 +35,6 @@ AccomplishedAchievement.create(
   game: spiel
 )
 
-## Characters & Perks
-hero_perk = Perk.create(
-  name: 'Held'
-)
-
-jaxson = Character.create(
-  title: 'Erster Charakter',
-  name: 'Mr. Jaxson',
-  description: LoremIpsum.lorem_ipsum(words: 25),
-  quote: LoremIpsum.lorem_ipsum(words: 10)
-)
-
-3.times do
-  jaxson.character_perks.create(
-    perk: hero_perk
-  )
-end
-
 Faq.create(
   question: 'How can I download Freeze Together?',
   answer: LoremIpsum.lorem_ipsum(words: 25),
@@ -74,4 +56,30 @@ Faq.create(
   question: 'How can I save my scores?',
   answer: LoremIpsum.lorem_ipsum(words: 25),
   category: 'game'
+)
+
+## Characters & Perks
+hero_perk = Perk.create(
+  name: 'Held'
+)
+
+hero_perk.image.attach(
+  io: Rails.root.join('app/assets/images/perks/hero.svg').open,
+  filename: 'hero.svg'
+)
+
+jaxson = Character.create(
+  title: 'sheriff',
+  name: 'Jaxson',
+  description: LoremIpsum.lorem_ipsum(words: 25),
+  quote: LoremIpsum.lorem_ipsum(words: 25)
+)
+
+jaxson.image.attach(
+  io: Rails.root.join('app/assets/images/game/jaxson.svg').open,
+  filename: 'jaxson.svg'
+)
+
+jaxson.character_perks.create(
+  perk: hero_perk
 )
