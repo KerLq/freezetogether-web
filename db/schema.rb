@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_07_115528) do
   create_table "accomplished_achievements", force: :cascade do |t|
     t.integer "achievement_id"
     t.integer "game_id"
@@ -124,6 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_204526) do
     t.string "confirm_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
   end
 
   add_foreign_key "accomplished_achievements", "achievements"
