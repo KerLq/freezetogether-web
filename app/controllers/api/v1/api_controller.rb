@@ -11,7 +11,7 @@ module Api
       end
 
       def not_found
-        render json: { error: 'not_found' }
+        render json: { message: '-1' }
       end
 
       def authorization_token
@@ -25,7 +25,7 @@ module Api
           @decoded     = JsonWebToken.decode(authorization_token)
           Current.user = User.find_by(id: @decoded[:user_id])
         rescue ActiveRecord::RecordNotFound || JWT::VerificationError, JWT::DecodeError => e
-          render json: { errors: e.message }, status: :unauthorized
+          render json: { message: '-1' }, status: :unauthorized
         end
       end
     end

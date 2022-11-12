@@ -7,9 +7,9 @@ module Api
         jwt_blacklist = JwtBlacklist.new(token: authorization_token)
 
         if jwt_blacklist.save
-          render json: '0', status: :ok
+          render json: { message: '0' }, status: :ok
         else
-          render json: '-1', status: :unprocessable_entity
+          render json: { message: '-1' }, status: :unprocessable_entity
         end
       end
     end

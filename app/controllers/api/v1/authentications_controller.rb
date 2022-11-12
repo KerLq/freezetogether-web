@@ -9,24 +9,24 @@ module Api
       def login
         @user = User.find_by(username: params[:username])
         if @user&.authenticate(params[:password])
-          token = JsonWebToken.encode(user_id: @user.id)
+          token = JsonWebToken.encode(user_id: @user.id) # Should be username & password too
           time  = Time.zone.now + 24.hours.to_i
-          debugger
+
           JwtBlacklist.blacklist(@user.token) if @user.token
 
           @user.update(token:)
-          render json: { token: @user.token, exp: time.strftime('%m-%d-%Y %H:%M'),
+          render json: { message: @user.token, exp: time.strftime('%m-%d-%Y %H:%M'),
                          username: @user.username }, status: :ok
         else
-          render json: { error: 'unauthorized' }, status: :unauthorized
+          render json: { message: '-1' }, status: :unauthorized
         end
       end
 
       def validate_token
         if (@user = User.find_by(token: authorization_token))
-          render json: { token: @user.token }, status: :ok
+          render json: { message: '0' }, status: :ok
         else
-          render json: { error: 'unauthorized' }, status: :unauthorized
+          render json: { message: '-1' }, status: :unauthorized
         end
       end
 
