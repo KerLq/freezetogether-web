@@ -1,0 +1,39 @@
+.header {
+  position: relative;
+  max-width: $lg-display;
+  margin: 2rem auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+
+  &__logo {
+    text-decoration: none;
+    font-size: 2rem;
+    color: $accent-color;
+    text-transform: uppercase;
+    font-weight: bolder;
+    span {
+      color: #fff;
+    }
+  }
+
+  &__tohome {
+    display: flex;
+    flex-flow: row;
+    font-size: 1.25rem;
+    color: #fff;
+    gap: .5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    svg {
+      height: .75rem;
+      fill: #fff;
+      max-height: 1rem;
+    }
+  }
+}

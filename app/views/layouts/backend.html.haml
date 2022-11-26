@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= "Admin - Freeze Together"
+    %title= "Das neue Koop-Abenteuer mit deinen Freunden - Freeze Together"
     = stylesheet_link_tag 'backend'
     = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
@@ -12,6 +12,9 @@
     - if content_for(:no_header)
       = yield
     - else
-      = render 'layouts/frontend/flash'
+      = render 'layouts/backend/header'
+      = render 'layouts/backend/navigation'
+      = render 'layouts/backend/flash'
       = yield
-    = javascript_include_tag 'application', media: 'all'
+      = render 'layouts/backend/footer'
+    = javascript_include_tag 'application.js'
