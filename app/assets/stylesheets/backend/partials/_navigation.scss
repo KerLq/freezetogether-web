@@ -1,0 +1,30 @@
+.navigation {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.nav {
+  display: flex;
+  flex-flow: row;
+  font-size: 1.125rem;
+  gap: 1rem;
+
+  &__link {
+    text-decoration: none;
+    opacity: .5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--active {
+      opacity: 1;
+      font-weight: bold;
+    }
+  }
+}
