@@ -39,9 +39,9 @@ module Backend
       controller_authorize(user)
 
       if @user.update(permitted_attributes(user))
-        redirect_to backend_user_path(user), flash: { success: t('.success') }
+        redirect_to edit_backend_user_path(user), flash: { success: t('.success') }
       else
-        redirect_to backend_user_path(user), flash: { error: t('.failed') }
+        redirect_to edit_backend_user_path(user), flash: { error: t('.failed') }
       end
     end
 

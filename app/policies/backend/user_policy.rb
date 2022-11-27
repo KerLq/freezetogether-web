@@ -23,7 +23,7 @@ module Backend
     end
 
     def permitted_attributes
-      %i[username email password description]
+      %i[username email password description avatar]
     end
   end
 end

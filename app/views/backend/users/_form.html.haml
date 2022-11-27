@@ -1,0 +1,17 @@
+= form_for [:backend, @user] do |f|
+  .form__item
+    = f.label :avatar
+    = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg"), height: 100
+    = f.file_field :avatar
+  .form__item
+    = f.label :username
+    = f.text_field :username
+  .form__item
+    = f.label :email
+    = f.text_field :email
+  .form__item
+    = f.label :password
+    = f.password_field :password
+  .form__buttons
+    = f.submit 'Update'
+
