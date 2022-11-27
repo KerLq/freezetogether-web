@@ -1,0 +1,30 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+}
+
+.info-box {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  background: #fff;
+  color: $primary-color;
+  border-radius: .5rem;
+  padding: 2rem;
+  overflow: hidden;
+
+  &__heading {
+    font-size: 1.25rem;
+  }
+
+  &__stats {
+    margin-top: 2rem;
+    font-size: 5rem;
+  }
+
+  &__image {
+    position: absolute;
+    right: 2rem;
+  }
+}

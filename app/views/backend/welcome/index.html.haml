@@ -1,0 +1,16 @@
+.dashboard
+  .info-box
+    .info-box__heading
+      Registrierte User
+    .info-box__stats= User.all.count
+    .info-box__image= image_tag("dashboard/users.png")
+  .info-box
+    .info-box__heading
+      Gestartete Spiele
+    .info-box__stats= Game.all.count
+    .info-box__image= image_tag("dashboard/games.png")
+  .info-box
+    .info-box__heading
+      Erreichte Achievements
+    .info-box__stats= AccomplishedAchievement.all.count
+    .info-box__image= image_tag("dashboard/achievements.png")
