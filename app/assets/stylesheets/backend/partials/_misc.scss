@@ -1,0 +1,25 @@
+.edit {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.relations {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  gap: 1rem;
+  max-width: 15rem;
+
+  &__link {
+    background: #0c0c0c;
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+
+    span {
+      opacity: .75;
+    }
+  }
+}

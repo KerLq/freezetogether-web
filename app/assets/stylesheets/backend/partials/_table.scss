@@ -38,6 +38,7 @@
   .tc {
     &.center {
       text-align: center;
+      justify-content: center;
     }
 
 
@@ -54,8 +55,8 @@
 
     &.edit {
       svg {
-        max-height: 1rem;
-        max-width: 1rem;
+        height: 1rem;
+        width: 1rem;
         fill: $primary-color;
       }
       a {
