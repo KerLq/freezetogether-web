@@ -1,5 +1,7 @@
 = form_for [:backend, @user] do |f|
   .form__item
+    %h4.heading= "#{controller.action_name} #{@user.class.name}"
+  .form__item
     = f.label :avatar
     = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg"), height: 100
     = f.file_field :avatar
@@ -10,8 +12,14 @@
     = f.label :email
     = f.text_field :email
   .form__item
-    = f.label :password
+    = f.label :role
+    = f.select :role, options_for_select(User.roles, selected: User.roles[@user.role])
+  .form__item
+    = f.label 'New Password'
     = f.password_field :password
   .form__buttons
-    = f.submit 'Update'
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Create'
 

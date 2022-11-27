@@ -1,7 +1,8 @@
+= link_to "Back to Users", backend_users_path, class: 'backto'
 .edit
   .form
     .form__content
       = render 'form', user: @user
   .relations
-    = link_to "<span>#{@user.username} ></span> Games".html_safe, "#", class: 'relations__link'
-    = link_to "<span>#{@user.username} ></span> Achievements".html_safe, "#", class: 'relations__link'
+    = link_to "<span>#{@user.username} ➟</span> Games".html_safe, "#", class: 'relations__link'
+    = link_to "<span>#{@user.username} ➟</span> Achievements".html_safe, "#", class: 'relations__link'

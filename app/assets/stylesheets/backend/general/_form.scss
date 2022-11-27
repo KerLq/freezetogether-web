@@ -1,4 +1,4 @@
-input {
+input, select {
   background: none;
   border :none;
   box-shadow: none;
@@ -44,6 +44,11 @@ input {
     &:hover {
       background: rgba(128, 128, 128, 0.05);
     }
+
+    .heading {
+      text-transform: uppercase;
+      font-weight: 900;
+    }
   }
 
   &__buttons {
@@ -51,10 +56,18 @@ input {
     flex-flow: row;
     justify-content: flex-end;
     padding: 2rem;
+    gap: 1rem;
   }
 
   label {
     font-size: 1.25rem;
+  }
+
+  select {
+    background-color: #fff;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 16px;
+    padding: .5rem 1rem;
   }
 
   input {
@@ -70,6 +83,10 @@ input {
       font-weight: bold;
       padding: .5rem 2rem;
       border-radius: 5px;
+
+      &.delete {
+        background: rgb(175, 32, 32);
+      }
     }
   }
 }

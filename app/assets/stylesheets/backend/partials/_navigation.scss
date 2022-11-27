@@ -28,3 +28,13 @@
     }
   }
 }
+
+.backto {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
