@@ -8,11 +8,15 @@
     .tc.center Delete
   - @users.each do |user|
     .table__item
-      .tc= user.id
       .tc.show
-        = link_to backend_user_path(user) do
+        = link_to edit_backend_user_path(user) do
+          = user.id
+      .tc.show
+        = link_to edit_backend_user_path(user) do
           = user.username
-      .tc= user.email
+      .tc.show
+        = link_to edit_backend_user_path(user) do
+          = user.email
       .tc= user.admin? ? 'Admin' : 'Player'
       .tc.center.edit
         = link_to edit_backend_user_path(user) do

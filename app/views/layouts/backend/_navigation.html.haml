@@ -4,7 +4,7 @@
       .navigation__searchbar
         = text_field(:post, :search, size: 20, placeholder: 'Search for Users..')
       %nav.nav
-        = active_link_to "Dashboard", backend_root_path, affinity: false, class: 'nav__link'
+        = active_link_to "Dashboard", backend_root_path, class: 'nav__link', disable_affinity: true
         = active_link_to "Users", backend_users_path, class: 'nav__link'
         = active_link_to "Games", "#", class: 'nav__link'
         = active_link_to "Achievements", "#", class: 'nav__link'
