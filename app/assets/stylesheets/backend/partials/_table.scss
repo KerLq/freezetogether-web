@@ -1,0 +1,89 @@
+.table {
+  display: flex;
+  flex-flow: column;
+  background: rgb(255, 255, 255);
+  color: $primary-color;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__head, &__item {
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+  }
+
+  &__head {
+    background: rgba(0, 0, 0, 0.02);
+    color: #878787;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    box-shadow: 0px 1px 0px rgba(128, 128, 128, 0.1);
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(128, 128, 128, 0.1);
+    }
+
+    &:last-child {
+      box-shadow: none;
+    }
+  }
+
+  .tc {
+    &.center {
+      text-align: center;
+    }
+
+
+    &.show {
+      a {
+        cursor: pointer;
+        color: $primary-color;
+        text-decoration: none;
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+
+    &.edit {
+      svg {
+        max-height: 1rem;
+        max-width: 1rem;
+        fill: $primary-color;
+      }
+      a {
+        &:hover {
+          svg {
+            fill: $accent-color;
+          }
+        }
+      }
+    }
+
+    &.delete {
+      svg {
+        height: 1rem;
+        width: 1rem;
+        fill: $primary-color;
+      }
+      button {
+        background: unset;
+        border: none;
+        padding: 0;
+        margin: 0;
+        &:hover {
+          svg {
+            fill: red;
+          }
+        }
+      }
+    }
+  }
+}

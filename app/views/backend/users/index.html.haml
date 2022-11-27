@@ -1,0 +1,26 @@
+.table
+  .table__head
+    .tc ID
+    .tc Username
+    .tc E-Mail
+    .tc Role
+    .tc.center Edit
+    .tc.center Delete
+  - @users.each do |user|
+    .table__item
+      .tc= user.id
+      .tc.show
+        = link_to backend_user_path(user) do
+          = user.username
+      .tc= user.email
+      .tc= user.admin? ? 'Admin' : 'Player'
+      .tc.center.edit
+        = link_to edit_backend_user_path(user) do
+          %svg{"enable-background" => "new 0 0 220.001 220.001", :space => "preserve", :version => "1.1", :viewbox => "0 0 220 220", :xmlns => "http://www.w3.org/2000/svg"}
+            %polygon{:points => "0 220 59.34 213.86 6.143 160.66"}
+            %path{:d => "m132.02 34.787 53.197 53.197-115.65 115.65-53.198-53.197 115.65-115.65zm80.678 25.715c9.738-9.738 9.742-25.527 0-35.268l-17.93-17.93c-9.738-9.74-25.529-9.738-35.268 0l-17.346 17.347 53.199 53.196 17.345-17.345z"}
+      .tc.center.delete
+        = button_to backend_user_path(user), method: :delete do
+          %svg{"enable-background" => "new 0 0 512 512", :space => "preserve", :version => "1.1", :viewbox => "0 0 512 512", :xmlns => "http://www.w3.org/2000/svg"}
+            %path{:d => "m432 96h-48v-64c0-17.672-14.328-32-32-32h-192c-17.672 0-32 14.328-32 32v64h-48c-17.672 0-32 14.328-32 32v32h416v-32c0-17.672-14.328-32-32-32zm-240 0v-32h128v32h-128z"}
+            %path{:d => "m80 480c0 17.672 14.324 31.996 31.996 31.996h288.01c17.668 0 31.992-14.324 31.992-31.992v-288.01h-352v288zm240-208c0-8.836 7.164-16 16-16s16 7.164 16 16v160c0 8.836-7.164 16-16 16s-16-7.164-16-16v-160zm-80 0c0-8.836 7.164-16 16-16s16 7.164 16 16v160c0 8.836-7.164 16-16 16s-16-7.164-16-16v-160zm-80 0c0-8.836 7.164-16 16-16s16 7.164 16 16v160c0 8.836-7.164 16-16 16s-16-7.164-16-16v-160z"}
