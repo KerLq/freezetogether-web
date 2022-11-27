@@ -14,6 +14,10 @@ module Backend
       Current.user&.admin?
     end
 
+    def destroy?
+      Current.user&.admin? && record
+    end
+
     def update?
       Current.user&.admin? && record
     end
