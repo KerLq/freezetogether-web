@@ -5,7 +5,7 @@ module Backend
     def index
       controller_authorize(News)
 
-      @news = News.all
+      @news = News.all.order('id DESC')
     end
 
     def show
@@ -29,7 +29,7 @@ module Backend
 
       if news.save
         news.cover_image.attach(params[:news][:cover_image])
-        redirect_to backend_news_path(news), flash: { success: t('.success') }
+        redirect_to backend_news_index_path, flash: { success: t('.success') }
       else
         redirect_to new_backend_news_path, flash: { error: t('.failed') }
       end

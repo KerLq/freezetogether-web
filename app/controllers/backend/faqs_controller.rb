@@ -5,7 +5,7 @@ module Backend
     def index
       controller_authorize(Faq)
 
-      @faqs = Faq.all
+      @faqs = Faq.all.order('id DESC')
     end
 
     def show
