@@ -1,9 +1,5 @@
-%section
-  .container
-    = form_for [:backend, @character] do |f|
-      = f.file_field :image
-      = f.text_field :title, placeholder: "Title"
-      = f.text_field :name, placeholder: "Name"
-      = f.text_field :description, placeholder: "Description"
-      = f.text_field :quote, placeholder: "Quote"
-      = f.submit "Create Character", class: 'button button--accent'
+= link_to "Back to Characters", backend_characters_path, class: 'backto'
+.edit
+  .form
+    .form__content
+      = render 'form', character: @character
