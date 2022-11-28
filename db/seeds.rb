@@ -58,16 +58,7 @@ Faq.create(
   category: 'game'
 )
 
-## Characters & Perks
-hero_perk = Perk.create(
-  name: 'Held'
-)
-
-hero_perk.image.attach(
-  io: Rails.root.join('app/assets/images/perks/hero.svg').open,
-  filename: 'hero.svg'
-)
-
+## Characters
 jaxson = Character.create(
   title: 'sheriff',
   name: 'Jaxson',
@@ -78,8 +69,4 @@ jaxson = Character.create(
 jaxson.image.attach(
   io: Rails.root.join('app/assets/images/game/jaxson.svg').open,
   filename: 'jaxson.svg'
-)
-
-jaxson.character_perks.create(
-  perk: hero_perk
 )
