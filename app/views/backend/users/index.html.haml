@@ -9,13 +9,13 @@
   - @users.each do |user|
     .table__item
       .tc.show
-        = link_to edit_backend_user_path(user) do
+        = link_to frontend_user_path(user), target:'_blank' do
           = user.id
       .tc.show
-        = link_to edit_backend_user_path(user) do
+        = link_to frontend_user_path(user), target:'_blank' do
           = user.username
       .tc.show
-        = link_to edit_backend_user_path(user) do
+        = link_to frontend_user_path(user), target:'_blank' do
           = user.email
       .tc= user.admin? ? 'Admin' : 'Player'
       .tc.center.edit
