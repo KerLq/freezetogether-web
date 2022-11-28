@@ -11,12 +11,14 @@
   - @characters.each do |character|
     .table__item
       .tc.show
-        = link_to edit_backend_character_path(character), target:'_blank' do
+        = link_to edit_backend_character_path(character) do
           = character.id
-      .tc= (image_tag (character&.image), height: 100) if character&.image&.attached?
+      .tc.show
+        = link_to edit_backend_character_path(character) do
+          = (image_tag (character&.image), height: 100) if character&.image&.attached?
       .tc= character.title
       .tc.show
-        = link_to edit_backend_character_path(character), target:'_blank' do
+        = link_to edit_backend_character_path(character) do
           = character.name
       .tc.center.edit
         = link_to edit_backend_character_path(character) do
