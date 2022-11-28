@@ -1,0 +1,22 @@
+= form_for [:backend, @news] do |f|
+  .form__item
+    %h4.heading= "#{controller.action_name} #{@news.class.name}"
+  .form__item
+    = f.label :cover_image
+    = (image_tag (@news&.cover_image), height: 100) if @news&.cover_image&.attached?
+    = f.file_field :cover_image
+  .form__item
+    = f.label :title
+    = f.text_field :title
+  .form__item
+    = f.label :description
+    = f.text_field :description
+  .form__item
+    = f.label :content
+    = f.rich_text_area :content
+  .form__buttons
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Publish'
+
