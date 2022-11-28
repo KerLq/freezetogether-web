@@ -39,9 +39,9 @@ module Backend
       controller_authorize(news)
 
       if news.update(permitted_attributes(news))
-        redirect_to backend_news_path(news), flash: { success: t('.success') }
+        redirect_to edit_backend_news_path(news), flash: { success: t('.success') }
       else
-        redirect_to new_backend_news_path, flash: { error: t('.failed') }
+        redirect_to edit_backend_news_path(news), flash: { error: t('.failed') }
       end
     end
 

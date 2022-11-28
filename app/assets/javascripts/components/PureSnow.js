@@ -2,7 +2,7 @@ let snowflakes_count = 200;
 
 // let base_css = ``; // Put your custom base css here
 
-if (typeof total !== 'undefined'){
+if (typeof total !== 'undefined') {
     snowflakes_count = total;
 }
 
@@ -14,7 +14,10 @@ function spawn_snow(snow_density = 200) {
         let board = document.createElement('div');
         board.className = "snowflake";
 
-        document.querySelector('.hero__snow').appendChild(board);
+        let heroSnow = document.querySelector('.hero__snow');
+        if (heroSnow) {
+            heroSnow.appendChild(board);
+        }
     }
 }
 
@@ -29,7 +32,7 @@ function add_css(rule) {
 
 
 // Math
-function random_int(value = 100){
+function random_int(value = 100) {
     return Math.floor(Math.random() * value) + 1;
 }
 
@@ -41,14 +44,14 @@ function random_range(min, max) {
 
 
 // Create style for snowflake
-function spawnSnowCSS(snow_density = 200){
+function spawnSnowCSS(snow_density = 200) {
     let snowflake_name = "snowflake";
     let rule = ``;
-    if (typeof base_css !== 'undefined'){
+    if (typeof base_css !== 'undefined') {
         rule = base_css;
     }
 
-    for(let i = 1; i < snow_density; i++){
+    for (let i = 1; i < snow_density; i++) {
         let random_x = Math.random() * 100; // vw
         let random_offset = random_range(-100000, 100000) * 0.0001; // vw;
         let random_x_end = random_x + random_offset;
@@ -68,7 +71,7 @@ function spawnSnowCSS(snow_density = 200){
         }
 
         @keyframes fall-${i} {
-            ${random_yoyo_time*100}% {
+            ${random_yoyo_time * 100}% {
                 transform: translate(${random_x_end}vw, ${random_yoyo_y}vh) scale(${random_scale});
             }
 
@@ -84,7 +87,7 @@ function spawnSnowCSS(snow_density = 200){
 }
 
 // Load the rules and execute after the DOM loads
-window.onload = function() {
+window.onload = function () {
     spawnSnowCSS(snowflakes_count);
     spawn_snow(snowflakes_count);
 };
