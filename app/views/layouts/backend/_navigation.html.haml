@@ -4,7 +4,7 @@
       %nav.nav
         = active_link_to "Dashboard", backend_root_path, class: 'nav__link', disable_affinity: true
         = active_link_to "Users", backend_users_path, class: 'nav__link'
-        = active_link_to "Games", "#", class: 'nav__link'
+        = active_link_to "Games", backend_games_path, class: 'nav__link'
         = active_link_to "Achievements", backend_achievements_path, class: 'nav__link'
         = active_link_to "Characters", backend_characters_path, class: 'nav__link'
         = active_link_to "FAQs", backend_faqs_path, class: 'nav__link'

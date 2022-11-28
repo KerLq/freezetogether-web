@@ -89,5 +89,9 @@ input, select {
         background: rgb(175, 32, 32);
       }
     }
+
+    &[disabled=disabled] {
+      opacity: .5;
+    }
   }
 }
