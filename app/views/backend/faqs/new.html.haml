@@ -1,3 +1,5 @@
-= render 'form', faq: @faq
-
-
+= link_to "Back to FAQs", backend_faqs_path, class: 'backto'
+.edit
+  .form
+    .form__content
+      = render 'form', faq: @faq

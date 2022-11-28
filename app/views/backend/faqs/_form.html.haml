@@ -1,5 +1,18 @@
 = form_for [:backend, @faq] do |f|
-    = f.text_field :question, placeholder: "Question"
-    = f.text_field :answer, placeholder: "Answer"
+  .form__item
+    %h4.heading= "#{controller.action_name} #{@faq.class.name}"
+  .form__item
+    = f.label :question
+    = f.text_field :question
+  .form__item
+    = f.label :answer
+    %div= f.rich_text_area :answer
+  .form__item
+    = f.label :category
     = f.select :category, options_for_select(Faq.categories.map {|key, value| [key.titleize, Faq.categories.key(value)]}, @faq.category)
-    = f.submit
+  .form__buttons
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Create'
+
