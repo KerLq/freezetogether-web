@@ -51,5 +51,6 @@ Rails.application.routes.draw do
     resources :characters
     resources :faqs
     resources :achievements
+    resources :games
   end
 end

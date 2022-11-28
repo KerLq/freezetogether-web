@@ -1,0 +1,28 @@
+= form_for [:backend, @game] do |f|
+  .form__item
+    %h4.heading= "#{controller.action_name} #{@game.class.name}"
+  .form__item
+    = f.label :id
+    = f.text_field :id, disabled: true
+  .form__item
+    = f.label :user
+    = f.text_field :user, value: @game.user.username, disabled: true
+  .form__item
+    = f.label :score
+    = f.text_field :score
+  .form__item
+    = f.label :coin
+    = f.text_field :coin
+  .form__item
+    = f.label :time
+    = f.text_field :time
+  .form__item
+    = f.label :accomplished_achievements
+    = f.text_field :accomplished_achievements, value: @game.accomplished_achievements.count, disabled: true
+
+  .form__buttons
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Publish'
+
