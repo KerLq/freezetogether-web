@@ -1,0 +1,19 @@
+= form_for [:backend, @achievement] do |f|
+  .form__item
+    %h4.heading= "#{controller.action_name} #{@achievement.class.name}"
+  .form__item
+    = f.label :cover_image
+    = (image_tag (@achievement&.cover_image), height: 100) if @achievement&.cover_image&.attached?
+    = f.file_field :cover_image
+  .form__item
+    = f.label :title
+    = f.text_field :title
+  .form__item
+    = f.label :description
+    %div= f.rich_text_area :description
+  .form__buttons
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Publish'
+
