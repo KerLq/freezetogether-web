@@ -5,6 +5,20 @@
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding: 1rem;
+
+    .button {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 
