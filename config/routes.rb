@@ -50,5 +50,6 @@ Rails.application.routes.draw do
     resources :news
     resources :characters
     resources :faqs
+    resources :achievements
   end
 end
