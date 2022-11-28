@@ -32,12 +32,6 @@
           .character__overline= character.title
           %h3.character__headline= character.name
           .character__description.mt-1= character.quote
-          .character__characteristics.mt-2
-            - character.character_perks.each do |perk|
-              .characteristics
-                .characteristics__image
-                  = show_svg perk&.image if perk&.image&.attached?
-                .characteristics__name= perk.name
   .button-row
     = link_to t('.show_all'), "#", class: 'button button--primary'
 
