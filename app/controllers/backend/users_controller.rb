@@ -29,7 +29,7 @@ module Backend
 
       if user.save
         session[:user_id] = user.id
-        redirect_to new_backend_user_path, flash: { success: t('.success') }
+        redirect_to backend_users_path, flash: { success: t('.success') }
       else
         redirect_to new_backend_user_path, flash: { error: t('.failed') }
       end
@@ -51,7 +51,7 @@ module Backend
       if user.destroy
         redirect_to backend_users_path, flash: { success: t('.success') }
       else
-        redirect_to backend_user_path(user), flash: { error: t('.failed') }
+        redirect_to backend_users_path, flash: { error: t('.failed') }
       end
     end
 

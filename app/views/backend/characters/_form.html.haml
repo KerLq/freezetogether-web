@@ -1,0 +1,25 @@
+= form_for [:backend, @character] do |f|
+  .form__item
+    %h4.heading= "#{controller.action_name} #{@character.class.name}"
+  .form__item
+    = f.label :image
+    = (image_tag (@character&.image), height: 100) if @character&.image&.attached?
+    = f.file_field :image
+  .form__item
+    = f.label :name
+    = f.text_field :name
+  .form__item
+    = f.label :title
+    = f.text_field :title
+  .form__item
+    = f.label :description
+    %div= f.rich_text_area :description
+  .form__item
+    = f.label :quote
+    %div= f.rich_text_area :quote
+  .form__buttons
+    - if controller.action_name == 'edit'
+      = f.submit 'Update'
+    - else
+      = f.submit 'Create'
+

@@ -40,10 +40,19 @@ module Backend
 
       character.avatar.attach(params[:character][:image]) if params[:character][:image]
 
-      if character.update(controller_permitted_attributes(character))
-        redirect_to backend_character_path(character), flash: { success: t('.success') }
+      if character.update(permitted_attributes(character))
+        redirect_to edit_backend_character_path(character), flash: { success: t('.success') }
       else
-        redirect_to backend_character_path(character), flash: { error: t('.failed') }
+        redirect_to edit_backend_character_path(character), flash: { error: t('.failed') }
+      end
+    end
+
+    def destroy
+      controller_authorize(character)
+      if character.destroy
+        redirect_to backend_characters_path, flash: { success: t('.success') }
+      else
+        redirect_to backend_characters_path, flash: { error: t('.failed') }
       end
     end
 
