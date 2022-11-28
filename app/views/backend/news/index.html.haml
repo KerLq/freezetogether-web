@@ -9,10 +9,10 @@
   - @news.each do |news|
     .table__item
       .tc.show
-        = link_to edit_backend_news_path(news) do
+        = link_to frontend_news_path(news), target: '_blank' do
           = news.id
       .tc.show
-        = link_to edit_backend_news_path(news) do
+        = link_to frontend_news_path(news), target: '_blank' do
           = news.title
       .tc= news.created_at
       .tc= news.updated_at
