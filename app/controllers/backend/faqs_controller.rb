@@ -28,7 +28,7 @@ module Backend
       faq = Faq.new(permitted_attributes(Faq))
 
       if faq.save
-        redirect_to backend_faqs_path, flash: { success: t('.success') }
+        redirect_to edit_backend_faq_path(faq), flash: { success: t('.success') }
       else
         redirect_to new_backend_faq_path, flash: { error: t('.failed') }
       end
@@ -38,7 +38,7 @@ module Backend
       controller_authorize(faq)
 
       if @faq.update(permitted_attributes(faq))
-        redirect_to backend_faq_path(faq), flash: { success: t('.success') }
+        redirect_to edit_backend_faq_path(faq), flash: { success: t('.success') }
       else
         redirect_to backend_faq_path(faq), flash: { error: t('.failed') }
       end
