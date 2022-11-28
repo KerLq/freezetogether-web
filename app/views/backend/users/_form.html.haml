@@ -9,8 +9,14 @@
     = f.label :username
     = f.text_field :username
   .form__item
+    = f.label :description
+    = f.text_field :description
+  .form__item
     = f.label :email
     = f.text_field :email
+  .form__item
+    = f.label :email_confirmed
+    = f.check_box :email_confirmed
   .form__item
     = f.label :role
     = f.select :role, options_for_select(User.roles, selected: User.roles[@user.role])
