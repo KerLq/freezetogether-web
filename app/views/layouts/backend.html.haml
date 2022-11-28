@@ -3,6 +3,7 @@
   %head
     %title= "Das neue Koop-Abenteuer mit deinen Freunden - Freeze Together"
     = stylesheet_link_tag 'backend'
+    = stylesheet_link_tag 'https://cdn.skypack.dev/trix/dist/trix.css'
     = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
     = yield :stylesheets
@@ -20,3 +21,6 @@
           = yield
       = render 'layouts/backend/footer'
     = javascript_include_tag 'application.js'
+    %script{:type => "module"}
+      import railsActiontext from 'https://cdn.skypack.dev/@rails/actiontext';
+      import trix from 'https://cdn.skypack.dev/trix';

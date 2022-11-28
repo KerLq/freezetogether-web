@@ -13,7 +13,7 @@
     = f.text_field :description
   .form__item
     = f.label :content
-    = f.rich_text_area :content
+    %div= f.rich_text_area :content
   .form__buttons
     - if controller.action_name == 'edit'
       = f.submit 'Update'
