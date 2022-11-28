@@ -5,7 +5,7 @@ module Backend
     def index
       controller_authorize(Character)
 
-      @characters = Character.all
+      @characters = Character.all.order('id DESC')
     end
 
     def show
