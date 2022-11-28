@@ -49,9 +49,9 @@ module Backend
       controller_authorize(news)
 
       if news.destroy
-        redirect_to backend_news_path, flash: { success: t('.success') }
+        redirect_to backend_news_index_path, flash: { success: t('.success') }
       else
-        redirect_to backend_news_path, flash: { error: t('.error') }
+        redirect_to backend_news_index_path, flash: { error: t('.error') }
       end
     end
 
