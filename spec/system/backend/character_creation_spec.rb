@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'support/login'
 
-RSpec.describe 'character creation', type: :system do
+RSpec.describe 'character creation', type: :system, js: true do
   it 'creates a character' do
     login_user(role: :admin)
 
