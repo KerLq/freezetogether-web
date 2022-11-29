@@ -7,5 +7,7 @@ class Character < ApplicationRecord
   validates :quote, presence: true
   # validates :image, attached: true, content_type: ['image/png', 'image/jpeg', 'image/svg'] ## BUGFIX!
 
+  has_rich_text :description
+  has_rich_text :quote
   has_one_attached :image
 end
