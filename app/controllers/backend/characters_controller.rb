@@ -38,7 +38,7 @@ module Backend
     def update
       controller_authorize(character)
 
-      character.avatar.attach(params[:character][:image]) if params[:character][:image]
+      character.image.attach(params[:character][:image]) if params[:character][:image]
 
       if character.update(permitted_attributes(character))
         redirect_to edit_backend_character_path(character), flash: { success: t('.success') }
