@@ -31,8 +31,8 @@
         .character__content
           .character__overline= character.title
           %h3.character__headline= character.name
-          .character__description.mt-1= h(character.quote.to_s.html_safe)
-  .button-row.mt-4
+          .character__description.mt-1= raw character.quote
+  .button-row
     = link_to t('.show_all'), "#", class: 'button button--primary'
 
 %section#news.section
