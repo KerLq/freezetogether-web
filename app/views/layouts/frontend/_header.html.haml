@@ -5,7 +5,6 @@
       = link_to (image_tag('/assets/logos/logo-text.svg')), frontend_root_path, class: 'main-nav__logo'
       %ul.nav-list
         %li.nav-list__item.nav-list__item--selected= link_to t('.gameinfo'), frontend_gameinfo_path
-        %li.nav-list__item= link_to t('.media'), "#"
         %li.nav-list__item= link_to t('.news'), frontend_news_index_path
         %li.nav-list__item= link_to t('.leaderboard'), frontend_leaderboard_path
         %li.nav-list__item= link_to t('.help'), frontend_help_path
