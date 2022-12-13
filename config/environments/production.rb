@@ -110,7 +110,7 @@ Rails.application.configure do
     address: 'smtp-relay.sendinblue.com',
     port: 587,
     user_name: 'dogus92009@live.de',
-    password: 'EnWOhC8Rm0Y3xMXf',
+    password: Rails.application.credentials.smtp[:password],
     authentication: 'plain',
     domain: 'freeze-together.xyz',
     enable_starttls_auto: true
