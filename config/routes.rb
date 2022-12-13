@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if ENV['MAILER_DELIVERY_METHOD'] != 'smtp'
   get '/login', to: 'frontend/sessions#new'
   post '/login', to: 'frontend/sessions#create'
   get '/register', to: 'frontend/users#new'

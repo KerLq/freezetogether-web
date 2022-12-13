@@ -63,6 +63,7 @@ group :development, :test do
   gem 'erb_lint'
   gem 'factory_bot_rails'
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'main'
+  gem 'letter_opener_web'
   gem 'pg'
   gem 'rspec-rails', '>= 3.9.0'
   gem 'rubocop'

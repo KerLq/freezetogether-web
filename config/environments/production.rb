@@ -99,6 +99,23 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # SMTP settings
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method       = :smtp
+  config.action_mailer.default_url_options   = { host: 'freeze-together.xyz' }
+  config.action_mailer.perform_deliveries    = true
+
+  # SMTP settings
+  config.action_mailer.smtp_settings = {
+    address: 'smtp-relay.sendinblue.com',
+    port: 587,
+    user_name: 'dogus92009@live.de',
+    password: 'EnWOhC8Rm0Y3xMXf',
+    authentication: 'plain',
+    domain: 'freeze-together.xyz',
+    enable_starttls_auto: true
+  }
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
