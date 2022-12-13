@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UserMailer < ApplicationMailer
-  default from: 'freezetogethergame@gmail.com'
+  default from: 'no-reply@freeze-together.xyz'
 
   def registration_confirmation(user)
     @user = user

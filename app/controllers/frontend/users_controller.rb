@@ -18,7 +18,7 @@ module Frontend
     def create
       controller_authorize(User)
 
-      user = User.new(controller_permitted_attributes(User))
+      user = User.new(permitted_attributes(User))
       user.avatar.attach(params[:user][:avatar])
 
       if user.save
