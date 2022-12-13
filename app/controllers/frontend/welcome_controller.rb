@@ -12,6 +12,30 @@ module Frontend
       controller_authorize(User)
     end
 
+    def imprint
+      controller_authorize(User)
+    end
+
+    def legacy
+      controller_authorize(User)
+    end
+
+    def updates
+      controller_authorize(User)
+    end
+
+    def user_agreement
+      controller_authorize(User)
+    end
+
+    def privacy
+      controller_authorize(User)
+    end
+
+    def download
+      controller_authorize(User)
+    end
+
     def help
       controller_authorize(User)
     end
