@@ -1,0 +1,101 @@
+de:
+  placeholder:
+    email: E-Mail Adresse
+  layouts:
+    frontend:
+      header:
+        gameinfo: Spielinfo
+        media: Medien
+        news: Neuigkeiten
+        leaderboard: Leaderboard
+        help: Hilfe
+        login: Login
+        download: Download
+  frontend:
+    footer:
+      impressum: Impressum
+      legal: Rechtliche Hinweise
+      updates: Service Updates
+      user_agreement: Nutzervereinbarung
+      policies: Datenschutz- und Cookie-Richtlinie (deine Datenschutzrechte)
+      cookies: Cookie Einstellungen
+    welcome:
+      index:
+        overline: Das neue Singleplayer-Abenteuer!
+        headline: Freeze Together
+        play_now: Jetzt spielen
+        supported_platforms: Unterstützte Platformen
+        introduction: Eine Story, die dich auf eine Reise mitnimmt...
+        introduction_text: Bist du bereit für ein großes Abenteuer?
+        introduction_more: Mehr lesen
+        news: Neuigkeiten
+        news_description: Bleiben Sie auf dem Laufenden über neue Funktionen und Updates!
+        newsletter: Newsletter
+        newsletter_description: Melden Sie sich noch heute an, um die neuesten Nachrichten, Aktualisierungen und Hintergrundinformationen per E-Mail zu erhalten.
+        newsletter_subscribe: Abonnieren
+        show_all: Alle anzeigen
+      gameinfo:
+        overline: Bist du bereit?
+        headline: Freeze it!
+        description: Ein Einzelspielerspiel mit Story-Abenteuer ist ein ideales Spiel für Spieler, die ein spannendes und herausforderndes Spiel mit einer interessanten Handlung erleben wollen. Die Spieler müssen ihren Verstand und ihre Strategie einsetzen, um die Gegner zu besiegen und in der Geschichte voranzukommen. Dieses Spiel ist perfekt für alle, die Rätsel- und Abenteuerspiele mögen.
+      help:
+        overline: Du brauchst Hilfe?
+        headline: Support & FAQ
+        sidebar_text: Wenn du eine spezielle Anfrage hast, kansnt du dich gerne an unseren Support wenden. Wir werden dir gerne helfen!
+    news:
+      index:
+        headline: Neuigkeiten
+    sessions:
+      create:
+        confirm_email: 'Bitte aktiviere dein Konto, indem du die Anweisungen in der Bestätigungs-E-Mail befolgst um fortzufahren.'
+        failed: 'Ungültiger Login!'
+        success: 'Erfolgreich eingeloggt!'
+    user:
+      create:
+        success: Erfolgreich registriert! Bitte bestätige deine Registrierung in deinem E-Mail-Postfach.
+        failed: Registrierung fehlgeschalgen.
+      update:
+        success: Erfolgreich aktualisiert!
+        failed: Aktualisierung fehlgeschlagen.
+      confirm_email:
+        success: Verifizierung erfolgreich abgeschlossen.
+        failed: Verifizierung fehlgeschlagen.
+
+  backend:
+    login:
+      invalid: 'Invalid Login!'
+    register:
+      success: 'Successfully registered!'
+      failed: 'Registration failed!'
+    news:
+      created: 'News was successfully created.'
+      updated: 'News was successfully updated.'
+      destroyed: 'News was successfully destroyed.'
+    user:
+      updated: 'User was successfully updated.'
+      destroyed: 'User was successfully destroyed.'
+      no_permission: 'No permission!'
+    faqs:
+      create:
+        success: 'Successfully created!'
+        failed: 'Creation failed!'
+      update:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+      destroy:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+    achievement:
+      created: 'Achievement was successfully created.'
+      updated: 'Achievement was successfully updated.'
+      destroyed: 'Achievement was successfully destroyed.'
+    characters:
+      create:
+        success: 'Successfully created!'
+        failed: 'Creation failed!'
+      update:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+  mailer:
+    register:
+      subject: 'Registration Confirmation'

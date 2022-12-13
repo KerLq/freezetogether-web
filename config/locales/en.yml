@@ -1,15 +1,17 @@
 en:
   placeholder:
     email: E-Mail Adress
+  layouts:
+    frontend:
+      header:
+        gameinfo: Gameinfo
+        media: Media
+        news: News
+        leaderboard: Leaderboard
+        help: Help
+        login: Login
+        download: Download
   frontend:
-    header:
-      gameinfo: Gameinfo
-      media: Media
-      news: News
-      leaderboard: Leaderboard
-      help: Help
-      login: Login
-      download: Download
     footer:
       impressum: Impressum
       legal: Legal
