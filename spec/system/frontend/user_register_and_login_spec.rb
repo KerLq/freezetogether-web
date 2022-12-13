@@ -25,6 +25,6 @@ RSpec.describe 'user register and login', type: :system do
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password
     click_button 'Login'
-    expect(page).to have_text('Successfully logged in!')
+    expect(page).to have_content I18n.t('frontend.sessions.create.success')
   end
 end

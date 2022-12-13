@@ -17,7 +17,7 @@ RSpec.describe 'character creation', type: :system, js: true do
 
     click_button 'Create'
 
-    expect(page).to have_text('Successfully created!')
+    expect(page).to have_content I18n.t('backend.characters.create.success')
     expect(page).to have_text('Ben o. Spencer')
   end
 end
