@@ -9,7 +9,7 @@ module Frontend
     def create
       controller_authorize(User)
 
-      @user = User.find_by(email: params[:email]) # Change to email! also downcase
+      @user = User.find_by("lower(email) = ?", params[:email].downcase)
       if @user&.authenticate(params[:password])
         if @user.email_confirmed
           session[:user_id] = @user.id
