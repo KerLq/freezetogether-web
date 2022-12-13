@@ -35,10 +35,16 @@ Rails.application.routes.draw do
     resources :scores, only: %i[index show], path: '/leaderboards'
     resources :achievements, only: %i[index show]
 
-    # FRONTEND DESIGNS #
     get '/gameinfo' => 'welcome#gameinfo'
+    get '/download' => 'welcome#download'
     get '/help' => 'welcome#help'
     get '/leaderboard' => 'welcome#leaderboard'
+
+    get '/imprint' => 'welcome#imprint'
+    get '/privacy' => 'welcome#privacy'
+    get '/legacy' => 'welcome#legacy'
+    get '/updates' => 'welcome#updates'
+    get '/user-agreement' => 'welcome#user_agreement'
 
     resources :sessions
     resources :news
