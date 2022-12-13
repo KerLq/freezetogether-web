@@ -20,7 +20,7 @@
         %h4= t('.introduction')
         %p.head-text__description= t('.introduction_text')
       .introduction__buttons
-        = link_to t('.introduction_more'), "#", class: 'button button--primary'
+        = link_to t('.introduction_more'), frontend_gameinfo_path, class: 'button button--primary'
 
 %section#first-char.section.section--no-x-padding
   - Character.all.each do |character|
@@ -32,7 +32,7 @@
           .character__overline= character.title
           %h3.character__headline= character.name
           .character__description.mt-1= character.quote.to_s.html_safe
-  .button-row
+  .button-row.mt-4
     = link_to t('.show_all'), "#", class: 'button button--primary'
 
 %section#news.section
