@@ -10,6 +10,7 @@ de:
         leaderboard: Leaderboard
         help: Hilfe
         login: Login
+        logout: Ausloggen
         download: Download
   frontend:
     footer:

@@ -23,6 +23,23 @@
     }
   }
 
+  &--avatar {
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+    background: white;
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid white;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
   &--login {
     font-weight: bold;
     background: none;
