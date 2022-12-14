@@ -11,7 +11,7 @@ module Frontend
     def show
       controller_authorize(news)
 
-      @other_news = News.limit(3).order('RANDOM()')
+      @other_news = News.where.not(id: news).limit(3).order('RANDOM()')
     end
 
     private
