@@ -39,6 +39,9 @@
       top: 0;
       left: 0;
       transition: 250ms ease-in-out;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
 
     &:hover {
