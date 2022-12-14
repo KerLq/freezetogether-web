@@ -1,9 +1,11 @@
 .news-cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
+
   * {
-    flex-basis: calc(100% / 3 - 1em);
+    flex-basis: calc(100% / 3 - 4em);
   }
   &--njc {
     justify-content: unset;
@@ -18,7 +20,7 @@
 }
 
 .news-card {
-  height: 20em;
+  height: 18em;
   width: 100%;
 
   &__image {

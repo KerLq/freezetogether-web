@@ -14,7 +14,7 @@
           = faq.id
       .tc.show
         = link_to edit_backend_faq_path(faq) do
-          = faq.question
+          = h(raw faq.question)
       .tc= faq.category
       .tc.center.edit
         = link_to edit_backend_faq_path(faq) do
