@@ -12,7 +12,10 @@
           = f.label :tos, class: 'checkbox' do
             = f.check_box :tos
             .checkmark
-            .description Ich habe die Nutzungsbedingungen gelesen und akzeptiere sie.
+            .description
+              Ich habe die
+              = link_to 'Nutzungsbedingungen', frontend_user_agreement_path, target: '_blank'
+              gelesen und akzeptiere sie.
         = f.submit "Kostenlos registrieren", class: 'button button--accent'
       .login-register__caption
         Bereits registriert?
