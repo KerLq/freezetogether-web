@@ -33,7 +33,7 @@
           %h3.character__headline= character.name
           .character__description.mt-1= h(raw character.quote)
   .button-row
-    = link_to t('.show_all'), "#", class: 'button button--primary'
+    = link_to t('.show_all'), frontend_gameinfo_path(anchor: 'characters'), class: 'button button--primary mt-4'
 
 %section#news.section
   .container
