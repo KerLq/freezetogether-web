@@ -11,6 +11,10 @@ module Frontend
       # user.private?
     end
 
+    def confirm_email?
+      true
+    end
+
     def update?
       user == record
     end
