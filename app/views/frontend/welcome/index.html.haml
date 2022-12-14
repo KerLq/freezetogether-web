@@ -23,7 +23,7 @@
         = link_to t('.introduction_more'), frontend_gameinfo_path, class: 'button button--primary'
 
 %section#first-char.section.section--no-x-padding
-  - Character.all.each do |character|
+  - Character.all.limit(3).each do |character|
     .character
       .character__container
         .character__image
