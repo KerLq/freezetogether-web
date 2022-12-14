@@ -12,7 +12,7 @@
               .faq__question
                 %details
                   %summary= faq.question
-                  %p.content= faq.answer
+                  %p.content= h(raw faq.answer)
       .faq__sidebar
         = image_tag("icons/faq.png")
         %p.mt-2= t('.sidebar_text')
