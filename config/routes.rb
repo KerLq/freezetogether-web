@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       post '/auth/login', to: 'authentications#login'
       post '/auth/validate_token', to: 'authentications#validate_token'
       post '/token/revoke', to: 'jwt_blacklists#create'
-      post 'game/upload', to: 'games#upload'
+      post '/game/upload', to: 'games#upload'
 
       get '/users/me', to: 'users#me'
     end

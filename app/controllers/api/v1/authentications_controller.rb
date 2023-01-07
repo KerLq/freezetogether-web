@@ -29,12 +29,6 @@ module Api
           render json: { message: '-1' }, status: :unauthorized
         end
       end
-
-      private
-
-      def login_params
-        params.permit(:username, :email, :password)
-      end
     end
   end
 end
