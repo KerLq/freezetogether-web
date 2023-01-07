@@ -19,9 +19,7 @@ module Api
 
         Current.user = User.find_by(token: authorization_token)
 
-        unless Current.user
-          render json: { message: '-1' }, status: :unauthorized
-        end
+        render json: { message: '-1' }, status: :unauthorized unless Current.user
       end
     end
   end
