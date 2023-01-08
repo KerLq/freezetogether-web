@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Frontend
   class ResetPasswordsController < Frontend::FrontendController
     def new
@@ -13,7 +15,6 @@ module Frontend
         user.generate_reset_password_token
         UserMailer.reset_password_link(user).deliver!
       end
-
 
       respond_to do |format|
         format.html { render 'frontend/reset_passwords/successful' }

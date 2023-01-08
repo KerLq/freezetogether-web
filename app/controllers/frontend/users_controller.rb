@@ -63,14 +63,15 @@ module Frontend
       controller_authorize(User.find_by(reset_password_token: params[:id]))
 
       @user = User.find_by(reset_password_token: params[:id])
-      
-      if request.post?
-        if user.update(permitted_attributes(user))
-          user.update_attribute(:reset_password_token, nil)
-          redirect_to login_path, flash: { success: t('.success') }
-        else
-          redirect_to login_path, flash: { success: t('.error') } # Das Passwort konnte leider nicht zurückgesetzt werden, bitte sende eine E-Mail an: support@freezetogether.com 
-        end 
+
+      return unless request.post?
+
+      if user.update(permitted_attributes(user))
+        user.update_attribute(:reset_password_token, nil)
+        redirect_to login_path, flash: { success: t('.success') }
+      else
+        redirect_to login_path, flash: { success: t('.error') } # Das Passwort konnte leider nicht zurückgesetzt werden,
+        # bitte sende eine E-Mail an: support@freezetogether.com
       end
     end
 
