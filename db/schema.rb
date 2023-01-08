@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_195404) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_08_145112) do
   create_table "accomplished_achievements", force: :cascade do |t|
     t.integer "achievement_id"
     t.integer "game_id"
@@ -118,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_195404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.string "reset_password_token"
   end
 
   add_foreign_key "accomplished_achievements", "achievements"

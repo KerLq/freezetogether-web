@@ -21,11 +21,17 @@ class User < ApplicationRecord
     save!(validate: false)
   end
 
+  def generate_reset_password_token
+    self.reset_password_token = SecureRandom.urlsafe_base64.to_s
+    save!(validate: false)
+  end
+
   private
 
   def confirmation_token
-    self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s
   end
+
 
   def downcase_email
     email.downcase!
