@@ -7,4 +7,9 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: user.email, subject: (I18n.t 'mailer.register.subject'))
   end
+
+  def reset_password_link(user)
+    @user = user
+    mail(to: user.email, subject: (I18n.t 'mailer.reset_password.subject'))
+  end
 end

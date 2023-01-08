@@ -32,9 +32,7 @@ module Frontend
     def update
       controller_authorize(user)
 
-      user.avatar.attach(params[:user][:avatar]) if params[:user][:avatar]
-
-      if user.update(controller_permitted_attributes(user))
+      if user.update(permitted_attributes(user))
         redirect_to frontend_user_path(user), flash: { success: t('.success') }
       else
         redirect_to frontend_user_path(user), flash: { error: t('.failed') }
@@ -58,6 +56,21 @@ module Frontend
         redirect_to login_path, flash: { success: t('.success') } # Render special view for activation page
       else
         redirect_to frontend_root_path, flash: { error: t('.failed') }
+      end
+    end
+
+    def reset_password
+      controller_authorize(User.find_by(reset_password_token: params[:id]))
+
+      @user = User.find_by(reset_password_token: params[:id])
+      
+      if request.post?
+        if user.update(permitted_attributes(user))
+          user.update_attribute(:reset_password_token, nil)
+          redirect_to login_path, flash: { success: t('.success') }
+        else
+          redirect_to login_path, flash: { success: t('.error') } # Das Passwort konnte leider nicht zurückgesetzt werden, bitte sende eine E-Mail an: support@freezetogether.com 
+        end 
       end
     end
 

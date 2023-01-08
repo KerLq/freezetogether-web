@@ -32,10 +32,16 @@ Rails.application.routes.draw do
       end
       member do
         get :confirm_email
+        get :reset_password
+        post :reset_password
       end
       get '/upload-image', to: 'users#upload_image'
       post '/upload-image', to: 'users#upload_image'
     end
+
+    get '/reset_password', to: 'reset_passwords#new'
+    post '/reset_password', to: 'reset_passwords#create_reset_password_link'
+
     resources :scores, only: %i[index show], path: '/leaderboards'
     resources :achievements, only: %i[index show]
 

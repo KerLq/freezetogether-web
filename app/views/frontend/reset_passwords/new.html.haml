@@ -1,0 +1,9 @@
+%section
+  .container
+    .login-register
+      .head-text.text-center
+        %h2.head-text__headline Freeze Passwort vergessen
+        %p.head-text__description Das neue Koop-Abenteuer mit deinen Freunden!
+      = form_with url: frontend_reset_password_path, class: 'login-form', remote: true do |f|
+        = f.text_field :email, placeholder: 'E-Mail-Adresse'
+        = f.submit "Passwort zurücksetzen", class: 'button button--accent'

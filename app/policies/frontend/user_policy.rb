@@ -23,12 +23,20 @@ module Frontend
       user == record
     end
 
+    def reset_password?
+      record.present?
+    end
+
     def permitted_attributes
       %i[username email password description]
     end
 
     def permitted_attributes_for_create
       %i[username email password]
+    end
+
+    def permitted_attributes_for_reset_password
+      %i[password]
     end
   end
 end

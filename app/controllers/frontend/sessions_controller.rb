@@ -15,6 +15,7 @@ module Frontend
           session[:user_id] = @user.id
           redirect_to frontend_user_path(@user), flash: { success: t('.success') }
         else
+          UserMailer.registration_confirmation(@user).deliver!
           redirect_to login_path, flash: { error: t('.confirm_email') }
         end
       else

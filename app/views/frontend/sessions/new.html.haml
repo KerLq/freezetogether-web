@@ -12,6 +12,7 @@
             = f.check_box :remember_me
             .checkmark
             .description Angemeldet bleiben
+          = link_to 'Passwort vergessen', frontend_reset_password_path
           =# link_to "Passwort vergessen?", "#"
         = f.submit "Login", class: 'button button--accent'
       .login-register__caption
