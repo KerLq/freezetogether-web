@@ -32,7 +32,6 @@ class User < ApplicationRecord
     self.confirm_token = SecureRandom.urlsafe_base64.to_s
   end
 
-
   def downcase_email
     email.downcase!
   end
