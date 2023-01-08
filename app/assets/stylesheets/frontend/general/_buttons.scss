@@ -103,4 +103,8 @@
     border: 1px solid $accent-color;
     color: $accent-color;
   }
+
+  &--w-full {
+    width: 100%;
+  }
 }
