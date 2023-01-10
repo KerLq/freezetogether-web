@@ -32,8 +32,9 @@ module Frontend
       controller_authorize(User)
     end
 
-    def download
+    def download_game
       controller_authorize(User)
+      send_file "#{Rails.root}/app/assets/download/example.exe", type: "application/exe", x_sendfile: true
     end
 
     def help
