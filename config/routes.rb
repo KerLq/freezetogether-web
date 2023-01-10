@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'frontend/sessions#destroy'
   post '/logout', to: 'frontend/sessions#destroy'
 
-  get 'download_game', to: "frontend/welcome#download_game"
+  get 'download_game', to: 'frontend/welcome#download_game'
 
   namespace :api do
     namespace :v1 do
