@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'frontend/sessions#destroy'
   post '/logout', to: 'frontend/sessions#destroy'
 
+  get 'download_game', to: "frontend/welcome#download_game"
+
   namespace :api do
     namespace :v1 do
       post '/auth/login', to: 'authentications#login'
@@ -38,7 +40,6 @@ Rails.application.routes.draw do
     resources :achievements, only: %i[index show]
 
     get '/gameinfo' => 'welcome#gameinfo'
-    get '/download' => 'welcome#download'
     get '/help' => 'welcome#help'
     get '/leaderboard' => 'welcome#leaderboard'
 
