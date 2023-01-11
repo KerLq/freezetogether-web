@@ -12,7 +12,12 @@ module Frontend
       @user = User.find_by('lower(email) = ?', params[:email].downcase)
       if @user&.authenticate(params[:password])
         if @user.email_confirmed
-          session[:user_id] = @user.id
+          if params[:remember_me].to_i == 1
+            cookies.permanent[:auth_token] = @user.id
+          else
+            session[:user_id] = @user.id
+          end
+
           redirect_to frontend_user_path(@user), flash: { success: t('.success') }
         else
           UserMailer.registration_confirmation(@user).deliver!

@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     browser_lang = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first&.to_sym
 
     I18n.locale = browser_lang || I18n.default_locale if I18n.available_locales.include?(browser_lang)
-    next unless session[:user_id]
+    next unless cookies[:auth_token] || session[:user_id]
 
-    Current.user = User.find_by(id: session[:user_id])
+    Current.user = User.find_by(id: (cookies[:auth_token] || session[:user_id]))
   end
 
   def user_not_authorized
