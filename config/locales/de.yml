@@ -62,7 +62,9 @@ de:
       confirm_email:
         success: Verifizierung erfolgreich abgeschlossen.
         failed: Verifizierung fehlgeschlagen.
-
+      reset_password:
+        success: Dein Passwort wurde erfolgreich zurückgesetzt.
+        failed: Das Passwort ist zu kurz! Es soll aus mindestens 8 Zeichen bestehen
   backend:
     login:
       invalid: 'Invalid Login!'

@@ -6,6 +6,7 @@ de:
           attributes:
             username:
               blank: Bitte trage einen Benutzernamen ein.
+              too_long: Dein Benutzername ist zu lang.
             tos:
               blank: Du musst die Terms of Services akzeptieren.
             email:

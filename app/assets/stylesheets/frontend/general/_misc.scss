@@ -127,3 +127,20 @@
     height: 100%;
   }
 }
+
+.flash {
+  padding: 1rem;
+
+  &__message {
+    margin-left: 13rem;
+    color: white;
+  }
+
+  &--green {
+    background: green;
+  }
+
+  &--red {
+    background: red;
+  }
+}
