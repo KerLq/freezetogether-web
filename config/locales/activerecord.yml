@@ -1,0 +1,16 @@
+de:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: Bitte trage einen Benutzernamen ein.
+            tos:
+              blank: Du musst die Terms of Services akzeptieren.
+            email:
+              taken: Die E-Mail existiert bereits!
+              invalid: Die E-Mail ist nicht valide!
+              blank: Bitte trage eine E-Mail Adresse ein!
+            password:
+              too_short: Das Passwort ist zu kurz! Es soll aus mindestens 8 Zeichen bestehen

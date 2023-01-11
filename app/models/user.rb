@@ -2,18 +2,19 @@
 
 class User < ApplicationRecord
   has_secure_password
-  validates :username, length: { maximum: 16 } # Entferne Sonderzeichen und ggf. chinesische Schriftzeichen entfernen
-  # validates_length_of :password, minimum: 8 # Groß- und Kleinbuchstaben ggf. + Sonderzeichen
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  before_save :downcase_email
-  before_create :confirmation_token, :downcase_email
-  # validates :username, presence: true, uniqueness: true
-  # validates :email, presence: true, uniqueness: true
-  enum role: { standard: 0, admin: 1 }
 
-  has_many :games, dependent: :delete_all
-  has_many :accomplished_achievements, through: :games
-  has_one_attached :avatar
+  has_many :games, dependent: :destroy
+  has_many :accomplished_achievements, through: :games, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
+
+  before_create :confirmation_token, :downcase_email
+
+  validates :username, presence: true, uniqueness: true, length: { maximum: 16 }
+  validate :validate_email
+  validates :password, length: { minimum: 8 }
+  validates :tos, presence: true
+
+  enum role: { standard: 0, admin: 1 }
 
   def email_activate
     self.email_confirmed = true
@@ -28,11 +29,23 @@ class User < ApplicationRecord
 
   private
 
+  def validate_email
+    return if email.present? && email =~ URI::MailTo::EMAIL_REGEXP
+
+    if email.blank? && email != ~URI::MailTo::EMAIL_REGEXP
+      errors.add(:email, :blank)
+    elsif email.present? && email != ~URI::MailTo::EMAIL_REGEXP
+      errors.add(:email, :invalid)
+    end
+  end
+
   def confirmation_token
     self.confirm_token = SecureRandom.urlsafe_base64.to_s
   end
 
   def downcase_email
+    return if email.blank?
+
     email.downcase!
   end
 end

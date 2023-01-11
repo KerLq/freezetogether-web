@@ -52,7 +52,7 @@ de:
         confirm_email: 'Bitte aktiviere dein Konto, indem du die Anweisungen in der Bestätigungs-E-Mail befolgst um fortzufahren.'
         failed: 'Ungültiger Login!'
         success: 'Erfolgreich eingeloggt!'
-    user:
+    users:
       create:
         success: Erfolgreich registriert! Bitte bestätige deine Registrierung in deinem E-Mail-Postfach.
         failed: Registrierung fehlgeschalgen.
