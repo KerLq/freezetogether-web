@@ -11,6 +11,9 @@
   .form__item
     = f.label :description
     %div= f.rich_text_area :description
+  .form__item
+    = f.label :scores
+    = f.text_field :scores
   .form__buttons
     - if controller.action_name == 'edit'
       = f.submit 'Update'

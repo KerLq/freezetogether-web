@@ -23,7 +23,7 @@ module Backend
     end
 
     def permitted_attributes
-      %i[title description cover_image]
+      %i[title description scores cover_image]
     end
   end
 end

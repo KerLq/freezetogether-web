@@ -7,15 +7,15 @@ module Api
         json_decoded = JSON.parse(params[:game])
 
         achievements = json_decoded['game']['achievements'].collect do |achievement|
-          Achievement.find_by(title: achievement['title'])
+          Achievement.find_by(title: achievement['title'], scores: achievement['scores'])
         end
 
         coins        = json_decoded['game']['coins'].to_i
         score        = json_decoded['game']['score'].to_i
-
+        time         = json_decoded['game']['time']
         game = Current.user.games.build(score:, coin: coins) # Rename coin column to 'coins'
 
-        achievements.each do |achievement|
+        achievements.each do |achievement, scores|
           game.accomplished_achievements.build(achievement:)
         end
 

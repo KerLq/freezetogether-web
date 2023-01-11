@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_08_145112) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_221611) do
   create_table "accomplished_achievements", force: :cascade do |t|
     t.integer "achievement_id"
     t.integer "game_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_08_145112) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "scores"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
