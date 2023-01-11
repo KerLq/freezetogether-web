@@ -18,7 +18,7 @@ RSpec.describe 'user register and login', type: :system do
   end
 
   it 'logs in a existing user' do
-    user = create(:user, password: 'ben', email_confirmed: true)
+    user = create(:user, password: 'benbenspencerbruv', email_confirmed: true, tos: true)
 
     visit login_path
 
