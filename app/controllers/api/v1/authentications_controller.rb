@@ -9,7 +9,7 @@ module Api
       def login
         @user = User.find_by(username: params[:username])
         if @user&.authenticate(params[:password])
-          token = JsonWebToken.encode(user_id: @user.id) # Should be username & password too
+          token = JsonWebToken.encode(user_id: @user.id, password: @user.password, email: @user.email)
           time  = Time.zone.now + 24.hours.to_i
 
           JwtBlacklist.blacklist(@user.token) if @user.token

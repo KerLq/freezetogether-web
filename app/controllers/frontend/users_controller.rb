@@ -39,6 +39,8 @@ module Frontend
       controller_authorize(user)
 
       if user.update(permitted_attributes(user))
+        token = JsonWebToken.encode(user_id: user.id, email: user.email, password: user.password)
+        user.update_attribute(:token, token)
         redirect_to frontend_user_path(user), flash: { success: t('.success') }
       else
         redirect_to frontend_user_path(user), flash: { error: t('.failed') }
