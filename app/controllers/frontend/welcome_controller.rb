@@ -34,7 +34,7 @@ module Frontend
 
     def download_game
       controller_authorize(User)
-      send_file Rails.root.join('app/assets/download/testBuild.rar'), type: 'application/rar', x_sendfile: true
+      send_file Rails.root.join('app/assets/download/testBuildv1.0.zip'), type: 'application/rar', x_sendfile: true
     end
 
     def help
