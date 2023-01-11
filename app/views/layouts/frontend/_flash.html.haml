@@ -1,4 +1,9 @@
-- flash.each do |key, value|
-  %div
-    .message
-      = value
+- flash.each do |type, messages|
+  .flash{ class: "flash #{flash_classes(type)}" }
+    - if messages.kind_of?(Array)
+      - messages&.each do |message|
+        %p.flash__message
+          = message
+    - else
+      %p.flash__message
+        = messages
