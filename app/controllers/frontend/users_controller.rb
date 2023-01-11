@@ -28,7 +28,7 @@ module Frontend
         flash[:error] ||= []
 
         user.errors.each do |error|
-          flash[:error] << error.message 
+          flash[:error] << error.message
         end
 
         redirect_to register_path
@@ -76,7 +76,8 @@ module Frontend
         user.update_attribute(:reset_password_token, nil)
         redirect_to login_path, flash: { success: t('.success') }
       else
-        redirect_to reset_password_frontend_user_path, flash: { error: t('.failed') } # Das Passwort konnte leider nicht zurückgesetzt werden,
+        redirect_to reset_password_frontend_user_path, flash: { error: t('.failed') }
+        # Das Passwort konnte leider nicht zurückgesetzt werden,
         # bitte sende eine E-Mail an: support@freezetogether.com
       end
     end
