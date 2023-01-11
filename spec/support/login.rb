@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 def login_user(**user_params)
-  user = create(:user, password: 'BenSpencer', email_confirmed: true, **user_params)
+  user = create(:user, password: 'BenSpencer', email_confirmed: true, **user_params, tos: true)
 
   visit login_path
 
