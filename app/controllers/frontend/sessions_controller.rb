@@ -33,7 +33,7 @@ module Frontend
       
       cookies[:auth_token] = nil
       session[:user_id] = nil 
-      redirect_to frontend_root_path # Landingpage (root_path)
+      redirect_to frontend_root_path
     end
   end
 end
