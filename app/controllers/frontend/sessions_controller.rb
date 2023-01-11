@@ -30,9 +30,9 @@ module Frontend
 
     def destroy
       controller_authorize(User)
-      
+
       cookies[:auth_token] = nil
-      session[:user_id] = nil 
+      session[:user_id]    = nil
       redirect_to frontend_root_path
     end
   end
