@@ -39,7 +39,7 @@ module Frontend
     end
 
     def permitted_attributes_for_update
-      %i[email password]
+      %i[email password description]
     end
   end
 end

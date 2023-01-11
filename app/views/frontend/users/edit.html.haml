@@ -5,5 +5,6 @@
         %h2.head-text__headline Benutzer bearbeiten
       = form_for [:frontend, @user], class: 'login-form' do |f|
         = f.text_field :email, placeholder: 'E-Mail-Adresse'
+        = f.text_field :description, placeholder: 'Profilbeschreibung'
         = f.password_field :password, placeholder: 'Passwort'
         = f.submit "Abspeichern", class: 'button button--accent'
