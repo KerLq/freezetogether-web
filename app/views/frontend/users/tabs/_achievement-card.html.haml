@@ -3,4 +3,4 @@
     = image_tag achievement.cover_image
   .achievements-card__text
     %h3= achievement.title
-    %p= achievement.description
+    %p= h(raw achievement.description)

@@ -1,7 +1,6 @@
-.game-card
-  .game-card__character
-  .game-card__details
-    %h3 GAME 1
-  .game-card__state
-  .game-card__progressbar
-    .game-card__progressbar-fill{style: "width: 55%"}
+.games__item
+  %div= game.created_at.strftime("%d.%m.%Y")
+  %div= game.score
+  %div= game.coin
+  %div= game.accomplished_achievements.count
+  %div= seconds_to_hms(game.time.to_i)
