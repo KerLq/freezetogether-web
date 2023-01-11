@@ -2,36 +2,21 @@
   .container
     .head-text.text-center
       .head-text__overline Die besten Freezer
-      %h2.head-text__headline Bestenliste
-    .leaderboard-sort= select_tag "sort", raw('<option value="" disabled="disabled" selected="selected">Sortieren nach</option><option>A-Z</option><option>Punkte</option>Zeit<option>Datum</option>'), class: 'leaderboard-search'
+      %h2.head-text__headline Leaderboard
+    .leaderboard-sort=# select_tag "sort", raw('<option value="" disabled="disabled" selected="selected">Sortieren nach</option><option>A-Z</option><option>Punkte</option>Zeit<option>Datum</option>'), class: 'leaderboard-search'
     .leaderboard
       .leaderboard__item.leaderboard__item--header
         %div
         %div Name
         %div Punkte
+        %div Coins
         %div Erfolge
         %div Zeit
-      .leaderboard__item
-        %div #1
-        %div= link_to 'Dogus', "#"
-        %div 34.656
-        %div 324
-        %div 02:33:15
-      .leaderboard__item
-        %div #1
-        %div Dogus
-        %div 34.656
-        %div 324
-        %div 02:33:15
-      .leaderboard__item
-        %div #1
-        %div Dogus
-        %div 34.656
-        %div 324
-        %div 02:33:15
-      .leaderboard__item
-        %div #1
-        %div Dogus
-        %div 34.656
-        %div 324
-        %div 02:33:15
+      - Game.all.order(time: :asc, score: :desc, coin: :desc, created_at: :asc).limit(100).each.with_index(1) do |game, index|
+        .leaderboard__item
+          %div= "##{index}"
+          %div= link_to game.user.username, frontend_user_path(game.user)
+          %div= game.score
+          %div= game.coin
+          %div= game.accomplished_achievements.count
+          %div= seconds_to_hms(game.time.to_i)
