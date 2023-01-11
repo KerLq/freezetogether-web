@@ -13,8 +13,7 @@ module Api
           time  = Time.zone.now + 24.hours.to_i
 
           JwtBlacklist.blacklist(@user.token) if @user.token
-
-          @user.update(token:)
+          @user.update_attribute(:token, token)
           render json: { message: @user.token, exp: time.strftime('%m-%d-%Y %H:%M'),
                          username: @user.username }, status: :ok
         else

@@ -2,8 +2,9 @@
   .profile__banner
     .profile-banner
       = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
-    .user-gear
-      = link_to image_tag("icons/gear-solid.svg", class: 'user-settings__image'), edit_frontend_user_path(@user), class: 'user-settings'
+    - if policy([:frontend, @user]).edit?
+      .user-gear
+        = link_to image_tag("icons/gear-solid.svg", class: 'user-settings__image'), edit_frontend_user_path(@user), class: 'user-settings'
     .profile-transparent-hr
     .profile-data
       .profile-data__avatar
