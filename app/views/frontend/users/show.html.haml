@@ -34,5 +34,11 @@
     %section#spielverlauf.tabs__section{"aria-hidden": "true", "aria-labelledby": "tab-spielverlauf", role: "tabpanel"}
       .tabs__body
         .games
-          - @user.games.each do |game|
+          .games__item.games__item--header
+            %div Datum
+            %div Punkte
+            %div Coins
+            %div Erfolge
+            %div Zeit
+          - @user.games.order(time: :asc, score: :asc, coin: :asc, created_at: :asc).each do |game|
             = render 'frontend/users/tabs/game-card', game: game

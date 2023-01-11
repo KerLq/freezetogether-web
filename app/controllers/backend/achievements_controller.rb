@@ -38,7 +38,7 @@ module Backend
     def update
       controller_authorize(achievement)
 
-      achievement.avatar.attach(params[:achievement][:cover_image]) if params[:achievement][:cover_image]
+      achievement.cover_image.attach(params[:achievement][:cover_image]) if params[:achievement][:cover_image]
 
       if achievement.update(permitted_attributes(achievement))
         redirect_to edit_backend_achievement_path(achievement), flash: { success: t('.success') }
