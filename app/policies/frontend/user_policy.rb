@@ -3,7 +3,7 @@
 module Frontend
   class UserPolicy < ApplicationPolicy
     def create?
-      true
+      user.nil?
     end
 
     def show?
