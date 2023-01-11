@@ -9,6 +9,7 @@ module Api
         achievements = json_decoded['game']['achievements'].collect do |achievement|
           Achievement.find_by(title: achievement['title'])
         end
+
         coins        = json_decoded['game']['coins'].to_i
         score        = json_decoded['game']['score'].to_i
 

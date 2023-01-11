@@ -1,5 +1,9 @@
-= form_for [:frontend, @user] do |f|
-  = f.text_field :username
-  = f.text_field :email
-  = f.file_field :avatar
-  = f.submit "Submit"
+%section
+  .container
+    .login-register
+      .head-text.text-center
+        %h2.head-text__headline Benutzer bearbeiten
+      = form_for [:frontend, @user], class: 'login-form' do |f|
+        = f.text_field :email, placeholder: 'E-Mail-Adresse'
+        = f.password_field :password, placeholder: 'Passwort'
+        = f.submit "Abspeichern", class: 'button button--accent'

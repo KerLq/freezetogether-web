@@ -8,7 +8,6 @@ module Frontend
 
     def show?
       true
-      # user.private?
     end
 
     def confirm_email?
@@ -32,11 +31,15 @@ module Frontend
     end
 
     def permitted_attributes_for_create
-      %i[username email password]
+      %i[username email password tos]
     end
 
     def permitted_attributes_for_reset_password
       %i[password]
+    end
+
+    def permitted_attributes_for_update
+      %i[email password]
     end
   end
 end

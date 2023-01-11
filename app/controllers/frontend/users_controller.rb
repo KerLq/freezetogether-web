@@ -25,7 +25,12 @@ module Frontend
         UserMailer.registration_confirmation(user).deliver!
         redirect_to login_path, flash: { success: t('.success') }
       else
-        redirect_to register_path, flash: { success: t('.failed') }
+        error_attributes = {}
+        user.errors.each do |error|
+          error_attributes[error.attribute] = error.message
+        end
+
+        redirect_to register_path, flash: error_attributes
       end
     end
 
