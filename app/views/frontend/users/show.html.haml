@@ -1,7 +1,7 @@
 .profile
   .profile__banner
     .profile-banner
-      = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
+      = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.png")
     - if policy([:frontend, @user]).edit?
       .user-gear
         = link_to image_tag("icons/gear-solid.svg", class: 'user-settings__image'), edit_frontend_user_path(@user), class: 'user-settings'
@@ -9,7 +9,7 @@
     .profile-data
       .profile-data__avatar
         .profile-avatar
-          = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.jpg")
+          = image_tag (@user&.avatar&.attached? ? @user&.avatar : "default.png")
           - if policy([:frontend, @user]).upload_image?
             = form_for [:frontend, @user], url: frontend_user_upload_image_path(@user), method: :post do |f|
               = f.file_field :avatar

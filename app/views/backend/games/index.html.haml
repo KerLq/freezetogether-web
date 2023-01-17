@@ -14,7 +14,7 @@
         = link_to edit_backend_game_path(game) do
           = game.id
       .tc.show
-        = link_to edit_backend_user_path(game.user) do
+        = link_to edit_frontend_user_path(game.user) do
           = game.user.username
       .tc= game.score
       .tc= game.coin
