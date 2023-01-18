@@ -2,7 +2,6 @@
 
 class User < ApplicationRecord
   has_secure_password
-
   has_many :games, dependent: :destroy
   has_many :accomplished_achievements, through: :games, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
@@ -11,7 +10,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, on: :create, length: { maximum: 16 }
   validate :validate_email
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, allow_nil: true
   validates :tos, presence: true
 
   enum role: { standard: 0, admin: 1 }
