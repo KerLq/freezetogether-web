@@ -1,4 +1,6 @@
 de:
+  errors:
+    not_authorized: Sie haben keinen Zugriff!
   placeholder:
     email: E-Mail Adresse
   layouts:
