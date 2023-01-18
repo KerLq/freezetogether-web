@@ -10,10 +10,18 @@ module Api
           Achievement.find_by(title: achievement['title'], scores: achievement['scores'])
         end
 
-        coins = json_decoded['game']['coins'].to_i
-        score = json_decoded['game']['score'].to_i
-        # time  = json_decoded['game']['time']
-        game  = Current.user.games.build(score:, coin: coins) # Rename coin column to 'coins'
+        coins        = json_decoded['game']['coins'].to_i
+        score        = json_decoded['game']['score'].to_i
+        milliseconds = json_decoded['game']['time'].to_f
+
+        if milliseconds.present?
+          seconds = milliseconds / 1000
+          time    = Time.at(seconds).utc.strftime('%H:%M:%S:%L')
+        else
+          time = 0
+        end
+
+        game  = Current.user.games.build(score:, coin: coins, time:) # Rename coin column to 'coins'
 
         achievements.each do |achievement, _scores|
           game.accomplished_achievements.build(achievement:)

@@ -18,7 +18,7 @@
           = game.user.username
       .tc= game.score
       .tc= game.coin
-      .tc= game.time
+      .tc= game.time || '00:00:00:00'
       .tc= game.accomplished_achievements.count
       .tc.center.edit
         = link_to edit_backend_game_path(game) do

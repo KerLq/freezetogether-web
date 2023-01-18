@@ -3,4 +3,4 @@
   %div= game.score
   %div= game.coin
   %div= game.accomplished_achievements.count if game.accomplished_achievements
-  %div= seconds_to_hms(game.time.to_i)
+  %div= game.time || '00:00:00:00'
