@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   before_create :confirmation_token, :downcase_email
 
-  validates :username, presence: true, uniqueness: true, length: { maximum: 16 }
+  validates :username, presence: true, uniqueness: true, on: :create, length: { maximum: 16 }
   validate :validate_email
   validates :password, length: { minimum: 8 }
   validates :tos, presence: true

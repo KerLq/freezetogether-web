@@ -43,6 +43,7 @@ module Frontend
         user.update_attribute(:token, token)
         redirect_to frontend_user_path(user), flash: { success: t('.success') }
       else
+        asdfadf
         redirect_to edit_frontend_user_path(user), flash: { error: t('.failed') }
       end
     end

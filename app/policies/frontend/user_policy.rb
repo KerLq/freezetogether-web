@@ -27,7 +27,7 @@ module Frontend
     end
 
     def permitted_attributes
-      %i[username email password description]
+      %i[email password description]
     end
 
     def permitted_attributes_for_create
