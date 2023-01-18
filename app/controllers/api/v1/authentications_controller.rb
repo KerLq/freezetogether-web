@@ -7,7 +7,7 @@ module Api
 
       # POST /auth/login
       def login
-        @user = User.find_by(username: params[:username])
+        @user = User.find_by(email: params[:email])
         if @user&.authenticate(params[:password])
           token = JsonWebToken.encode(user_id: @user.id, password: @user.password, email: @user.email)
           time  = Time.zone.now + 24.hours.to_i
@@ -15,7 +15,7 @@ module Api
           JwtBlacklist.blacklist(@user.token) if @user.token
           @user.update_attribute(:token, token)
           render json: { message: @user.token, exp: time.strftime('%m-%d-%Y %H:%M'),
-                         username: @user.username }, status: :ok
+                         email: @user.email }, status: :ok
         else
           render json: { message: '-1' }, status: :unauthorized
         end
