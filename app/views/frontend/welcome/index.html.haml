@@ -5,7 +5,8 @@
       %p.hero-container__description= t('.overline')
       %h2.hero-container__headline= t('.headline')
       .hero-container__buttons
-        = link_to t('.play_now'), register_path, class: 'button button--secondary-light'
+        - unless logged_in?
+          = link_to t('.play_now'), register_path, class: 'button button--secondary-light'
         = link_to "#{t('.download_windows')} #{image_tag '/assets/icons/download.png', class: 'ml-1'}".html_safe, download_game_windows_path, class: 'button button--secondary'
         = link_to "#{t('.download_linux')} #{image_tag '/assets/icons/download.png', class: 'ml-1'}".html_safe, download_game_linux_path, class: 'button button--secondary'
       .hero-container__platforms-headline
