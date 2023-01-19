@@ -14,7 +14,11 @@ module Frontend
       true
     end
 
-    def download_game?
+    def download_game_windows?
+      true
+    end
+
+    def download_game_linux?
       true
     end
 

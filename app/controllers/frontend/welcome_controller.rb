@@ -34,12 +34,12 @@ module Frontend
 
     def download_game_windows
       controller_authorize(User)
-      send_file Rails.root.join('app/assets/download/testBuildv1.0.zip'), type: 'application/zip', x_sendfile: true
+      send_file Rails.root.join('app/assets/download/FreezeTogetherWin.zip'), type: 'application/zip', x_sendfile: true
     end
 
     def download_game_linux
       controller_authorize(User)
-      send_file Rails.root.join('app/assets/download/testBuildv1.0.zip'), type: 'application/zip', x_sendfile: true
+      send_file Rails.root.join('app/assets/download/FreezeTogetherLinux.zip'), type: 'application/zip', x_sendfile: true
     end
 
     def help
