@@ -23,7 +23,7 @@ module Api
 
         game  = Current.user.games.build(score:, coin: coins, time:) # Rename coin column to 'coins'
 
-        achievements.each do |achievement|
+        achievements.each do |achievement, _scores|
           game.accomplished_achievements.build(achievement:)
         end
 
