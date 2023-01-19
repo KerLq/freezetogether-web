@@ -14,4 +14,3 @@
       - else
         = link_to t('.logout').html_safe, logout_path, class: 'button button--login'
         = link_to (image_tag(Current.user&.avatar&.attached? ? Current.user&.avatar : "default.png")), frontend_user_url(Current.user), class: 'button button--avatar mr-2'
-      = link_to "#{t('.download')} #{image_tag('/assets/icons/download.png')}".html_safe, download_game_path, class: 'button button--download'

@@ -11,7 +11,6 @@ en:
         help: Help
         login: Login
         logout: Logout
-        download: Download
   frontend:
     footer:
       impressum: Imprint
@@ -24,8 +23,9 @@ en:
       index:
         overline: The New Singleplayer Adventure!
         headline: Freeze Together
-        play_now: Register For Free!
-        download: Download
+        play_now: Register
+        download_windows: Windows
+        download_linux: Linux
         supported_platforms: Supported Platforms
         introduction: A Story That Takes You On A Journey...
         introduction_text: Are You Ready For The Great Adventure?

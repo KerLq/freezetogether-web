@@ -13,7 +13,6 @@ de:
         help: Hilfe
         login: Login
         logout: Ausloggen
-        download: Herunterladen
   frontend:
     footer:
       impressum: Impressum
@@ -26,8 +25,9 @@ de:
       index:
         overline: Das neue Singleplayer-Abenteuer!
         headline: Freeze Together
-        play_now: Kostenlos registrieren
-        download: Herunterladen
+        play_now: Registrieren
+        download_windows: Windows
+        download_linux: Linux
         supported_platforms: Unterstützte Plattformen
         introduction: Eine Story, die dich auf eine Reise mitnimmt...
         introduction_text: Bist du bereit für ein großes Abenteuer?
