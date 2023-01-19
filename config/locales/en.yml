@@ -1,0 +1,105 @@
+en:
+  placeholder:
+    email: Email Address
+  layouts:
+    frontend:
+      header:
+        gameinfo: Game Info
+        media: Media
+        news: News
+        leaderboard: Leaderboard
+        help: Help
+        login: Login
+        logout: Logout
+        download: Download
+  frontend:
+    footer:
+      impressum: Imprint
+      legal: Legal Notice
+      updates: Service Updates
+      user_agreement: User Agreement
+      policies: Privacy and Cookie Policy (Your Privacy Rights)
+      cookies: Cookie Settings
+    welcome:
+      index:
+        overline: The New Singleplayer Adventure!
+        headline: Freeze Together
+        play_now: Register For Free!
+        download: Download
+        supported_platforms: Supported Platforms
+        introduction: A Story That Takes You On A Journey...
+        introduction_text: Are You Ready For The Great Adventure?
+        introduction_more: Read More
+        news: News
+        news_description: Stay Up To Date On New Features and Updates!
+        newsletter: Newsletter
+        newsletter_description: Sign Up Today To Receive The Latest News, Updates And Background Information By Email.
+        newsletter_subscribe: Subscribe
+        show_all: Show All
+      gameinfo:
+        overline: Are You Ready?
+        headline: Freeze it!
+        description: Freeze Together Is A Single Player Story Adventure Game For Players Who Want To Experience An Exciting And Challenging Gameplay With An Interesting Storyline. You Have To Use Wits And Strategy To Defeat The Opponents And Advance In The Story. This Game Is Perfect For Everyone Who Likes Puzzle And Adventure Games.
+      help:
+        overline: You Need Help?
+        headline: Support & FAQ
+        sidebar_text: If You Have A Specific Request, Please Feel Free To Contact Our Support. We Will Be Happy To Help You!
+    news:
+      index:
+        headline: News
+    sessions:
+      create:
+        confirm_email: Please Activate Your Account By Following The Instructions In The Confirmation Email To Continue.
+        failed: Invalid Login!
+        success: Successfully logged in!
+    users:
+      create:
+        success: Successfully registered! Please confirm your registration in your email inbox.
+        failed: Registration failed.
+      update:
+        success: Updated successfully!
+        failed: Update failed.
+      confirm_email:
+        success: Verification completed successfully.
+        failed: Verification failed.
+      reset_password:
+        success: Your password has been successfully reset.
+        failed: The password is too short! It should consist of at least 8 characters.
+  backend:
+    login:
+      invalid: 'Invalid Login!'
+    register:
+      success: 'Successfully registered!'
+      failed: 'Registration failed!'
+    news:
+      created: 'News was successfully created.'
+      updated: 'News was successfully updated.'
+      destroyed: 'News was successfully destroyed.'
+    user:
+      updated: 'User was successfully updated.'
+      destroyed: 'User was successfully destroyed.'
+      no_permission: 'No permission!'
+    faqs:
+      create:
+        success: 'Successfully created!'
+        failed: 'Creation failed!'
+      update:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+      destroy:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+    achievement:
+      created: 'Achievement was successfully created.'
+      updated: 'Achievement was successfully updated.'
+      destroyed: 'Achievement was successfully destroyed.'
+    characters:
+      create:
+        success: 'Successfully created!'
+        failed: 'Creation failed!'
+      update:
+        success: 'Successfully updated!'
+        failed: 'Update failed!'
+  mailer:
+    register:
+      subject: 'Registration Confirmation'
